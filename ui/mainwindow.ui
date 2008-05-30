@@ -1,0 +1,122 @@
+<ui version="4.0" >
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>900</width>
+    <height>607</height>
+   </rect>
+  </property>
+  <property name="minimumSize" >
+   <size>
+    <width>100</width>
+    <height>100</height>
+   </size>
+  </property>
+  <property name="windowTitle" >
+   <string>QMTSim</string>
+  </property>
+  <property name="windowIcon" >
+   <iconset resource="../resource.qrc" >
+    <normaloff>:/newPrefix/logo.jpg</normaloff>:/newPrefix/logo.jpg</iconset>
+  </property>
+  <property name="statusTip" >
+   <string> In order to move the object, drag it with the left mouse button pressed. In order to rotate the object, select it and then use Key-R to rotate clockwise and press Key-L to rotate counter-clockwise</string>
+  </property>
+  <property name="whatsThis" >
+   <string>For QMTSim 1.0 , when the simulator is run for the first time, the scene contains only one object.
+Extra customized objects can be put using the dialog.
+
+In order to move the object, drag it with the left mouse button pressed.
+In order to rotate the object, select it and then use Key-R to rotate clockwise and press Key-L to rotate counter-clockwise.
+Item can be translated and rotated at the same time.</string>
+  </property>
+  <widget class="QWidget" name="centralwidget" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>33</y>
+     <width>900</width>
+     <height>555</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout" >
+    <item row="0" column="0" colspan="2" >
+     <widget class="QGraphicsView" name="view" >
+      <property name="cursor" stdset="0" >
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="toolTip" >
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0" >
+     <widget class="QPushButton" name="addItemButton" >
+      <property name="text" >
+       <string>Add New Item</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1" >
+     <spacer name="horizontalSpacer" >
+      <property name="orientation" >
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0" >
+       <size>
+        <width>717</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>900</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>588</y>
+     <width>900</width>
+     <height>19</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="toolBar" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>21</y>
+     <width>900</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="windowTitle" >
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea" >
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak" >
+    <bool>false</bool>
+   </attribute>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../resource.qrc" />
+ </resources>
+ <connections/>
+</ui>
