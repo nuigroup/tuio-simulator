@@ -1,0 +1,13 @@
+INPUT(
+./build\mainwindowimpl.o
+./build\main.o
+./build\item.o
+./build\dialogimpl.o
+./build\setpathscene.o
+./build\setpathwinodwimpl.o
+./build\moc_mainwindowimpl.o
+./build\moc_dialogimpl.o
+./build\moc_setpathwinodwimpl.o
+./build\moc_setpathscene.o
+./build\qrc_resource.o
+);
