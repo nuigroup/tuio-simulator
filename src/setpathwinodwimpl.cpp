@@ -47,7 +47,7 @@ void SetPathWindowImpl::addPoint()
 	scene->y.insert(index->value(),pointy->value());	
 	//std::cout << index->value() << "   \n" ;
 	index->setValue(index->value() + 1);
-	scene->addEllipse(pointx->value(),pointy->value(),5,5);
+	scene->addEllipse(pointx->value()-2,pointy->value()-2,5,5);
 	 
 }
 
@@ -59,7 +59,7 @@ void SetPathWindowImpl::addPointOfScene(double i,double j)
 	scene->y.insert(index->value(),j);	
 	//std::cout << index->value() << scene->x.at(index->value())<<scene->y.at(index->value())<<"   \n" ;
 	index->setValue(index->value() + 1);
-	scene->addEllipse(i,j,5,5);
+	scene->addEllipse(i-2,j-2,5,5);
 	 
 }
 

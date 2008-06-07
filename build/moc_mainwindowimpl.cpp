@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'mainwindowimpl.h'
 **
-** Created: Fri Jun 6 23:44:12 2008
+** Created: Sat Jun 7 09:53:57 2008
 **      by: The Qt Meta Object Compiler version 59 (Qt 4.4.0)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -32,8 +32,8 @@ static const uint qt_meta_data_MainWindowImpl[] = {
       29,   15,   15,   15, 0x08,
       45,   15,   15,   15, 0x08,
       62,   15,   15,   15, 0x08,
-      83,   81,   15,   15, 0x08,
-     108,   15,   15,   15, 0x08,
+      81,   15,   15,   15, 0x08,
+     103,  101,   15,   15, 0x08,
 
        0        // eod
 };
@@ -41,8 +41,8 @@ static const uint qt_meta_data_MainWindowImpl[] = {
 static const char qt_meta_stringdata_MainWindowImpl[] = {
     "MainWindowImpl\0\0showDialog()\0"
     "setPathDialog()\0startAnimation()\0"
-    "setanimationtime()\0n\0animationslidertime(int)\0"
-    "animationFinished()\0"
+    "setanimationtime()\0animationFinished()\0"
+    "n\0animationslidertime(int)\0"
 };
 
 const QMetaObject MainWindowImpl::staticMetaObject = {
@@ -76,8 +76,8 @@ int MainWindowImpl::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         case 1: setPathDialog(); break;
         case 2: startAnimation(); break;
         case 3: setanimationtime(); break;
-        case 4: animationslidertime((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 5: animationFinished(); break;
+        case 4: animationFinished(); break;
+        case 5: animationslidertime((*reinterpret_cast< int(*)>(_a[1]))); break;
         }
         _id -= 6;
     }

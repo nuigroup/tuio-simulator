@@ -93,6 +93,9 @@
     </item>
     <item row="1" column="7" >
      <widget class="QSlider" name="animationSlider" >
+      <property name="cursor" >
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="orientation" >
        <enum>Qt::Horizontal</enum>
       </property>

@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'mainwindow.ui'
 **
-** Created: Fri Jun 6 22:43:24 2008
+** Created: Sat Jun 7 09:53:43 2008
 **      by: Qt User Interface Compiler version 4.4.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -105,6 +105,7 @@ public:
 
     animationSlider = new QSlider(centralwidget);
     animationSlider->setObjectName(QString::fromUtf8("animationSlider"));
+    animationSlider->setCursor(QCursor(Qt::PointingHandCursor));
     animationSlider->setOrientation(Qt::Horizontal);
 
     gridLayout->addWidget(animationSlider, 1, 7, 1, 1);

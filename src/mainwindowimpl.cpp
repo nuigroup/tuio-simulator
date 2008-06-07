@@ -108,8 +108,10 @@ void MainWindowImpl::setanimationtime()
 }
 
 void MainWindowImpl::animationslidertime(int n)
-{	this->timer->stop();
+{
+	this->timer->stop();
 	timer->setCurrentTime((animationtime->value()*n)/framerange);
+	this->timer->stop();
 	this->timer->start();
 	
 }
@@ -121,5 +123,6 @@ void MainWindowImpl::animationFinished()
 		animationProgressBar->setValue(0);
 		animationSlider->setValue(0);
 		startAnimation_Radio->toggle();
+		this->timer->stop();
 }
 

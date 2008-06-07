@@ -38,9 +38,8 @@ void showDialog();
 void setPathDialog();
 void startAnimation();
 void setanimationtime();
-void animationslidertime(int n);
 void animationFinished();
-
+void animationslidertime(int n);
 
 
 

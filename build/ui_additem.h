@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'additem.ui'
 **
-** Created: Fri Jun 6 22:15:19 2008
+** Created: Sat Jun 7 09:42:01 2008
 **      by: Qt User Interface Compiler version 4.4.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
