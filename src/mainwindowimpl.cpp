@@ -112,6 +112,7 @@ void MainWindowImpl::animationslidertime(int n)
 	this->timer->stop();
 	timer->setCurrentTime((animationtime->value()*n)/framerange);
 	this->timer->stop();
+	startAnimation_Radio->setChecked(true);
 	this->timer->start();
 	
 }
@@ -122,7 +123,7 @@ void MainWindowImpl::animationFinished()
 		startAnimationButton->setText("Start Animation");
 		animationProgressBar->setValue(0);
 		animationSlider->setValue(0);
-		startAnimation_Radio->toggle();
+		startAnimation_Radio->setChecked(false);
 		this->timer->stop();
 }
 
