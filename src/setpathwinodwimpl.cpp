@@ -1,6 +1,7 @@
 #include "setpathwinodwimpl.h"
 #include <QtGui>
 #include "item.h"
+#include <iostream>
 
 SetPathWindowImpl::SetPathWindowImpl( QGraphicsItem *item,QWidget * parent, Qt::WFlags f) 
 	: QMainWindow(parent, f)
@@ -10,7 +11,7 @@ SetPathWindowImpl::SetPathWindowImpl( QGraphicsItem *item,QWidget * parent, Qt::
 		scene = new SetPathScene;
 		setpathitem = (myitem*)item;
 		
-	
+		pathset = 0 ;
         
 		
 		QPen pen;
@@ -37,6 +38,7 @@ SetPathWindowImpl::SetPathWindowImpl( QGraphicsItem *item,QWidget * parent, Qt::
 		connect(previewPathButton,SIGNAL(clicked()),this,SLOT(previewPath()));
 		connect(scene,SIGNAL(addPoint(double,double)),this,SLOT(addPointOfScene(double,double)));
 		connect(setPathButton,SIGNAL(clicked()),this,SLOT(setpath()));
+		connect(this,SIGNAL(setPathSignal()),this,SLOT(previewPath()));
 
 	}
 
@@ -98,6 +100,7 @@ void SetPathWindowImpl::previewPath()
 	path_pen.setWidth(3);
 	
 	scene->addPath(*path,path_pen);
+	pathset = 1;
 	
 	
 		
@@ -149,11 +152,14 @@ void SetPathWindowImpl::bezierControlPoint (int i , double& cp1x, double& cp1y,d
 
 void SetPathWindowImpl::setpath()
 {
-
-	setpathitem->moveBy(20,20);
+	
+	if(pathset == 0 ) 
+		{
+			emit setPathSignal();
+			std::cout<<"Path not previewed"<<"\n";
+		}
     for (int i = 0; i < 500; ++i)
          setpathitem->animation->setPosAt(i / 500.0, path->pointAtPercent(i/500.0));
-		//setpathitem->animation->setPosAt(i / 500.0, QPointF(i, i));
 		this->close();
 }
 

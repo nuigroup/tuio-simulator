@@ -50,6 +50,9 @@ MainWindowImpl::MainWindowImpl( QWidget * parent, Qt::WFlags f)
 	connect(animationSlider,SIGNAL(sliderMoved(int )),this,SLOT(animationslidertime(int)));	
 	connect(timer,SIGNAL(frameChanged(int)),animationSlider,SLOT(setValue(int)));
 	connect(timer,SIGNAL(finished()),this,SLOT(animationFinished()));
+	connect(addEllipseButton,SIGNAL(clicked()),this,SLOT(showAddEllipseDialog()));
+	connect(addCursorButton,SIGNAL(clicked()),this,SLOT(showAddCursorDialog()));
+	connect(deleteItemButton,SIGNAL(clicked()),this,SLOT(deleteItem()));
 
     item->animation->setItem(item);
     item->animation->setTimeLine(timer);
@@ -65,6 +68,18 @@ void MainWindowImpl::showDialog()
 	 
 }
 
+void MainWindowImpl::showAddEllipseDialog()
+{
+	AddEllipseDialogImpl *addEllipse = new AddEllipseDialogImpl(this);
+	addEllipse->show();
+}
+
+void MainWindowImpl::showAddCursorDialog()
+{
+	AddCursorDialogImpl *addCursor  = new AddCursorDialogImpl(this);
+	addCursor->show();
+}
+
 void MainWindowImpl::setPathDialog()
 {
 	QList<QGraphicsItem*> list = this->scene->selectedItems();
@@ -78,6 +93,19 @@ void MainWindowImpl::setPathDialog()
 		SetPathWindowImpl *setpathwindow = new SetPathWindowImpl(list.at(0));
 		setpathwindow->show();
 	}
+}
+
+void MainWindowImpl::deleteItem()
+{
+	QList<QGraphicsItem*> list = this->scene->selectedItems();
+		if (list.isEmpty()) 
+        QMessageBox::warning(this, tr("QMTSim"),
+                           tr("There is no selected item.\n"
+                               "Please Select an item and then try again."));
+     
+              while (!list.isEmpty())
+             delete list.takeFirst();
+	
 }
 
 void MainWindowImpl::startAnimation()
@@ -126,4 +154,5 @@ void MainWindowImpl::animationFinished()
 		startAnimation_Radio->setChecked(false);
 		this->timer->stop();
 }
+
 

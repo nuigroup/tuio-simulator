@@ -135,7 +135,7 @@
   <widget class="QPushButton" name="AddItem" >
    <property name="geometry" >
     <rect>
-     <x>130</x>
+     <x>90</x>
      <y>180</y>
      <width>75</width>
      <height>23</height>
@@ -155,9 +155,39 @@
     </rect>
    </property>
   </widget>
+  <widget class="QPushButton" name="cancelButton" >
+   <property name="geometry" >
+    <rect>
+     <x>200</x>
+     <y>180</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Cancel</string>
+   </property>
+  </widget>
  </widget>
  <resources>
   <include location="../resource.qrc" />
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>cancelButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>237</x>
+     <y>191</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>199</x>
+     <y>146</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

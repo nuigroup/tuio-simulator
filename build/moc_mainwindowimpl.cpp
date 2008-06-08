@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'mainwindowimpl.h'
 **
-** Created: Sat Jun 7 22:35:24 2008
+** Created: Mon Jun 9 00:06:18 2008
 **      by: The Qt Meta Object Compiler version 59 (Qt 4.4.0)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,25 +23,29 @@ static const uint qt_meta_data_MainWindowImpl[] = {
        1,       // revision
        0,       // classname
        0,    0, // classinfo
-       6,   10, // methods
+       9,   10, // methods
        0,    0, // properties
        0,    0, // enums/sets
 
  // slots: signature, parameters, type, tag, flags
       16,   15,   15,   15, 0x08,
       29,   15,   15,   15, 0x08,
-      45,   15,   15,   15, 0x08,
-      62,   15,   15,   15, 0x08,
-      81,   15,   15,   15, 0x08,
-     103,  101,   15,   15, 0x08,
+      42,   15,   15,   15, 0x08,
+      58,   15,   15,   15, 0x08,
+      75,   15,   15,   15, 0x08,
+      94,   15,   15,   15, 0x08,
+     114,   15,   15,   15, 0x08,
+     136,   15,   15,   15, 0x08,
+     161,  159,   15,   15, 0x08,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_MainWindowImpl[] = {
-    "MainWindowImpl\0\0showDialog()\0"
+    "MainWindowImpl\0\0showDialog()\0deleteItem()\0"
     "setPathDialog()\0startAnimation()\0"
     "setanimationtime()\0animationFinished()\0"
+    "showAddCursorDialog()\0showAddEllipseDialog()\0"
     "n\0animationslidertime(int)\0"
 };
 
@@ -73,13 +77,16 @@ int MainWindowImpl::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
         case 0: showDialog(); break;
-        case 1: setPathDialog(); break;
-        case 2: startAnimation(); break;
-        case 3: setanimationtime(); break;
-        case 4: animationFinished(); break;
-        case 5: animationslidertime((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 1: deleteItem(); break;
+        case 2: setPathDialog(); break;
+        case 3: startAnimation(); break;
+        case 4: setanimationtime(); break;
+        case 5: animationFinished(); break;
+        case 6: showAddCursorDialog(); break;
+        case 7: showAddEllipseDialog(); break;
+        case 8: animationslidertime((*reinterpret_cast< int(*)>(_a[1]))); break;
         }
-        _id -= 6;
+        _id -= 9;
     }
     return _id;
 }

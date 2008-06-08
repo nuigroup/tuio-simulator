@@ -20,6 +20,7 @@ class myitem : public QGraphicsPolygonItem
 	
 	
 	public : 
+			
 			myitem(QPolygon *mypolygon = 0,QTimeLine* timer= 0,QGraphicsItem *parent =0 ,QGraphicsScene *scene = 0); 
 			QGraphicsItemAnimation *animation;
 	protected :

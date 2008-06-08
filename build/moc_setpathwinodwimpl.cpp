@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'setpathwinodwimpl.h'
 **
-** Created: Sat Jun 7 22:35:32 2008
+** Created: Sun Jun 8 23:20:28 2008
 **      by: The Qt Meta Object Compiler version 59 (Qt 4.4.0)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,23 +23,26 @@ static const uint qt_meta_data_SetPathWindowImpl[] = {
        1,       // revision
        0,       // classname
        0,    0, // classinfo
-       4,   10, // methods
+       5,   10, // methods
        0,    0, // properties
        0,    0, // enums/sets
 
+ // signals: signature, parameters, type, tag, flags
+      19,   18,   18,   18, 0x05,
+
  // slots: signature, parameters, type, tag, flags
-      19,   18,   18,   18, 0x08,
-      30,   18,   18,   18, 0x08,
-      48,   44,   18,   18, 0x08,
-      79,   18,   18,   18, 0x08,
+      35,   18,   18,   18, 0x08,
+      46,   18,   18,   18, 0x08,
+      64,   60,   18,   18, 0x08,
+      95,   18,   18,   18, 0x08,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_SetPathWindowImpl[] = {
-    "SetPathWindowImpl\0\0addPoint()\0"
-    "previewPath()\0i,j\0addPointOfScene(double,double)\0"
-    "setpath()\0"
+    "SetPathWindowImpl\0\0setPathSignal()\0"
+    "addPoint()\0previewPath()\0i,j\0"
+    "addPointOfScene(double,double)\0setpath()\0"
 };
 
 const QMetaObject SetPathWindowImpl::staticMetaObject = {
@@ -69,13 +72,20 @@ int SetPathWindowImpl::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: addPoint(); break;
-        case 1: previewPath(); break;
-        case 2: addPointOfScene((*reinterpret_cast< double(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2]))); break;
-        case 3: setpath(); break;
+        case 0: setPathSignal(); break;
+        case 1: addPoint(); break;
+        case 2: previewPath(); break;
+        case 3: addPointOfScene((*reinterpret_cast< double(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2]))); break;
+        case 4: setpath(); break;
         }
-        _id -= 4;
+        _id -= 5;
     }
     return _id;
+}
+
+// SIGNAL 0
+void SetPathWindowImpl::setPathSignal()
+{
+    QMetaObject::activate(this, &staticMetaObject, 0, 0);
 }
 QT_END_MOC_NAMESPACE

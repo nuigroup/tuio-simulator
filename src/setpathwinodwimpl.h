@@ -25,8 +25,9 @@ Q_OBJECT
 public:
 	SetPathWindowImpl( QGraphicsItem* ,QWidget * parent = 0, Qt::WFlags f = 0 );
 	
+	int pathset ;
 	int count;
-	QPainterPath *path;
+	QPainterPath *path ;
 	SetPathScene *scene;
 	myitem *setpathitem;
 	QTimeLine *setpathtimer;
@@ -39,6 +40,11 @@ private slots:
 	void previewPath();
 	void addPointOfScene(double i,double j);
 	void setpath();
+	
+ signals:
+ 
+ void setPathSignal();
+   
 
 
 

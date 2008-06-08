@@ -5,9 +5,15 @@ INPUT(
 ./build\dialogimpl.o
 ./build\setpathscene.o
 ./build\setpathwinodwimpl.o
+./build\sceneellipse.o
+./build\addellipsedialogimpl.o
+./build\scenecursor.o
+./build\addcusordialogimpl.o
 ./build\moc_mainwindowimpl.o
 ./build\moc_dialogimpl.o
 ./build\moc_setpathwinodwimpl.o
 ./build\moc_setpathscene.o
+./build\moc_addellipsedialogimpl.o
+./build\moc_addcusordialogimpl.o
 ./build\qrc_resource.o
 );

@@ -11,6 +11,8 @@
 #include "ui_additem.h"
 #include "mainwindowimpl.h"
 
+class MainWindowImpl;
+
 
 
 class DialogImpl : public QDialog, public Ui::Dialog

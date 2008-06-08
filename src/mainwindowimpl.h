@@ -15,6 +15,8 @@
 #include <QPainterPath>
 #include <QAbstractSlider>
 #include "item.h"
+#include "addellipsedialogimpl.h"
+#include "addcusordialogimpl.h"
 
 
 
@@ -35,10 +37,13 @@ public:
 private slots:
 
 void showDialog();
+void deleteItem();
 void setPathDialog();
 void startAnimation();
 void setanimationtime();
 void animationFinished();
+void showAddCursorDialog();
+void showAddEllipseDialog();
 void animationslidertime(int n);
 
 
