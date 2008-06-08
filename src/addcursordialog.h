@@ -5,6 +5,7 @@
 #include <QtGui/QAction>
 #include <QtGui/QApplication>
 #include <QtGui/QButtonGroup>
+#include <QtGui/QComboBox>
 #include <QtGui/QDialog>
 #include <QtGui/QLabel>
 #include <QtGui/QPushButton>
@@ -23,6 +24,8 @@ public:
     QLabel *label;
     QLabel *label_2;
     QLabel *label_3;
+    QComboBox *fillColourComboBox;
+    QLabel *label_4;
 
     void setupUi(QDialog *addCursorDialog)
     {
@@ -34,10 +37,10 @@ public:
     addCursorDialog->setWindowIcon(icon);
     addCursorButton = new QPushButton(addCursorDialog);
     addCursorButton->setObjectName(QString::fromUtf8("addCursorButton"));
-    addCursorButton->setGeometry(QRect(90, 160, 75, 23));
+    addCursorButton->setGeometry(QRect(100, 230, 75, 23));
     cancelButton = new QPushButton(addCursorDialog);
     cancelButton->setObjectName(QString::fromUtf8("cancelButton"));
-    cancelButton->setGeometry(QRect(190, 160, 75, 23));
+    cancelButton->setGeometry(QRect(210, 230, 75, 23));
     cursor_x = new QSpinBox(addCursorDialog);
     cursor_x->setObjectName(QString::fromUtf8("cursor_x"));
     cursor_x->setGeometry(QRect(60, 70, 52, 22));
@@ -56,6 +59,12 @@ public:
     label_3 = new QLabel(addCursorDialog);
     label_3->setObjectName(QString::fromUtf8("label_3"));
     label_3->setGeometry(QRect(270, 50, 46, 14));
+    fillColourComboBox = new QComboBox(addCursorDialog);
+    fillColourComboBox->setObjectName(QString::fromUtf8("fillColourComboBox"));
+    fillColourComboBox->setGeometry(QRect(130, 140, 131, 22));
+    label_4 = new QLabel(addCursorDialog);
+    label_4->setObjectName(QString::fromUtf8("label_4"));
+    label_4->setGeometry(QRect(170, 120, 71, 20));
     QWidget::setTabOrder(cursor_x, cursor_y);
     QWidget::setTabOrder(cursor_y, cursor_radius);
     QWidget::setTabOrder(cursor_radius, addCursorButton);
@@ -74,10 +83,12 @@ public:
     label->setText(QApplication::translate("addCursorDialog", "X", 0, QApplication::UnicodeUTF8));
     label_2->setText(QApplication::translate("addCursorDialog", "Y", 0, QApplication::UnicodeUTF8));
     label_3->setText(QApplication::translate("addCursorDialog", "Radius", 0, QApplication::UnicodeUTF8));
+    label_4->setText(QApplication::translate("addCursorDialog", "Set Colour", 0, QApplication::UnicodeUTF8));
     Q_UNUSED(addCursorDialog);
     } // retranslateUi
 
 };
+
 
 namespace Ui4 {
     class addCursorDialog: public Ui_addCursorDialog {};

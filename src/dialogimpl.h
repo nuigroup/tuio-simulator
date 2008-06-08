@@ -6,6 +6,10 @@
 #include <QSpinBox>
 #include <QGraphicsScene>
 #include <QDialog>
+#include <QBrush>
+#include <QComboBox>
+#include <QColor>
+#include <QtGui>
 
 
 #include "ui_additem.h"

@@ -5,6 +5,7 @@
 #include <QtGui/QAction>
 #include <QtGui/QApplication>
 #include <QtGui/QButtonGroup>
+#include <QtGui/QComboBox>
 #include <QtGui/QDialog>
 #include <QtGui/QLabel>
 #include <QtGui/QPushButton>
@@ -25,6 +26,8 @@ public:
     QLabel *label_2;
     QLabel *label_3;
     QLabel *label_4;
+    QComboBox *fillColourComboBox;
+    QLabel *label_5;
 
     void setupUi(QDialog *addEllipseDialog)
     {
@@ -48,10 +51,10 @@ public:
     Ellipse_height->setGeometry(QRect(310, 70, 52, 22));
     addEllipseButton = new QPushButton(addEllipseDialog);
     addEllipseButton->setObjectName(QString::fromUtf8("addEllipseButton"));
-    addEllipseButton->setGeometry(QRect(90, 190, 75, 23));
+    addEllipseButton->setGeometry(QRect(120, 230, 75, 23));
     cancelButton = new QPushButton(addEllipseDialog);
     cancelButton->setObjectName(QString::fromUtf8("cancelButton"));
-    cancelButton->setGeometry(QRect(210, 190, 75, 23));
+    cancelButton->setGeometry(QRect(210, 230, 75, 23));
     label = new QLabel(addEllipseDialog);
     label->setObjectName(QString::fromUtf8("label"));
     label->setGeometry(QRect(57, 47, 16, 16));
@@ -64,6 +67,12 @@ public:
     label_4 = new QLabel(addEllipseDialog);
     label_4->setObjectName(QString::fromUtf8("label_4"));
     label_4->setGeometry(QRect(300, 47, 46, 14));
+    fillColourComboBox = new QComboBox(addEllipseDialog);
+    fillColourComboBox->setObjectName(QString::fromUtf8("fillColourComboBox"));
+    fillColourComboBox->setGeometry(QRect(140, 140, 131, 22));
+    label_5 = new QLabel(addEllipseDialog);
+    label_5->setObjectName(QString::fromUtf8("label_5"));
+    label_5->setGeometry(QRect(170, 110, 61, 16));
 
     retranslateUi(addEllipseDialog);
     QObject::connect(cancelButton, SIGNAL(clicked()), addEllipseDialog, SLOT(close()));
@@ -80,10 +89,12 @@ public:
     label_2->setText(QApplication::translate("addEllipseDialog", "Y", 0, QApplication::UnicodeUTF8));
     label_3->setText(QApplication::translate("addEllipseDialog", "Width", 0, QApplication::UnicodeUTF8));
     label_4->setText(QApplication::translate("addEllipseDialog", "Height", 0, QApplication::UnicodeUTF8));
+    label_5->setText(QApplication::translate("addEllipseDialog", "Set Colour", 0, QApplication::UnicodeUTF8));
     Q_UNUSED(addEllipseDialog);
     } // retranslateUi
 
 };
+
 
 namespace Ui3 {
     class addEllipseDialog: public Ui_addEllipseDialog {};

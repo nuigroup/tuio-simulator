@@ -3,6 +3,8 @@
 #include "mainwindowimpl.h"
 
 
+class QComboBox ;
+
 DialogImpl::DialogImpl(MainWindowImpl *win,QWidget * parent, Qt::WFlags f) 
 	: QDialog(parent, f)
 {  
@@ -22,6 +24,14 @@ DialogImpl::DialogImpl(MainWindowImpl *win,QWidget * parent, Qt::WFlags f)
 	VertexNumber->setMaximum(100);
 	VertexNumber->setValue(0);
 	
+	
+	QStringList colorNames = QColor::colorNames();
+    foreach (QString name, colorNames)
+    fillColourComboBox->addItem(name, QColor(name));
+    
+    fillColourComboBox->setCurrentIndex(
+      fillColourComboBox->findText("mediumslateblue"));
+	
 }
 
 
@@ -33,6 +43,12 @@ void DialogImpl::addNewItem()
 	myscene->addItem(item);
     item->animation->setItem(item);
     item->animation->setTimeLine(mywin->timer);
+    
+    QBrush *local_brush = new QBrush;
+    QColor colour = qvariant_cast<QColor>(fillColourComboBox->itemData(fillColourComboBox->currentIndex()));    
+    local_brush->setColor(colour);
+    local_brush->setStyle(Qt::Dense2Pattern);
+    item->setBrush(*local_brush);
     
 
 	this->close();

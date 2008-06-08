@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'additem.ui'
 **
-** Created: Sun Jun 8 23:19:47 2008
+** Created: Mon Jun 9 01:25:27 2008
 **      by: Qt User Interface Compiler version 4.4.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -14,6 +14,7 @@
 #include <QtGui/QAction>
 #include <QtGui/QApplication>
 #include <QtGui/QButtonGroup>
+#include <QtGui/QComboBox>
 #include <QtGui/QDialog>
 #include <QtGui/QLabel>
 #include <QtGui/QPushButton>
@@ -35,6 +36,8 @@ public:
     QPushButton *AddItem;
     QSpinBox *VertexNumber;
     QPushButton *cancelButton;
+    QComboBox *fillColourComboBox;
+    QLabel *label_6;
 
     void setupUi(QDialog *Dialog)
     {
@@ -78,13 +81,19 @@ public:
     label_3->setGeometry(QRect(150, 80, 21, 41));
     AddItem = new QPushButton(Dialog);
     AddItem->setObjectName(QString::fromUtf8("AddItem"));
-    AddItem->setGeometry(QRect(90, 180, 75, 23));
+    AddItem->setGeometry(QRect(110, 220, 75, 23));
     VertexNumber = new QSpinBox(Dialog);
     VertexNumber->setObjectName(QString::fromUtf8("VertexNumber"));
     VertexNumber->setGeometry(QRect(10, 60, 70, 20));
     cancelButton = new QPushButton(Dialog);
     cancelButton->setObjectName(QString::fromUtf8("cancelButton"));
-    cancelButton->setGeometry(QRect(200, 180, 75, 23));
+    cancelButton->setGeometry(QRect(220, 220, 75, 23));
+    fillColourComboBox = new QComboBox(Dialog);
+    fillColourComboBox->setObjectName(QString::fromUtf8("fillColourComboBox"));
+    fillColourComboBox->setGeometry(QRect(130, 130, 131, 22));
+    label_6 = new QLabel(Dialog);
+    label_6->setObjectName(QString::fromUtf8("label_6"));
+    label_6->setGeometry(QRect(160, 160, 51, 16));
 
     retranslateUi(Dialog);
     QObject::connect(cancelButton, SIGNAL(clicked()), Dialog, SLOT(close()));
@@ -108,6 +117,7 @@ public:
     label_3->setText(QApplication::translate("Dialog", "X", 0, QApplication::UnicodeUTF8));
     AddItem->setText(QApplication::translate("Dialog", "Add Item", 0, QApplication::UnicodeUTF8));
     cancelButton->setText(QApplication::translate("Dialog", "Cancel", 0, QApplication::UnicodeUTF8));
+    label_6->setText(QApplication::translate("Dialog", "Set Colour", 0, QApplication::UnicodeUTF8));
     Q_UNUSED(Dialog);
     } // retranslateUi
 

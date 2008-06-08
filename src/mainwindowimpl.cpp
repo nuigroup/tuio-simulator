@@ -28,7 +28,7 @@ MainWindowImpl::MainWindowImpl( QWidget * parent, Qt::WFlags f)
 
 	myitem *item;
 	item  = new myitem();
-	scene->addItem(item);
+	//scene->addItem(item);
 	
 	timer = new QTimeLine(10000);
 	timer->setFrameRange(0, framerange);
