@@ -17,7 +17,8 @@ HEADERS = src/mainwindowimpl.h \
  src/addellipsedialogimpl.h \
  src/scenecursor.h \
  src/addcursordialog.h \
- src/addcusordialogimpl.h
+ src/addcusordialogimpl.h \
+ src/tangible_type.h
 SOURCES = src/mainwindowimpl.cpp \
  src/main.cpp \
  src/item.cpp \
@@ -27,5 +28,6 @@ SOURCES = src/mainwindowimpl.cpp \
  src/sceneellipse.cpp \
  src/addellipsedialogimpl.cpp \
  src/scenecursor.cpp \
- src/addcusordialogimpl.cpp
+ src/addcusordialogimpl.cpp \
+ src/tangible_type.cpp
 RESOURCES += resource.qrc

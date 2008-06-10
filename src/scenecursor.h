@@ -8,8 +8,9 @@
 #include <QTimeLine>
 #include <QGraphicsItemAnimation>
 #include <QBrush>
+#include "tangible_type.h"
 
-class SceneCursor : public QGraphicsEllipseItem
+class SceneCursor : public QGraphicsEllipseItem , public Tangible_Type
 {
 
 
@@ -18,6 +19,7 @@ class SceneCursor : public QGraphicsEllipseItem
 			SceneCursor(int x, int y, int w, int h);
 			QGraphicsItemAnimation *animation;
 			QBrush *local_brush;
+			
 	
 	
 	

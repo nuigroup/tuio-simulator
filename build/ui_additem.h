@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'additem.ui'
 **
-** Created: Mon Jun 9 01:25:27 2008
+** Created: Wed Jun 11 01:21:00 2008
 **      by: Qt User Interface Compiler version 4.4.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -94,6 +94,12 @@ public:
     label_6 = new QLabel(Dialog);
     label_6->setObjectName(QString::fromUtf8("label_6"));
     label_6->setGeometry(QRect(160, 160, 51, 16));
+    QWidget::setTabOrder(VertexNumber, X_Vertex);
+    QWidget::setTabOrder(X_Vertex, Y_Vertex);
+    QWidget::setTabOrder(Y_Vertex, AddVertex);
+    QWidget::setTabOrder(AddVertex, fillColourComboBox);
+    QWidget::setTabOrder(fillColourComboBox, AddItem);
+    QWidget::setTabOrder(AddItem, cancelButton);
 
     retranslateUi(Dialog);
     QObject::connect(cancelButton, SIGNAL(clicked()), Dialog, SLOT(close()));

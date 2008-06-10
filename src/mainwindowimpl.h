@@ -14,6 +14,7 @@
 #include <QPolygon>
 #include <QPainterPath>
 #include <QAbstractSlider>
+#include <QXMLStreamWriter>
 #include "item.h"
 #include "addellipsedialogimpl.h"
 #include "addcusordialogimpl.h"
@@ -38,6 +39,7 @@ private slots:
 
 void showDialog();
 void deleteItem();
+void saveProfile();
 void setPathDialog();
 void startAnimation();
 void setanimationtime();
@@ -45,6 +47,7 @@ void animationFinished();
 void showAddCursorDialog();
 void showAddEllipseDialog();
 void animationslidertime(int n);
+
 
 
 

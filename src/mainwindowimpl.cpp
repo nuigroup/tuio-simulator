@@ -3,6 +3,7 @@
 #include "dialogimpl.h"
 //#include <iostream>
 #include "setpathwinodwimpl.h"
+#include "tangible_type.h"
 
 
 
@@ -53,6 +54,7 @@ MainWindowImpl::MainWindowImpl( QWidget * parent, Qt::WFlags f)
 	connect(addEllipseButton,SIGNAL(clicked()),this,SLOT(showAddEllipseDialog()));
 	connect(addCursorButton,SIGNAL(clicked()),this,SLOT(showAddCursorDialog()));
 	connect(deleteItemButton,SIGNAL(clicked()),this,SLOT(deleteItem()));
+	connect(saveProfileButton,SIGNAL(clicked()),this,SLOT(saveProfile()));
 
     item->animation->setItem(item);
     item->animation->setTimeLine(timer);
@@ -155,4 +157,84 @@ void MainWindowImpl::animationFinished()
 		this->timer->stop();
 }
 
+void MainWindowImpl::saveProfile()
+{
+	QList<QGraphicsItem*> list = this->scene->selectedItems();
+	if (list.isEmpty()) 
+	{
+		
+	QMessageBox::warning(this, tr("QMTSim"),
+	tr("There is no selected item.\n"
+	   "Please Select an item and then try again."));	
+	return;
+	}
+	   
+	else
+	{
+		
+		
+	QGraphicsItem *localitem = list.at(0);
+	Tangible_Type *myTangible = dynamic_cast<Tangible_Type*>(localitem);
+	if (myTangible == NULL )
+	{
+   		QMessageBox::warning(this, tr("QMTSim"),
+	   tr("Pointer Casting Error.\n"
+	   "Null pointer recieved"));
+	   return;
+   	
+  	}
+  	
+   QString getType = (myTangible->tangible_geom) ;
+   QMessageBox::information(this, tr("QMTSim"),getType);
+  	
+  	
+	 QString fileName =
+            QFileDialog::getSaveFileName(this, tr("Save Profile"),
+                                         QDir::currentPath(),
+                                         tr("XML Files ( *.xml)"));
+    if (fileName.isEmpty())
+     	return;
+   	
+        
 
+    QFile file(fileName);
+    if (!file.open(QFile::WriteOnly | QFile::Text)) 
+    {
+        QMessageBox::warning(this, tr("QMTSim \n Save Profile \n"),
+                             tr("Cannot write file %1:\n%2.")
+                             .arg(fileName)
+                             .arg(file.errorString()));
+        return;
+	}
+	
+		
+	
+	QXmlStreamWriter xmlWriter(&file);
+	xmlWriter.setAutoFormatting(true);
+	xmlWriter.writeStartDocument();
+	xmlWriter.writeStartElement("QMTSim");
+	xmlWriter.writeStartElement("TableItem");
+	xmlWriter.writeAttribute("Type",getType);
+	xmlWriter.writeEndElement();
+	xmlWriter.writeStartElement("Position");
+	QString str_x,str_y;
+	double real_x = (localitem->scenePos()).x();
+	str_y.setNum((localitem->scenePos()).y());
+	str_x.setNum(real_x);
+	xmlWriter.writeAttribute("x",str_x);
+	xmlWriter.writeAttribute("y",str_y);
+	xmlWriter.writeEndElement();
+	xmlWriter.writeEndDocument();
+	file.close();
+	return;     
+
+   
+   
+
+		
+
+
+	 }
+
+
+}

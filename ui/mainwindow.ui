@@ -32,7 +32,7 @@
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout" >
-    <item row="0" column="0" colspan="9" >
+    <item row="0" column="0" colspan="12" >
      <widget class="QGraphicsView" name="view" >
       <property name="cursor" stdset="0" >
        <cursorShape>PointingHandCursor</cursorShape>
@@ -77,21 +77,21 @@
       </property>
      </widget>
     </item>
-    <item row="1" column="6" >
+    <item row="1" column="6" colspan="2" >
      <widget class="QSpinBox" name="animationtime" >
       <property name="statusTip" >
        <string>Time in milliseconds</string>
       </property>
      </widget>
     </item>
-    <item row="1" column="7" >
+    <item row="1" column="8" colspan="2" >
      <widget class="QPushButton" name="setAnimationTimeButton" >
       <property name="text" >
        <string>Set Animation Time</string>
       </property>
      </widget>
     </item>
-    <item row="1" column="8" >
+    <item row="1" column="10" colspan="2" >
      <widget class="QSlider" name="animationSlider" >
       <property name="cursor" >
        <cursorShape>PointingHandCursor</cursorShape>
@@ -125,11 +125,32 @@
     <item row="2" column="3" colspan="2" >
      <widget class="QPushButton" name="saveProfileButton" >
       <property name="text" >
-       <string>Save Profile</string>
+       <string>Save Item</string>
       </property>
      </widget>
     </item>
-    <item row="2" column="5" colspan="4" >
+    <item row="2" column="5" colspan="2" >
+     <widget class="QPushButton" name="uploadItemButton" >
+      <property name="text" >
+       <string>Upload Item</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="7" colspan="2" >
+     <widget class="QPushButton" name="pushButton" >
+      <property name="text" >
+       <string>Save Session</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="9" colspan="2" >
+     <widget class="QPushButton" name="pushButton_2" >
+      <property name="text" >
+       <string>Upload Session</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="11" >
      <spacer name="horizontalSpacer" >
       <property name="orientation" >
        <enum>Qt::Horizontal</enum>

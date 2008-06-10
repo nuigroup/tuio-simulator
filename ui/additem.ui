@@ -192,6 +192,15 @@
    </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>VertexNumber</tabstop>
+  <tabstop>X_Vertex</tabstop>
+  <tabstop>Y_Vertex</tabstop>
+  <tabstop>AddVertex</tabstop>
+  <tabstop>fillColourComboBox</tabstop>
+  <tabstop>AddItem</tabstop>
+  <tabstop>cancelButton</tabstop>
+ </tabstops>
  <resources>
   <include location="../resource.qrc" />
  </resources>

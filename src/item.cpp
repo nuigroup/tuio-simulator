@@ -1,6 +1,6 @@
 #include "item.h"
 
-myitem::myitem(QPolygon *mypolygon ,QTimeLine* timer,QGraphicsItem *parent,QGraphicsScene *scene):QGraphicsPolygonItem(parent, scene)
+myitem::myitem(QPolygon *mypolygon ,QTimeLine* timer,QGraphicsItem *parent,QGraphicsScene *scene):QGraphicsPolygonItem(parent, scene),Tangible_Type()
 	
 	{  
 		if(  (mypolygon)== NULL )
@@ -23,6 +23,8 @@ myitem::myitem(QPolygon *mypolygon ,QTimeLine* timer,QGraphicsItem *parent,QGrap
     setFlag(QGraphicsItem::ItemIsFocusable, true);
     setFlag(QGraphicsItem::ItemIsSelectable,true);
     setCursor(Qt::PointingHandCursor);
+    tangible_type = 1;
+    tangible_geom = QString("Polygon");
     
 	}
 	
