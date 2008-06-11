@@ -14,6 +14,7 @@
 
 #include "ui_additem.h"
 #include "mainwindowimpl.h"
+#include "item.h"
 
 class MainWindowImpl;
 
@@ -23,6 +24,8 @@ class DialogImpl : public QDialog, public Ui::Dialog
 {
 Q_OBJECT
 public:
+	myitem *item;
+	
 	
 	QPolygon *mypolygon ;
 	QGraphicsScene *myscene ;
@@ -32,6 +35,7 @@ public:
 private slots:
 	void addNewItem();
 	void addNewVertex();
+	void addFiducial();
 };
 #endif
 

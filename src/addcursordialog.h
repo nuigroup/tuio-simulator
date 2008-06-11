@@ -71,6 +71,7 @@ public:
     QWidget::setTabOrder(addCursorButton, cancelButton);
 
     retranslateUi(addCursorDialog);
+    QObject::connect(cancelButton, SIGNAL(clicked()), addCursorDialog, SLOT(close()));
 
     QMetaObject::connectSlotsByName(addCursorDialog);
     } // setupUi

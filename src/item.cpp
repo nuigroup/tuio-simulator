@@ -1,19 +1,19 @@
 #include "item.h"
 
-myitem::myitem(QPolygon *mypolygon ,QTimeLine* timer,QGraphicsItem *parent,QGraphicsScene *scene):QGraphicsPolygonItem(parent, scene),Tangible_Type()
+myitem::myitem(QTimeLine* timer,QGraphicsItem *parent,QGraphicsScene *scene):QGraphicsPolygonItem(parent, scene),Tangible_Type()
 	
 	{  
-		if(  (mypolygon)== NULL )
+		/*if(  (mypolygon)== NULL )
 		    {
 		        mypolygon = new QPolygon;   	
  			    (*mypolygon) << QPoint(-50, -50) << QPoint(-50, 50)
                       << QPoint(50, 50) << QPoint(50,-50)
                       << QPoint(-50,-50); 
-            }
+            }*/
                           
                           
                           
-       setPolygon(*mypolygon);
+       //setPolygon(*mypolygon);
        animation = new QGraphicsItemAnimation;
                        
 
@@ -23,8 +23,12 @@ myitem::myitem(QPolygon *mypolygon ,QTimeLine* timer,QGraphicsItem *parent,QGrap
     setFlag(QGraphicsItem::ItemIsFocusable, true);
     setFlag(QGraphicsItem::ItemIsSelectable,true);
     setCursor(Qt::PointingHandCursor);
+    
     tangible_type = 1;
     tangible_geom = QString("Polygon");
+    fiducial.append(1);
+
+    
     
 	}
 	

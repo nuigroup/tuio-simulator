@@ -40,6 +40,7 @@ void AddCursorDialogImpl::addCursor()
     local_brush->setColor(colour);
     local_brush->setStyle(Qt::SolidPattern);
     local_cursor->setBrush(*local_brush);
+    local_cursor->r = cursor_radius->value();
     
     
     this->close();

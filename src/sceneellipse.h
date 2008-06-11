@@ -14,8 +14,9 @@ class SceneEllipse : public QGraphicsEllipseItem,public Tangible_Type
 	
 
 	public : 
-			SceneEllipse(int x, int y, int w, int h);
-			QGraphicsItemAnimation *animation;
+			SceneEllipse();
+			
+			
 			
 	
 	

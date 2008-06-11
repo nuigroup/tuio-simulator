@@ -1,5 +1,7 @@
 #include "mainwindowimpl.h"
 #include "item.h"
+#include "sceneellipse.h"
+#include "scenecursor.h"
 #include "dialogimpl.h"
 //#include <iostream>
 #include "setpathwinodwimpl.h"
@@ -224,14 +226,81 @@ void MainWindowImpl::saveProfile()
 	xmlWriter.writeAttribute("x",str_x);
 	xmlWriter.writeAttribute("y",str_y);
 	xmlWriter.writeEndElement();
+	
+	xmlWriter.writeStartElement("Geometry");
+	switch(myTangible->tangible_type)
+	{
+		case 1:
+		{	for(int j = 0 ; j < (myTangible->vertex_x).size() ; j++ )
+			{	
+				xmlWriter.writeStartElement("Vertex");
+				str_x.setNum(myTangible->vertex_x.at(j));
+				str_y.setNum(myTangible->vertex_y.at(j));
+				xmlWriter.writeAttribute("Vertex_x",str_x);
+				xmlWriter.writeAttribute("Vertex_y",str_y);
+				xmlWriter.writeEndElement();	
+			}
+			
+			break;
+		}
+			
+		case 2:
+		{
+			str_x.setNum(myTangible->w);
+			str_y.setNum(myTangible->h);
+			xmlWriter.writeAttribute("Width",str_x);
+			xmlWriter.writeAttribute("Height",str_y);
+			break;
+		}
+		case 3:
+		{
+			str_x.setNum(myTangible->r);
+			xmlWriter.writeAttribute("Radius",str_x);
+			break;
+		}
+			
+		default:
+			break;
+		
+	}
+	
+	xmlWriter.writeEndElement();
+	
+	for(int j = 0 ; j < (myTangible->fiducial).size() ; j++ )
+	{	xmlWriter.writeStartElement("Fiducial");
+		str_x.setNum((myTangible->fiducial).at(j));
+		xmlWriter.writeAttribute("Value",str_x);
+		xmlWriter.writeEndElement();
+	}
+	
+
+	if(myTangible->path_x.size())
+  {
+		
+	
+	xmlWriter.writeStartElement("Path");
+	
+	for (int j = 0 ; j < myTangible->path_x.size() ; j++ )
+	{
+		xmlWriter.writeStartElement("Path_x");
+		str_x.setNum((myTangible->path_x).at(j));
+		xmlWriter.writeAttribute("X",str_x);
+		xmlWriter.writeEndElement();
+		
+		xmlWriter.writeStartElement("Path_y");
+		str_x.setNum((myTangible->path_y).at(j));
+		xmlWriter.writeAttribute("Y",str_x);
+		xmlWriter.writeEndElement();
+		
+		
+	}
+	xmlWriter.writeEndElement();
+	
+  }
 	xmlWriter.writeEndDocument();
 	file.close();
 	return;     
 
-   
-   
-
-		
 
 
 	 }

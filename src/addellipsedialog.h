@@ -28,6 +28,8 @@ public:
     QLabel *label_4;
     QComboBox *fillColourComboBox;
     QLabel *label_5;
+    QSpinBox *fiducialBox;
+    QPushButton *addFiducialButton;
 
     void setupUi(QDialog *addEllipseDialog)
     {
@@ -69,10 +71,16 @@ public:
     label_4->setGeometry(QRect(300, 47, 46, 14));
     fillColourComboBox = new QComboBox(addEllipseDialog);
     fillColourComboBox->setObjectName(QString::fromUtf8("fillColourComboBox"));
-    fillColourComboBox->setGeometry(QRect(140, 140, 131, 22));
+    fillColourComboBox->setGeometry(QRect(50, 140, 131, 22));
     label_5 = new QLabel(addEllipseDialog);
     label_5->setObjectName(QString::fromUtf8("label_5"));
-    label_5->setGeometry(QRect(170, 110, 61, 16));
+    label_5->setGeometry(QRect(90, 120, 61, 16));
+    fiducialBox = new QSpinBox(addEllipseDialog);
+    fiducialBox->setObjectName(QString::fromUtf8("fiducialBox"));
+    fiducialBox->setGeometry(QRect(190, 140, 81, 22));
+    addFiducialButton = new QPushButton(addEllipseDialog);
+    addFiducialButton->setObjectName(QString::fromUtf8("addFiducialButton"));
+    addFiducialButton->setGeometry(QRect(280, 140, 75, 23));
 
     retranslateUi(addEllipseDialog);
     QObject::connect(cancelButton, SIGNAL(clicked()), addEllipseDialog, SLOT(close()));
@@ -90,6 +98,7 @@ public:
     label_3->setText(QApplication::translate("addEllipseDialog", "Width", 0, QApplication::UnicodeUTF8));
     label_4->setText(QApplication::translate("addEllipseDialog", "Height", 0, QApplication::UnicodeUTF8));
     label_5->setText(QApplication::translate("addEllipseDialog", "Set Colour", 0, QApplication::UnicodeUTF8));
+    addFiducialButton->setText(QApplication::translate("addEllipseDialog", "Add Fiducial", 0, QApplication::UnicodeUTF8));
     Q_UNUSED(addEllipseDialog);
     } // retranslateUi
 

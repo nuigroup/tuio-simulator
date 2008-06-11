@@ -12,6 +12,7 @@
 #include <QGraphicsItemAnimation>
 #include <QTimeLine>
 #include "item.h"
+#include "tangible_type.h"
 
 #include <iostream>
 
@@ -29,7 +30,7 @@ public:
 	int count;
 	QPainterPath *path ;
 	SetPathScene *scene;
-	myitem *setpathitem;
+	Tangible_Type *setpathitem;
 	QTimeLine *setpathtimer;
 	
 	void bezierControlPoint (int i , double& cp1x, double& cp1y,double& cp2x, double& cp2y);

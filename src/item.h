@@ -22,9 +22,11 @@ class myitem : public QGraphicsPolygonItem ,public Tangible_Type
 	
 	public : 
 			
+
 			
-			myitem(QPolygon *mypolygon = 0,QTimeLine* timer= 0,QGraphicsItem *parent =0 ,QGraphicsScene *scene = 0); 
-			QGraphicsItemAnimation *animation;
+			
+			myitem(QTimeLine* timer= 0,QGraphicsItem *parent =0 ,QGraphicsScene *scene = 0); 
+			
 	protected :
 
 			 void keyPressEvent(QKeyEvent *keyevent); 

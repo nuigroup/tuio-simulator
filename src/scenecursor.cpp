@@ -13,6 +13,10 @@ SceneCursor::SceneCursor(int x, int y, int w, int h):QGraphicsEllipseItem(x,y,w,
     setBrush(*local_brush);
     tangible_type = 3;
     tangible_geom = QString("Cursor");
+    
+    
+    
+    
 }
 
 

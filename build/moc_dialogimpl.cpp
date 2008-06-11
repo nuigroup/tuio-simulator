@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'dialogimpl.h'
 **
-** Created: Wed Jun 11 01:49:48 2008
+** Created: Thu Jun 12 01:42:23 2008
 **      by: The Qt Meta Object Compiler version 59 (Qt 4.4.0)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,19 +23,21 @@ static const uint qt_meta_data_DialogImpl[] = {
        1,       // revision
        0,       // classname
        0,    0, // classinfo
-       2,   10, // methods
+       3,   10, // methods
        0,    0, // properties
        0,    0, // enums/sets
 
  // slots: signature, parameters, type, tag, flags
       12,   11,   11,   11, 0x08,
       25,   11,   11,   11, 0x08,
+      40,   11,   11,   11, 0x08,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_DialogImpl[] = {
     "DialogImpl\0\0addNewItem()\0addNewVertex()\0"
+    "addFiducial()\0"
 };
 
 const QMetaObject DialogImpl::staticMetaObject = {
@@ -67,8 +69,9 @@ int DialogImpl::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         switch (_id) {
         case 0: addNewItem(); break;
         case 1: addNewVertex(); break;
+        case 2: addFiducial(); break;
         }
-        _id -= 2;
+        _id -= 3;
     }
     return _id;
 }

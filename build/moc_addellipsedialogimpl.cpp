@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'addellipsedialogimpl.h'
 **
-** Created: Wed Jun 11 01:49:52 2008
+** Created: Thu Jun 12 01:42:30 2008
 **      by: The Qt Meta Object Compiler version 59 (Qt 4.4.0)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,18 +23,20 @@ static const uint qt_meta_data_AddEllipseDialogImpl[] = {
        1,       // revision
        0,       // classname
        0,    0, // classinfo
-       1,   10, // methods
+       2,   10, // methods
        0,    0, // properties
        0,    0, // enums/sets
 
  // slots: signature, parameters, type, tag, flags
       22,   21,   21,   21, 0x08,
+      35,   21,   21,   21, 0x08,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_AddEllipseDialogImpl[] = {
     "AddEllipseDialogImpl\0\0addEllipse()\0"
+    "addFiducial()\0"
 };
 
 const QMetaObject AddEllipseDialogImpl::staticMetaObject = {
@@ -65,8 +67,9 @@ int AddEllipseDialogImpl::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
         case 0: addEllipse(); break;
+        case 1: addFiducial(); break;
         }
-        _id -= 1;
+        _id -= 2;
     }
     return _id;
 }

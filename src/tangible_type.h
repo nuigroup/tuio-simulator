@@ -2,6 +2,8 @@
 #define __TANGIBLE_TYPE_H__
 
 #include <QString>
+#include <QList>
+#include <QGraphicsItemAnimation>
 
 class Tangible_Type
 {
@@ -9,6 +11,14 @@ class Tangible_Type
 			int tangible_type;
 			QString tangible_geom ;
 			Tangible_Type();
+			QList<int> fiducial;
+			QList<double> path_x;
+			QList<double> path_y;
+			QGraphicsItemAnimation *animation;
+			QList<double> vertex_x;
+			QList<double> vertex_y;
+			int r,h,w;
+			
 			int getType();
 };
 

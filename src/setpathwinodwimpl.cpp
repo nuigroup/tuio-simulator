@@ -2,6 +2,7 @@
 #include <QtGui>
 #include "item.h"
 #include <iostream>
+#include "tangible_type.h"
 
 SetPathWindowImpl::SetPathWindowImpl( QGraphicsItem *item,QWidget * parent, Qt::WFlags f) 
 	: QMainWindow(parent, f)
@@ -9,7 +10,7 @@ SetPathWindowImpl::SetPathWindowImpl( QGraphicsItem *item,QWidget * parent, Qt::
 		setupUi(this);
 		count = 0;
 		scene = new SetPathScene;
-		setpathitem = (myitem*)item;
+		setpathitem = dynamic_cast<Tangible_Type*>(item);
 		
 		pathset = 0 ;
         
@@ -39,6 +40,7 @@ SetPathWindowImpl::SetPathWindowImpl( QGraphicsItem *item,QWidget * parent, Qt::
 		connect(scene,SIGNAL(addPoint(double,double)),this,SLOT(addPointOfScene(double,double)));
 		connect(setPathButton,SIGNAL(clicked()),this,SLOT(setpath()));
 		connect(this,SIGNAL(setPathSignal()),this,SLOT(previewPath()));
+		path = new QPainterPath;
 
 	}
 
@@ -71,7 +73,7 @@ void SetPathWindowImpl::previewPath()
 	double cp2x;
 	double cp1y;
 	double cp2y;
-	path = new QPainterPath;
+
 
          
          
@@ -159,7 +161,13 @@ void SetPathWindowImpl::setpath()
 			std::cout<<"Path not previewed"<<"\n";
 		}
     for (int i = 0; i < 500; ++i)
-         setpathitem->animation->setPosAt(i / 500.0, path->pointAtPercent(i/500.0));
+        {
+
+         	setpathitem->animation->setPosAt(i / 500.0, path->pointAtPercent(i/500.0));
+         	setpathitem->path_x.insert(i,(path->pointAtPercent(i/500.0).x()));
+         	setpathitem->path_y.insert(i,(path->pointAtPercent(i/500.0).y()));
+         	
+        }
 		this->close();
 }
 
