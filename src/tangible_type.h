@@ -3,6 +3,7 @@
 
 #include <QString>
 #include <QList>
+#include <QColor>
 #include <QGraphicsItemAnimation>
 
 class Tangible_Type
@@ -18,6 +19,7 @@ class Tangible_Type
 			QList<double> vertex_x;
 			QList<double> vertex_y;
 			int r,h,w;
+			QColor colour;
 			
 			int getType();
 };

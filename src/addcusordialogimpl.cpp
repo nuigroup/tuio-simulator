@@ -23,21 +23,23 @@ AddCursorDialogImpl::AddCursorDialogImpl(MainWindowImpl *win,QWidget * parent, Q
     
     	fillColourComboBox->setCurrentIndex(
     	fillColourComboBox->findText("red"));
+    	local_cursor = new SceneCursor();
 
 		
 	}
 
 void AddCursorDialogImpl::addCursor()
 {
-	SceneCursor *local_cursor = new SceneCursor(-(cursor_radius->value()),-(cursor_radius->value()),cursor_radius->value() * 2,cursor_radius->value() * 2);
+
+	local_cursor->setRect(-(cursor_radius->value()),-(cursor_radius->value()),cursor_radius->value() * 2,cursor_radius->value() * 2);
 	myscene->addItem(local_cursor);
 	local_cursor->moveBy(cursor_x->value()+cursor_radius->value(),cursor_y->value()+cursor_radius->value());
     local_cursor->animation->setItem(local_cursor);
     local_cursor->animation->setTimeLine(mywin->timer);
     
     QBrush *local_brush = new QBrush;
-    QColor colour = qvariant_cast<QColor>(fillColourComboBox->itemData(fillColourComboBox->currentIndex()));    
-    local_brush->setColor(colour);
+    local_cursor->colour = qvariant_cast<QColor>(fillColourComboBox->itemData(fillColourComboBox->currentIndex()));    
+    local_brush->setColor(local_cursor->colour);
     local_brush->setStyle(Qt::SolidPattern);
     local_cursor->setBrush(*local_brush);
     local_cursor->r = cursor_radius->value();

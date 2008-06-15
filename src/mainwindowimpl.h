@@ -15,9 +15,11 @@
 #include <QPainterPath>
 #include <QAbstractSlider>
 #include <QXMLStreamWriter>
+#include <QXMLStreamReader>
 #include "item.h"
 #include "addellipsedialogimpl.h"
 #include "addcusordialogimpl.h"
+#include <iostream>
 
 
 
@@ -33,13 +35,17 @@ public:
     QTimeLine *timer;
     bool animationStarted ;
     int framerange;
+    void readEllipse(QXmlStreamReader * xmlReader);
+    void readCursor(QXmlStreamReader * xmlReader);
+    void readPolygon(QXmlStreamReader * xmlReader);
 
 	
 private slots:
 
 void showDialog();
 void deleteItem();
-void saveProfile();
+void uploadItem();
+void saveItem();
 void setPathDialog();
 void startAnimation();
 void setanimationtime();

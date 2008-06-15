@@ -46,8 +46,8 @@ void AddEllipseDialogImpl::addEllipse()
     
     
     QBrush *local_brush = new QBrush;
-    QColor colour = qvariant_cast<QColor>(fillColourComboBox->itemData(fillColourComboBox->currentIndex()));    
-    local_brush->setColor(colour);
+    local_ellipse->colour = qvariant_cast<QColor>(fillColourComboBox->itemData(fillColourComboBox->currentIndex()));    
+    local_brush->setColor(local_ellipse->colour);
     local_brush->setStyle(Qt::Dense1Pattern);
     local_ellipse->setBrush(*local_brush);
     

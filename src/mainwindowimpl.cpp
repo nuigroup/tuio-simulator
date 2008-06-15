@@ -3,7 +3,7 @@
 #include "sceneellipse.h"
 #include "scenecursor.h"
 #include "dialogimpl.h"
-//#include <iostream>
+
 #include "setpathwinodwimpl.h"
 #include "tangible_type.h"
 
@@ -56,7 +56,8 @@ MainWindowImpl::MainWindowImpl( QWidget * parent, Qt::WFlags f)
 	connect(addEllipseButton,SIGNAL(clicked()),this,SLOT(showAddEllipseDialog()));
 	connect(addCursorButton,SIGNAL(clicked()),this,SLOT(showAddCursorDialog()));
 	connect(deleteItemButton,SIGNAL(clicked()),this,SLOT(deleteItem()));
-	connect(saveProfileButton,SIGNAL(clicked()),this,SLOT(saveProfile()));
+	connect(saveItemButton,SIGNAL(clicked()),this,SLOT(saveItem()));
+	connect(uploadItemButton,SIGNAL(clicked()),this,SLOT(uploadItem()));
 
     item->animation->setItem(item);
     item->animation->setTimeLine(timer);
@@ -159,7 +160,7 @@ void MainWindowImpl::animationFinished()
 		this->timer->stop();
 }
 
-void MainWindowImpl::saveProfile()
+void MainWindowImpl::saveItem()
 {
 	QList<QGraphicsItem*> list = this->scene->selectedItems();
 	if (list.isEmpty()) 
@@ -174,8 +175,38 @@ void MainWindowImpl::saveProfile()
 	else
 	{
 		
+		QString fileName =
+		QFileDialog::getSaveFileName(this, tr("QMTSim : Save Item"),
+                                         QDir::currentPath(),
+                                         tr("XML Files ( *.xml)"));
+		if (fileName.isEmpty())
+		return;
+
+
+
+		QFile file(fileName);
+		if (!file.open(QFile::WriteOnly | QFile::Text)) 
+		{
+			QMessageBox::warning(this, tr("QMTSim \n Save Profile \n"),
+								tr("Cannot write file %1:\n%2.")
+								.arg(fileName)
+								.arg(file.errorString()));
+			return;
+		}
 		
-	QGraphicsItem *localitem = list.at(0);
+		
+		
+		
+		
+	QXmlStreamWriter xmlWriter(&file);
+	xmlWriter.setAutoFormatting(true);
+	xmlWriter.writeStartDocument();
+	xmlWriter.writeStartElement("QMTSim");
+	while(!list.isEmpty())
+	{
+		
+	
+	QGraphicsItem *localitem = list.takeFirst();
 	Tangible_Type *myTangible = dynamic_cast<Tangible_Type*>(localitem);
 	if (myTangible == NULL )
 	{
@@ -183,55 +214,40 @@ void MainWindowImpl::saveProfile()
 	   tr("Pointer Casting Error.\n"
 	   "Null pointer recieved"));
 	   return;
-   	
   	}
   	
    QString getType = (myTangible->tangible_geom) ;
-   QMessageBox::information(this, tr("QMTSim"),getType);
+   //QMessageBox::information(this, tr("QMTSim"),getType);
   	
   	
-	 QString fileName =
-            QFileDialog::getSaveFileName(this, tr("Save Profile"),
-                                         QDir::currentPath(),
-                                         tr("XML Files ( *.xml)"));
-    if (fileName.isEmpty())
-     	return;
-   	
-        
 
-    QFile file(fileName);
-    if (!file.open(QFile::WriteOnly | QFile::Text)) 
-    {
-        QMessageBox::warning(this, tr("QMTSim \n Save Profile \n"),
-                             tr("Cannot write file %1:\n%2.")
-                             .arg(fileName)
-                             .arg(file.errorString()));
-        return;
-	}
 	
-		
+	QString str_x,str_y;
 	
-	QXmlStreamWriter xmlWriter(&file);
-	xmlWriter.setAutoFormatting(true);
-	xmlWriter.writeStartDocument();
-	xmlWriter.writeStartElement("QMTSim");
+	
+	
+
 	xmlWriter.writeStartElement("TableItem");
 	xmlWriter.writeAttribute("Type",getType);
+	str_x.setNum(myTangible->tangible_type);
+	xmlWriter.writeAttribute("TypeNo",str_x);
 	xmlWriter.writeEndElement();
 	xmlWriter.writeStartElement("Position");
-	QString str_x,str_y;
+
 	double real_x = (localitem->scenePos()).x();
 	str_y.setNum((localitem->scenePos()).y());
 	str_x.setNum(real_x);
-	xmlWriter.writeAttribute("x",str_x);
-	xmlWriter.writeAttribute("y",str_y);
+	xmlWriter.writeAttribute("Position_x",str_x);
+	xmlWriter.writeAttribute("Position_y",str_y);
 	xmlWriter.writeEndElement();
 	
 	xmlWriter.writeStartElement("Geometry");
 	switch(myTangible->tangible_type)
 	{
 		case 1:
-		{	for(int j = 0 ; j < (myTangible->vertex_x).size() ; j++ )
+		{	
+			this->statusbar->showMessage("Polygon Item is being Saved",1500);
+			for(int j = 0 ; j < (myTangible->vertex_x).size() ; j++ )
 			{	
 				xmlWriter.writeStartElement("Vertex");
 				str_x.setNum(myTangible->vertex_x.at(j));
@@ -240,12 +256,15 @@ void MainWindowImpl::saveProfile()
 				xmlWriter.writeAttribute("Vertex_y",str_y);
 				xmlWriter.writeEndElement();	
 			}
+			xmlWriter.writeStartElement("EndVertex");
+			xmlWriter.writeEndElement();
 			
 			break;
 		}
 			
 		case 2:
 		{
+			this->statusbar->showMessage("Ellipse Item is being Saved",1500);
 			str_x.setNum(myTangible->w);
 			str_y.setNum(myTangible->h);
 			xmlWriter.writeAttribute("Width",str_x);
@@ -254,6 +273,7 @@ void MainWindowImpl::saveProfile()
 		}
 		case 3:
 		{
+			this->statusbar->showMessage("Cursor Item is being Saved",1500);
 			str_x.setNum(myTangible->r);
 			xmlWriter.writeAttribute("Radius",str_x);
 			break;
@@ -265,6 +285,20 @@ void MainWindowImpl::saveProfile()
 	}
 	
 	xmlWriter.writeEndElement();
+	
+	xmlWriter.writeStartElement("Colour");
+	int r,g,b,a;
+	myTangible->colour.getRgb(&r,&g,&b,&a);
+	str_x.setNum(r);
+	xmlWriter.writeAttribute("R",str_x);
+	str_x.setNum(g);
+	xmlWriter.writeAttribute("G",str_x);
+	str_x.setNum(b);
+	xmlWriter.writeAttribute("B",str_x);
+	str_x.setNum(a);
+	xmlWriter.writeAttribute("A",str_x);
+	xmlWriter.writeEndElement();
+	
 	
 	for(int j = 0 ; j < (myTangible->fiducial).size() ; j++ )
 	{	xmlWriter.writeStartElement("Fiducial");
@@ -295,8 +329,21 @@ void MainWindowImpl::saveProfile()
 		
 	}
 	xmlWriter.writeEndElement();
+
+	xmlWriter.writeStartElement("EndPath");
+	xmlWriter.writeEndElement();
+	
 	
   }
+	
+	xmlWriter.writeStartElement("EndItem");
+	xmlWriter.writeEndElement();
+	
+	
+	
+	
+}
+	xmlWriter.writeEndElement();
 	xmlWriter.writeEndDocument();
 	file.close();
 	return;     
@@ -306,4 +353,115 @@ void MainWindowImpl::saveProfile()
 	 }
 
 
+}
+
+void MainWindowImpl::uploadItem()
+{
+	   //QMessageBox::information(this, tr("QMTSim"),"Upload Item");
+
+	
+	QString fileName =QFileDialog::getOpenFileName(this, tr("QMTSim : Open Item XML file"),
+                                         QDir::currentPath(),
+                                         tr("XML Files ( *.xml)"));
+    if (fileName.isEmpty())
+        return;
+
+    QFile file(fileName);
+    if (!file.open(QFile::ReadOnly | QFile::Text)) {
+        QMessageBox::warning(this, tr("QXmlStream Bookmarks"),
+                             tr("Cannot read file %1:\n%2.")
+                             .arg(fileName)
+                             .arg(file.errorString()));
+        return;
+    }
+    
+    QString str_x;
+    QString str_y;
+
+    int typeno;
+    
+     QXmlStreamReader xmlReader;
+     
+     xmlReader.setDevice(&file);
+     
+	 while (!xmlReader.atEnd()) 
+{
+     xmlReader.readNext();
+
+        if (xmlReader.isStartElement()) 
+       {
+            if ((xmlReader.name()).toString() == "QMTSim" )
+            {	
+            	
+            	
+            	//QMessageBox::information(this, tr("QMTSim"),"Upload Item");
+            	
+            	while (!xmlReader.atEnd())
+            {
+            	
+            	xmlReader.readNext();
+            	
+            	//if (xmlReader.isEndElement()) break;
+            	if (xmlReader.isStartElement())  
+            	{
+            		
+           		
+            		if (xmlReader.name() == "TableItem" )
+            		{
+            		str_x = (xmlReader.attributes().value("Type")).toString();
+            		str_y = (xmlReader.attributes().value("TypeNo")).toString();
+            		typeno = str_y.toInt();
+            		//QMessageBox::information(this, tr("QMTSim"),str_x);
+            		
+            		switch(typeno)
+            		{
+            			case 1 : {
+            						this->statusbar->showMessage("Polygon Item is being Uploaded",1500);
+            						readPolygon(&xmlReader);
+            						break ;
+           						 }
+            			
+            					
+            					
+            			case 2 :
+            					{
+            						this->statusbar->showMessage("Ellipse Item is being Uploaded",1500);
+            						readEllipse(&xmlReader);
+            						break ;
+           						}
+           						
+            			case 3 :
+            					{
+            						this->statusbar->showMessage("Cursor Item is being Uploaded",1500);
+            						readCursor(&xmlReader);
+            						break;
+           						}
+            			default :
+            					QMessageBox::warning(this,"QMTSim","Item not supported");
+     							break;
+            			
+            					
+            				
+           			}
+           			
+
+           			}
+           			else	QMessageBox::warning(this, tr("QMTSim"),xmlReader.name().toString()); 
+               		
+              	
+             	}
+            	
+           	}
+                return;
+            }
+            else
+            {
+                xmlReader.raiseError(QObject::tr("The file is not an QMTSim Item file."));
+                QMessageBox::warning(this, tr("QMTSim"),"The file is not an QMTSim Item file");
+                return;
+             }
+        }
+}
+    
+    return;
 }

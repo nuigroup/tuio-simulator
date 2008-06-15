@@ -29,5 +29,8 @@ SOURCES = src/mainwindowimpl.cpp \
  src/addellipsedialogimpl.cpp \
  src/scenecursor.cpp \
  src/addcusordialogimpl.cpp \
- src/tangible_type.cpp
+ src/tangible_type.cpp \
+ src/readellipse.cpp \
+ src/readcursor.cpp \
+ src/readpolygon.cpp
 RESOURCES += resource.qrc

@@ -10,6 +10,9 @@ INPUT(
 ./build\scenecursor.o
 ./build\addcusordialogimpl.o
 ./build\tangible_type.o
+./build\readellipse.o
+./build\readcursor.o
+./build\readpolygon.o
 ./build\moc_mainwindowimpl.o
 ./build\moc_dialogimpl.o
 ./build\moc_setpathwinodwimpl.o

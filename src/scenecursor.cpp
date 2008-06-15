@@ -1,6 +1,6 @@
 #include "scenecursor.h"
 
-SceneCursor::SceneCursor(int x, int y, int w, int h):QGraphicsEllipseItem(x,y,w,h)
+SceneCursor::SceneCursor()
 {
 	
 	

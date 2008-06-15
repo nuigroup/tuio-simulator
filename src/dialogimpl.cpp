@@ -56,8 +56,8 @@ void DialogImpl::addNewItem()
     item->animation->setTimeLine(mywin->timer);
     
     QBrush *local_brush = new QBrush;
-    QColor colour = qvariant_cast<QColor>(fillColourComboBox->itemData(fillColourComboBox->currentIndex()));    
-    local_brush->setColor(colour);
+    item->colour = qvariant_cast<QColor>(fillColourComboBox->itemData(fillColourComboBox->currentIndex()));    
+    local_brush->setColor(item->colour);
     local_brush->setStyle(Qt::Dense2Pattern);
     item->setBrush(*local_brush);
     

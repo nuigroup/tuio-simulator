@@ -15,6 +15,7 @@ public:
 		AddCursorDialogImpl(MainWindowImpl *win,QWidget * parent = 0, Qt::WFlags f = 0 );
 		QGraphicsScene *myscene ;
 		MainWindowImpl *mywin;
+		SceneCursor *local_cursor;
 			
 	private slots:
 		void addCursor();

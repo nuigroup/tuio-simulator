@@ -16,7 +16,7 @@ class SceneCursor : public QGraphicsEllipseItem , public Tangible_Type
 
 
 	public : 
-			SceneCursor(int x, int y, int w, int h);
+			SceneCursor();
 		
 			QBrush *local_brush;
 			

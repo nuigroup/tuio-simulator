@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'mainwindowimpl.h'
 **
-** Created: Thu Jun 12 01:42:19 2008
+** Created: Sun Jun 15 16:15:23 2008
 **      by: The Qt Meta Object Compiler version 59 (Qt 4.4.0)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_MainWindowImpl[] = {
        1,       // revision
        0,       // classname
        0,    0, // classinfo
-      10,   10, // methods
+      11,   10, // methods
        0,    0, // properties
        0,    0, // enums/sets
 
@@ -31,20 +31,21 @@ static const uint qt_meta_data_MainWindowImpl[] = {
       16,   15,   15,   15, 0x08,
       29,   15,   15,   15, 0x08,
       42,   15,   15,   15, 0x08,
-      56,   15,   15,   15, 0x08,
-      72,   15,   15,   15, 0x08,
-      89,   15,   15,   15, 0x08,
-     108,   15,   15,   15, 0x08,
-     128,   15,   15,   15, 0x08,
-     150,   15,   15,   15, 0x08,
-     175,  173,   15,   15, 0x08,
+      55,   15,   15,   15, 0x08,
+      66,   15,   15,   15, 0x08,
+      82,   15,   15,   15, 0x08,
+      99,   15,   15,   15, 0x08,
+     118,   15,   15,   15, 0x08,
+     138,   15,   15,   15, 0x08,
+     160,   15,   15,   15, 0x08,
+     185,  183,   15,   15, 0x08,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_MainWindowImpl[] = {
     "MainWindowImpl\0\0showDialog()\0deleteItem()\0"
-    "saveProfile()\0setPathDialog()\0"
+    "uploadItem()\0saveItem()\0setPathDialog()\0"
     "startAnimation()\0setanimationtime()\0"
     "animationFinished()\0showAddCursorDialog()\0"
     "showAddEllipseDialog()\0n\0"
@@ -80,16 +81,17 @@ int MainWindowImpl::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         switch (_id) {
         case 0: showDialog(); break;
         case 1: deleteItem(); break;
-        case 2: saveProfile(); break;
-        case 3: setPathDialog(); break;
-        case 4: startAnimation(); break;
-        case 5: setanimationtime(); break;
-        case 6: animationFinished(); break;
-        case 7: showAddCursorDialog(); break;
-        case 8: showAddEllipseDialog(); break;
-        case 9: animationslidertime((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 2: uploadItem(); break;
+        case 3: saveItem(); break;
+        case 4: setPathDialog(); break;
+        case 5: startAnimation(); break;
+        case 6: setanimationtime(); break;
+        case 7: animationFinished(); break;
+        case 8: showAddCursorDialog(); break;
+        case 9: showAddEllipseDialog(); break;
+        case 10: animationslidertime((*reinterpret_cast< int(*)>(_a[1]))); break;
         }
-        _id -= 10;
+        _id -= 11;
     }
     return _id;
 }
