@@ -1,0 +1,205 @@
+<ui version="4.0" >
+ <class>addEllipseDialog</class>
+ <widget class="QDialog" name="addEllipseDialog" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Add Ellipse</string>
+  </property>
+  <property name="windowIcon" >
+   <iconset resource="../QMTSim 1.0/resource.qrc" >
+    <normaloff>:/newPrefix/logo.jpg</normaloff>:/newPrefix/logo.jpg</iconset>
+  </property>
+  <widget class="QSpinBox" name="Ellipse_x" >
+   <property name="geometry" >
+    <rect>
+     <x>50</x>
+     <y>70</y>
+     <width>52</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="Ellipse_y" >
+   <property name="geometry" >
+    <rect>
+     <x>140</x>
+     <y>70</y>
+     <width>52</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="Ellipse_width" >
+   <property name="geometry" >
+    <rect>
+     <x>220</x>
+     <y>70</y>
+     <width>52</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="Ellipse_height" >
+   <property name="geometry" >
+    <rect>
+     <x>310</x>
+     <y>70</y>
+     <width>52</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="addEllipseButton" >
+   <property name="geometry" >
+    <rect>
+     <x>120</x>
+     <y>230</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Add Ellipse</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="cancelButton" >
+   <property name="geometry" >
+    <rect>
+     <x>210</x>
+     <y>230</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Cancel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label" >
+   <property name="geometry" >
+    <rect>
+     <x>57</x>
+     <y>47</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>X</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2" >
+   <property name="geometry" >
+    <rect>
+     <x>147</x>
+     <y>47</y>
+     <width>46</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Y</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3" >
+   <property name="geometry" >
+    <rect>
+     <x>220</x>
+     <y>47</y>
+     <width>46</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Width</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4" >
+   <property name="geometry" >
+    <rect>
+     <x>300</x>
+     <y>47</y>
+     <width>46</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Height</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="fillColourComboBox" >
+   <property name="geometry" >
+    <rect>
+     <x>50</x>
+     <y>140</y>
+     <width>131</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5" >
+   <property name="geometry" >
+    <rect>
+     <x>90</x>
+     <y>120</y>
+     <width>61</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Set Colour</string>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="fiducialBox" >
+   <property name="geometry" >
+    <rect>
+     <x>190</x>
+     <y>140</y>
+     <width>81</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="addFiducialButton" >
+   <property name="geometry" >
+    <rect>
+     <x>280</x>
+     <y>140</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Add Fiducial</string>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../QMTSim 1.0/resource.qrc" />
+ </resources>
+ <connections>
+  <connection>
+   <sender>cancelButton</sender>
+   <signal>clicked()</signal>
+   <receiver>addEllipseDialog</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>247</x>
+     <y>201</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

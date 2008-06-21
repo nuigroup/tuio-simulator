@@ -1,0 +1,177 @@
+<ui version="4.0" >
+ <class>SetPathWindow</class>
+ <widget class="QMainWindow" name="SetPathWindow" >
+  <property name="windowModality" >
+   <enum>Qt::ApplicationModal</enum>
+  </property>
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>900</width>
+    <height>607</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Set Animation Path</string>
+  </property>
+  <property name="windowIcon" >
+   <iconset resource="../resource.qrc" >
+    <normaloff>:/newPrefix/logo.jpg</normaloff>:/newPrefix/logo.jpg</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>21</y>
+     <width>900</width>
+     <height>567</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout" >
+    <item row="0" column="0" colspan="11" >
+     <widget class="QGraphicsView" name="view" >
+      <property name="cursor" stdset="0" >
+       <cursorShape>CrossCursor</cursorShape>
+      </property>
+      <property name="statusTip" >
+       <string>Click To Add Point</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1" >
+     <widget class="QLabel" name="label_2" >
+      <property name="text" >
+       <string>Index No.</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2" colspan="2" >
+     <widget class="QLabel" name="label_3" >
+      <property name="text" >
+       <string>X</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="4" colspan="2" >
+     <widget class="QLabel" name="label_4" >
+      <property name="text" >
+       <string>Y</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="6" >
+     <widget class="QLabel" name="label_5" >
+      <property name="text" >
+       <string>Smoothness</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0" >
+     <widget class="QLabel" name="label" >
+      <property name="text" >
+       <string>Points Added</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1" >
+     <widget class="QSpinBox" name="index" />
+    </item>
+    <item row="2" column="2" >
+     <widget class="QDoubleSpinBox" name="pointx" />
+    </item>
+    <item row="2" column="3" colspan="2" >
+     <widget class="QDoubleSpinBox" name="pointy" />
+    </item>
+    <item row="2" column="5" >
+     <widget class="QPushButton" name="addPointButton" >
+      <property name="text" >
+       <string>Add Point</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="6" >
+     <widget class="QDoubleSpinBox" name="smoothness" />
+    </item>
+    <item row="2" column="7" >
+     <widget class="QPushButton" name="previewPathButton" >
+      <property name="statusTip" >
+       <string>Add at least three points</string>
+      </property>
+      <property name="text" >
+       <string>Preview Path</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="8" >
+     <widget class="QPushButton" name="setPathButton" >
+      <property name="text" >
+       <string>Set Path</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="9" >
+     <spacer name="horizontalSpacer" >
+      <property name="orientation" >
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0" >
+       <size>
+        <width>403</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="2" column="10" >
+     <widget class="QPushButton" name="CancelButton" >
+      <property name="text" >
+       <string>Cancel</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>900</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>588</y>
+     <width>900</width>
+     <height>19</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../resource.qrc" />
+ </resources>
+ <connections>
+  <connection>
+   <sender>CancelButton</sender>
+   <signal>clicked()</signal>
+   <receiver>SetPathWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>847</x>
+     <y>567</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>449</x>
+     <y>303</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

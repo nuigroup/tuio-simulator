@@ -1,0 +1,266 @@
+<ui version="4.0" >
+ <class>configureDialog</class>
+ <widget class="QDialog" name="configureDialog" >
+  <property name="windowModality" >
+   <enum>Qt::WindowModal</enum>
+  </property>
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Configure Transmission</string>
+  </property>
+  <property name="windowIcon" >
+   <iconset resource="../QMTSim 1.0/resource.qrc" >
+    <normaloff>:/newPrefix/logo.jpg</normaloff>:/newPrefix/logo.jpg</iconset>
+  </property>
+  <widget class="QLabel" name="label" >
+   <property name="geometry" >
+    <rect>
+     <x>90</x>
+     <y>100</y>
+     <width>61</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>IP Address</string>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="spinBox" >
+   <property name="geometry" >
+    <rect>
+     <x>20</x>
+     <y>130</y>
+     <width>42</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="spinBox_2" >
+   <property name="geometry" >
+    <rect>
+     <x>70</x>
+     <y>130</y>
+     <width>42</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="spinBox_3" >
+   <property name="geometry" >
+    <rect>
+     <x>120</x>
+     <y>130</y>
+     <width>42</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="spinBox_4" >
+   <property name="geometry" >
+    <rect>
+     <x>170</x>
+     <y>130</y>
+     <width>42</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2" >
+   <property name="geometry" >
+    <rect>
+     <x>230</x>
+     <y>130</y>
+     <width>16</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:16pt;">:&lt;/span>&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:16pt;">&lt;/p>&lt;/body>&lt;/html></string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3" >
+   <property name="geometry" >
+    <rect>
+     <x>270</x>
+     <y>100</y>
+     <width>71</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Port Number</string>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="spinBox_5" >
+   <property name="geometry" >
+    <rect>
+     <x>270</x>
+     <y>130</y>
+     <width>81</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton" >
+   <property name="geometry" >
+    <rect>
+     <x>90</x>
+     <y>240</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Apply</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="cancelButton" >
+   <property name="geometry" >
+    <rect>
+     <x>180</x>
+     <y>240</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Cancel</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2" >
+   <property name="geometry" >
+    <rect>
+     <x>20</x>
+     <y>50</y>
+     <width>111</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Add New Reciever</string>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="spinBox_6" >
+   <property name="geometry" >
+    <rect>
+     <x>150</x>
+     <y>50</y>
+     <width>42</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4" >
+   <property name="geometry" >
+    <rect>
+     <x>150</x>
+     <y>30</y>
+     <width>46</width>
+     <height>14</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Index</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_3" >
+   <property name="geometry" >
+    <rect>
+     <x>270</x>
+     <y>50</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>SET</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radioButton" >
+   <property name="geometry" >
+    <rect>
+     <x>160</x>
+     <y>190</y>
+     <width>84</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>UDP</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radioButton_2" >
+   <property name="geometry" >
+    <rect>
+     <x>280</x>
+     <y>190</y>
+     <width>84</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>TCP</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5" >
+   <property name="geometry" >
+    <rect>
+     <x>30</x>
+     <y>190</y>
+     <width>111</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Type of Transmission</string>
+   </property>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>spinBox</tabstop>
+  <tabstop>spinBox_2</tabstop>
+  <tabstop>spinBox_3</tabstop>
+  <tabstop>spinBox_4</tabstop>
+  <tabstop>spinBox_5</tabstop>
+  <tabstop>radioButton</tabstop>
+  <tabstop>radioButton_2</tabstop>
+  <tabstop>pushButton_2</tabstop>
+  <tabstop>spinBox_6</tabstop>
+  <tabstop>pushButton_3</tabstop>
+  <tabstop>pushButton</tabstop>
+  <tabstop>cancelButton</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../QMTSim 1.0/resource.qrc" />
+ </resources>
+ <connections>
+  <connection>
+   <sender>cancelButton</sender>
+   <signal>clicked()</signal>
+   <receiver>configureDialog</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>217</x>
+     <y>251</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
