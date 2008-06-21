@@ -8,6 +8,7 @@
 #include <QTimeLine>
 #include <QGraphicsItemAnimation>
 #include "tangible_type.h"
+#include <iostream>
 
 class SceneEllipse : public QGraphicsEllipseItem,public Tangible_Type
 {
@@ -22,7 +23,10 @@ class SceneEllipse : public QGraphicsEllipseItem,public Tangible_Type
 	
 	
 	protected :
-			void keyPressEvent(QKeyEvent *keyevent);	
+			void keyPressEvent(QKeyEvent *keyevent);
+			void mouseReleaseEvent(QGraphicsSceneMouseEvent *mouseEvent);
+			void mousePressEvent(QGraphicsSceneMouseEvent *mouseevent);
+			void mouseMoveEvent(QGraphicsSceneMouseEvent *mouseevent);
 };
 
 

@@ -58,6 +58,7 @@ MainWindowImpl::MainWindowImpl( QWidget * parent, Qt::WFlags f)
 	connect(deleteItemButton,SIGNAL(clicked()),this,SLOT(deleteItem()));
 	connect(saveItemButton,SIGNAL(clicked()),this,SLOT(saveItem()));
 	connect(uploadItemButton,SIGNAL(clicked()),this,SLOT(uploadItem()));
+	connect(configureButton,SIGNAL(clicked()),this,SLOT(showConfigureDialog()));
 
     item->animation->setItem(item);
     item->animation->setTimeLine(timer);
@@ -158,6 +159,14 @@ void MainWindowImpl::animationFinished()
 		animationSlider->setValue(0);
 		startAnimation_Radio->setChecked(false);
 		this->timer->stop();
+}
+
+void MainWindowImpl::showConfigureDialog()
+{
+
+	ConfigureDialogImpl *configure_Dialog = new ConfigureDialogImpl();
+	configure_Dialog->show();
+	
 }
 
 void MainWindowImpl::saveItem()

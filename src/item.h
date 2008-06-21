@@ -11,6 +11,7 @@
 #include <QTimeLine>
 #include <QGraphicsItemAnimation>
 #include "tangible_type.h"
+#include <iostream>
 
 
 
@@ -29,7 +30,10 @@ class myitem : public QGraphicsPolygonItem ,public Tangible_Type
 			
 	protected :
 
-			 void keyPressEvent(QKeyEvent *keyevent); 
+			void keyPressEvent(QKeyEvent *keyevent); 
+			void mouseReleaseEvent(QGraphicsSceneMouseEvent *mouseEvent);
+			void mousePressEvent(QGraphicsSceneMouseEvent *mouseevent);
+			void mouseMoveEvent(QGraphicsSceneMouseEvent *mouseevent);
 };
 
 

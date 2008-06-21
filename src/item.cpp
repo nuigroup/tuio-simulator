@@ -1,5 +1,6 @@
 #include "item.h"
 
+
 myitem::myitem(QTimeLine* timer,QGraphicsItem *parent,QGraphicsScene *scene):QGraphicsPolygonItem(parent, scene),Tangible_Type()
 	
 	{  
@@ -10,15 +11,10 @@ myitem::myitem(QTimeLine* timer,QGraphicsItem *parent,QGraphicsScene *scene):QGr
                       << QPoint(50, 50) << QPoint(50,-50)
                       << QPoint(-50,-50); 
             }*/
-                          
-                          
-                          
+  
        //setPolygon(*mypolygon);
        animation = new QGraphicsItemAnimation;
-                       
 
-    
-                          
     setFlag(QGraphicsItem::ItemIsMovable, true);
     setFlag(QGraphicsItem::ItemIsFocusable, true);
     setFlag(QGraphicsItem::ItemIsSelectable,true);
@@ -53,4 +49,31 @@ myitem::myitem(QTimeLine* timer,QGraphicsItem *parent,QGraphicsScene *scene):QGr
  	QGraphicsItem::keyPressEvent(keyevent);
  	
 }
+
+
+  void myitem::mouseReleaseEvent(QGraphicsSceneMouseEvent *mouseEvent)
+	{
+
+		std::cout << "Mouse Release Event" << "\n" ;
+		QGraphicsItem::mouseReleaseEvent(mouseEvent);
+
+
+	}
+
+  void myitem::mousePressEvent(QGraphicsSceneMouseEvent *mouseEvent)
+	{
+		std::cout << "Mouse Press Event" << "\n" ;
+		QGraphicsItem::mousePressEvent(mouseEvent);
+
+
+	}
+	
+  void myitem::mouseMoveEvent(QGraphicsSceneMouseEvent *mouseEvent)
+	{
+		std::cout << "Mouse Move Event" << "\n" ;
+		QGraphicsItem::mouseMoveEvent(mouseEvent);
+
+
+
+	}
 

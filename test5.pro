@@ -18,7 +18,9 @@ HEADERS = src/mainwindowimpl.h \
  src/scenecursor.h \
  src/addcursordialog.h \
  src/addcusordialogimpl.h \
- src/tangible_type.h
+ src/tangible_type.h \
+ src/configuredialog.h \
+ src/configuredialogimpl.h
 SOURCES = src/mainwindowimpl.cpp \
  src/main.cpp \
  src/item.cpp \
@@ -32,5 +34,6 @@ SOURCES = src/mainwindowimpl.cpp \
  src/tangible_type.cpp \
  src/readellipse.cpp \
  src/readcursor.cpp \
- src/readpolygon.cpp
+ src/readpolygon.cpp \
+ src/configuredialogimpl.cpp
 RESOURCES += resource.qrc

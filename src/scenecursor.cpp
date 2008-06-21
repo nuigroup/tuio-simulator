@@ -14,9 +14,34 @@ SceneCursor::SceneCursor()
     tangible_type = 3;
     tangible_geom = QString("Cursor");
     
-    
-    
-    
 }
+
+  void SceneCursor::mouseReleaseEvent(QGraphicsSceneMouseEvent *mouseEvent)
+	{
+
+		std::cout << "Mouse Release Event" << "\n" ;
+		QGraphicsItem::mouseReleaseEvent(mouseEvent);
+
+
+	}
+
+  void SceneCursor::mousePressEvent(QGraphicsSceneMouseEvent *mouseEvent)
+	{
+		std::cout << "Mouse Press Event" << "\n" ;
+		QGraphicsItem::mousePressEvent(mouseEvent);
+
+
+	}
+	
+  void SceneCursor::mouseMoveEvent(QGraphicsSceneMouseEvent *mouseEvent)
+	{
+		std::cout << "Mouse Move Event" << "\n" ;
+		QGraphicsItem::mouseMoveEvent(mouseEvent);
+
+
+
+	}
+
+
 
 

@@ -9,6 +9,7 @@
 #include <QGraphicsItemAnimation>
 #include <QBrush>
 #include "tangible_type.h"
+#include <iostream>
 
 class SceneCursor : public QGraphicsEllipseItem , public Tangible_Type
 {
@@ -21,7 +22,10 @@ class SceneCursor : public QGraphicsEllipseItem , public Tangible_Type
 			QBrush *local_brush;
 			
 	
-	
+	protected :
+			void mouseReleaseEvent(QGraphicsSceneMouseEvent *mouseEvent);
+			void mousePressEvent(QGraphicsSceneMouseEvent *mouseevent);
+			void mouseMoveEvent(QGraphicsSceneMouseEvent *mouseevent);
 	
 	
 };

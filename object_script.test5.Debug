@@ -13,6 +13,7 @@ INPUT(
 ./build\readellipse.o
 ./build\readcursor.o
 ./build\readpolygon.o
+./build\configuredialogimpl.o
 ./build\moc_mainwindowimpl.o
 ./build\moc_dialogimpl.o
 ./build\moc_setpathwinodwimpl.o

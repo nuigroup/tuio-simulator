@@ -19,6 +19,7 @@
 #include "item.h"
 #include "addellipsedialogimpl.h"
 #include "addcusordialogimpl.h"
+#include "configuredialogimpl.h"
 #include <iostream>
 
 
@@ -53,6 +54,7 @@ void animationFinished();
 void showAddCursorDialog();
 void showAddEllipseDialog();
 void animationslidertime(int n);
+void showConfigureDialog();
 
 
 
