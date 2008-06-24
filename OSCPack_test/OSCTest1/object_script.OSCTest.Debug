@@ -1,0 +1,12 @@
+INPUT(
+./debug\OscOutboundPacketStream.o
+./debug\OscPrintReceivedElements.o
+./debug\OscReceivedElements.o
+./debug\OscTypes.o
+./debug\IpEndpointName.o
+./debug\NetworkingUtils.o
+./debug\UdpSocket.o
+./debug\NetworkingUtils.o
+./debug\UdpSocket.o
+./debug\OscUnitTests.o
+);
