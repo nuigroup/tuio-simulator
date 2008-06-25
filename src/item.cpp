@@ -54,7 +54,7 @@ myitem::myitem(QTimeLine* timer,QGraphicsItem *parent,QGraphicsScene *scene):QGr
   void myitem::mouseReleaseEvent(QGraphicsSceneMouseEvent *mouseEvent)
 	{
 
-		std::cout << "Mouse Release Event" << "\n" ;
+		std::cout << "Polygon Mouse Release Event" << "\n" ;
 		QGraphicsItem::mouseReleaseEvent(mouseEvent);
 
 
@@ -62,7 +62,7 @@ myitem::myitem(QTimeLine* timer,QGraphicsItem *parent,QGraphicsScene *scene):QGr
 
   void myitem::mousePressEvent(QGraphicsSceneMouseEvent *mouseEvent)
 	{
-		std::cout << "Mouse Press Event" << "\n" ;
+		std::cout << "Polygon Mouse Press Event" << "\n" ;
 		QGraphicsItem::mousePressEvent(mouseEvent);
 
 
@@ -70,7 +70,7 @@ myitem::myitem(QTimeLine* timer,QGraphicsItem *parent,QGraphicsScene *scene):QGr
 	
   void myitem::mouseMoveEvent(QGraphicsSceneMouseEvent *mouseEvent)
 	{
-		std::cout << "Mouse Move Event" << "\n" ;
+		std::cout << "Polygon Mouse Move Event" << "\n" ;
 		QGraphicsItem::mouseMoveEvent(mouseEvent);
 
 

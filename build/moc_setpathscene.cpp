@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'setpathscene.h'
 **
-** Created: Thu Jun 19 23:41:32 2008
+** Created: Thu Jun 26 00:17:45 2008
 **      by: The Qt Meta Object Compiler version 59 (Qt 4.4.0)
 **
 ** WARNING! All changes made in this file will be lost!

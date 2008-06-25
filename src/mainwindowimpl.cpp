@@ -23,8 +23,11 @@ MainWindowImpl::MainWindowImpl( QWidget * parent, Qt::WFlags f)
 	animationStarted = false;
 	QPen pen;
 	pen.setBrush(Qt::blue);
-	QGraphicsRectItem *rect =  scene->addRect(5,5,600,400,pen);
-	rect->setFlag(QGraphicsItem::ItemIsSelectable,false);
+	table = new Table ;
+	table->setRect(5,5,600,400);
+	scene->addItem(table);
+	//QGraphicsRectItem *rect =  scene->addRect(5,5,600,400,pen);
+	//rect->setFlag(QGraphicsItem::ItemIsSelectable,false);
     view->setScene(scene);
     view->setRenderHints(QPainter::Antialiasing
                          | QPainter::TextAntialiasing);

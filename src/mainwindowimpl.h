@@ -20,7 +20,9 @@
 #include "addellipsedialogimpl.h"
 #include "addcusordialogimpl.h"
 #include "configuredialogimpl.h"
+#include "table.h"
 #include <iostream>
+
 
 
 
@@ -36,6 +38,7 @@ public:
     QTimeLine *timer;
     bool animationStarted ;
     int framerange;
+    Table *table;
     void readEllipse(QXmlStreamReader * xmlReader);
     void readCursor(QXmlStreamReader * xmlReader);
     void readPolygon(QXmlStreamReader * xmlReader);

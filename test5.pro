@@ -1,6 +1,6 @@
 TEMPLATE = app
 QT = gui core xml
-CONFIG += qt warn_on console release
+CONFIG += qt warn_on console debug_and_release
 DESTDIR = bin
 OBJECTS_DIR = build
 MOC_DIR = build
@@ -20,7 +20,8 @@ HEADERS = src/mainwindowimpl.h \
  src/addcusordialogimpl.h \
  src/tangible_type.h \
  src/configuredialog.h \
- src/configuredialogimpl.h
+ src/configuredialogimpl.h \
+ src/table.h
 SOURCES = src/mainwindowimpl.cpp \
  src/main.cpp \
  src/item.cpp \
@@ -35,5 +36,6 @@ SOURCES = src/mainwindowimpl.cpp \
  src/readellipse.cpp \
  src/readcursor.cpp \
  src/readpolygon.cpp \
- src/configuredialogimpl.cpp
+ src/configuredialogimpl.cpp \
+ src/table.cpp
 RESOURCES += resource.qrc
