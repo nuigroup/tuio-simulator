@@ -14,9 +14,9 @@ DialogImpl::DialogImpl(MainWindowImpl *win,QWidget * parent, Qt::WFlags f)
 	connect(AddItem,SIGNAL(clicked()),this,SLOT(addNewItem()));
 	connect(AddVertex,SIGNAL(clicked()),this,SLOT(addNewVertex()));
 	connect(addFiducialButton,SIGNAL(clicked()),this,SLOT(addFiducial()));
-	mywin = new MainWindowImpl;
+	//mywin = new MainWindowImpl;
 	mywin = win;
-	myscene = new QGraphicsScene;
+	//myscene = new QGraphicsScene;
 	myscene = win->scene;
 	mypolygon = new QPolygon;
 	X_Vertex->setMaximum(1000);
@@ -54,12 +54,16 @@ void DialogImpl::addNewItem()
 	myscene->addItem(item);
     item->animation->setItem(item);
     item->animation->setTimeLine(mywin->timer);
+    mywin->tangibleId++ ;
+    item->Id = mywin->tangibleId ;
     
     QBrush *local_brush = new QBrush;
     item->colour = qvariant_cast<QColor>(fillColourComboBox->itemData(fillColourComboBox->currentIndex()));    
     local_brush->setColor(item->colour);
     local_brush->setStyle(Qt::Dense2Pattern);
     item->setBrush(*local_brush);
+    
+    
     
 	
 	this->close();

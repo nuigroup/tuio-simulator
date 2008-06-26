@@ -1,18 +1,24 @@
 #include "table.h"
 
-Table::Table()
+Table::Table(MainWindowImpl *win)
 {
 
+	//mywin = new MainWindowImpl;
+	mywin = win;
+	//myscene = new QGraphicsScene;
+	myscene = win->scene;
 	setFlag(QGraphicsItem::ItemIsMovable,false);
 	setFlag(QGraphicsItem::ItemIsFocusable,false);
-	setFlag(QGraphicsItem::ItemIsSelectable,false);
+	setFlag(QGraphicsItem::ItemIsSelectable,true);
 	setCursor(Qt::PointingHandCursor);
 }
 
   void Table::mouseReleaseEvent(QGraphicsSceneMouseEvent *mouseEvent)
 	{
 
-		std::cout << "Table Mouse Release Event" << "\n" ;
+		
+		active = false ;
+		std::cout << "Table Mouse Release Event CursorId  "<< Id << "\n" ;
 		QGraphicsItem::mouseReleaseEvent(mouseEvent);
 
 
@@ -20,7 +26,11 @@ Table::Table()
 
   void Table::mousePressEvent(QGraphicsSceneMouseEvent *mouseEvent)
 	{
-		std::cout << "Table Mouse Press Event" << "\n" ;
+		
+		mywin->cursorId++;
+		Id = mywin->cursorId;
+		active = true ;
+		std::cout << "Table Mouse Press Event CursorId  "<< Id << "\n" ;
 		QGraphicsItem::mousePressEvent(mouseEvent);
 
 
@@ -28,7 +38,7 @@ Table::Table()
 	
   void Table::mouseMoveEvent(QGraphicsSceneMouseEvent *mouseEvent)
 	{
-		std::cout << "Table Mouse Move Event" << "\n" ;
+		std::cout << "Table Mouse Move Event  Cursor Id  "<< Id << "\n" ;
 		QGraphicsItem::mouseMoveEvent(mouseEvent);
 
 

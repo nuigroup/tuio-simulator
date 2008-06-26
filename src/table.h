@@ -5,12 +5,17 @@
 #include <QGraphicsItem>
 #include <QtGui>
 #include <iostream>
+#include "mainwindowimpl.h"
 
 
 class Table : public QGraphicsRectItem
 {
 	public : 
-			Table();
+			Table(MainWindowImpl *win);
+			QGraphicsScene *myscene ;
+			MainWindowImpl *mywin;
+			bool active;  // Used to represent whether the mouse cursor is an active tnagible cursor
+			int Id ; 
 			
 	private :
 			

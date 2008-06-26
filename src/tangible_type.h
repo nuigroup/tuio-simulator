@@ -21,6 +21,9 @@ class Tangible_Type
 			int r,h,w;
 			QColor colour;
 			
+			int Id;
+			bool heldUp ; // flag to 
+			
 			int getType();
 };
 

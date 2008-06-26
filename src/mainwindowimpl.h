@@ -28,6 +28,8 @@
 
 #include "ui_mainwindow.h"
 
+class Table ;
+
 class MainWindowImpl : public QMainWindow , public Ui::MainWindow
 {
 Q_OBJECT
@@ -39,6 +41,8 @@ public:
     bool animationStarted ;
     int framerange;
     Table *table;
+    int cursorId;
+    int tangibleId;
     void readEllipse(QXmlStreamReader * xmlReader);
     void readCursor(QXmlStreamReader * xmlReader);
     void readPolygon(QXmlStreamReader * xmlReader);

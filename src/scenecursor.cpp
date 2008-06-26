@@ -19,7 +19,7 @@ SceneCursor::SceneCursor()
   void SceneCursor::mouseReleaseEvent(QGraphicsSceneMouseEvent *mouseEvent)
 	{
 
-		std::cout << "Cursor Mouse Release Event" << "\n" ;
+		std::cout << "Cursor Mouse Release Event CursorID  " << Id  << "\n" ;
 		QGraphicsItem::mouseReleaseEvent(mouseEvent);
 
 
@@ -27,7 +27,7 @@ SceneCursor::SceneCursor()
 
   void SceneCursor::mousePressEvent(QGraphicsSceneMouseEvent *mouseEvent)
 	{
-		std::cout << "Cursor Mouse Press Event" << "\n" ;
+		std::cout << "Cursor Mouse Press Event CursorId  " << Id << "\n" ;
 		QGraphicsItem::mousePressEvent(mouseEvent);
 
 
@@ -35,7 +35,7 @@ SceneCursor::SceneCursor()
 	
   void SceneCursor::mouseMoveEvent(QGraphicsSceneMouseEvent *mouseEvent)
 	{
-		std::cout << "Cursor Mouse Move Event" << "\n" ;
+		std::cout << "Cursor Mouse Move Event CursorId  " << Id << "\n" ;
 		QGraphicsItem::mouseMoveEvent(mouseEvent);
 
 

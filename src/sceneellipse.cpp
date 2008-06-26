@@ -42,7 +42,7 @@ SceneEllipse::SceneEllipse()
   void SceneEllipse::mouseReleaseEvent(QGraphicsSceneMouseEvent *mouseEvent)
 	{
 
-		std::cout << "Ellipse Mouse Release Event" << "\n" ;
+		std::cout << "Ellipse Mouse Release Event TangibleId  " << Id << "\n" ;
 		QGraphicsItem::mouseReleaseEvent(mouseEvent);
 
 
@@ -50,7 +50,7 @@ SceneEllipse::SceneEllipse()
 
   void SceneEllipse::mousePressEvent(QGraphicsSceneMouseEvent *mouseEvent)
 	{
-		std::cout << "Ellipse Mouse Press Event" << "\n" ;
+		std::cout << "Ellipse Mouse Press Event TangibleId  " << Id << "\n" ;
 		QGraphicsItem::mousePressEvent(mouseEvent);
 
 
@@ -58,7 +58,7 @@ SceneEllipse::SceneEllipse()
 	
   void SceneEllipse::mouseMoveEvent(QGraphicsSceneMouseEvent *mouseEvent)
 	{
-		std::cout << "Ellipse Mouse Move Event" << "\n" ;
+		std::cout << "Ellipse Mouse Move Event TangibleId  " << Id << "\n" ;
 		QGraphicsItem::mouseMoveEvent(mouseEvent);
 
 

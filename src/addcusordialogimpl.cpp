@@ -5,9 +5,9 @@ AddCursorDialogImpl::AddCursorDialogImpl(MainWindowImpl *win,QWidget * parent, Q
 	: QDialog(parent, f)
 	{
 		setupUi(this);
-		mywin = new MainWindowImpl;
+		//mywin = new MainWindowImpl;
 		mywin = win;
-		myscene = new QGraphicsScene;
+		//myscene = new QGraphicsScene;
 		myscene = win->scene;
 		connect(addCursorButton,SIGNAL(clicked()),this,SLOT(addCursor()));
 		cursor_x->setMaximum(1000);
@@ -36,6 +36,9 @@ void AddCursorDialogImpl::addCursor()
 	local_cursor->moveBy(cursor_x->value()+cursor_radius->value(),cursor_y->value()+cursor_radius->value());
     local_cursor->animation->setItem(local_cursor);
     local_cursor->animation->setTimeLine(mywin->timer);
+    
+    mywin->cursorId++ ;
+    local_cursor->Id = mywin->cursorId ;
     
     QBrush *local_brush = new QBrush;
     local_cursor->colour = qvariant_cast<QColor>(fillColourComboBox->itemData(fillColourComboBox->currentIndex()));    

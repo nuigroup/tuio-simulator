@@ -23,7 +23,7 @@ MainWindowImpl::MainWindowImpl( QWidget * parent, Qt::WFlags f)
 	animationStarted = false;
 	QPen pen;
 	pen.setBrush(Qt::blue);
-	table = new Table ;
+	table = new Table(this) ;
 	table->setRect(5,5,600,400);
 	scene->addItem(table);
 	//QGraphicsRectItem *rect =  scene->addRect(5,5,600,400,pen);
@@ -65,6 +65,9 @@ MainWindowImpl::MainWindowImpl( QWidget * parent, Qt::WFlags f)
 
     item->animation->setItem(item);
     item->animation->setTimeLine(timer);
+    
+    cursorId   = 0;
+    tangibleId = 0 ;
 
 
 	

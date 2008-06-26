@@ -4,9 +4,9 @@ AddEllipseDialogImpl::AddEllipseDialogImpl(MainWindowImpl *win,QWidget * parent,
 	: QDialog(parent, f)
 	{
 		setupUi(this);
-		mywin = new MainWindowImpl;
+		//mywin = new MainWindowImpl;
 		mywin = win;
-		myscene = new QGraphicsScene;
+		//myscene = new QGraphicsScene;
 		myscene = win->scene;
 		connect(addEllipseButton,SIGNAL(clicked()),this,SLOT(addEllipse()));
 		connect(addFiducialButton,SIGNAL(clicked()),this,SLOT(addFiducial()));
@@ -42,6 +42,9 @@ void AddEllipseDialogImpl::addEllipse()
     local_ellipse->animation->setTimeLine(mywin->timer);
     local_ellipse->w = Ellipse_width->value();
     local_ellipse->h = Ellipse_height->value();
+    
+    mywin->tangibleId++ ;
+    local_ellipse->Id = mywin->tangibleId ;
 
     
     
@@ -50,7 +53,6 @@ void AddEllipseDialogImpl::addEllipse()
     local_brush->setColor(local_ellipse->colour);
     local_brush->setStyle(Qt::Dense1Pattern);
     local_ellipse->setBrush(*local_brush);
-    
     
     this->close();
 }
