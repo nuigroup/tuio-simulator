@@ -160,14 +160,17 @@ void SetPathWindowImpl::setpath()
 			emit setPathSignal();
 			std::cout<<"Path not previewed"<<"\n";
 		}
+
+		
     for (int i = 0; i < 500; ++i)
         {
 
          	setpathitem->animation->setPosAt(i / 500.0, path->pointAtPercent(i/500.0));
-         	setpathitem->path_x.insert(i,(path->pointAtPercent(i/500.0).x()));
-         	setpathitem->path_y.insert(i,(path->pointAtPercent(i/500.0).y()));
-         	
+         	setpathitem->path_x.replace(i,(path->pointAtPercent(i/500.0).x()));
+         	setpathitem->path_y.replace(i,(path->pointAtPercent(i/500.0).y()));
+         	//std::cout << "path_x size  "<<setpathitem->path_y.size() << "\n" ;
         }
+        std::cout << "path_x size  "<<setpathitem->path_y.size() << "\n" ;
 		this->close();
 }
 

@@ -9,6 +9,7 @@
 #include <QHBoxLayout>
 #include <QFlags>
 #include <QGraphicsItem>
+#include <QGraphicsScene>
 #include <QLayout>
 #include <QCursor>
 #include <QPolygon>
@@ -16,11 +17,13 @@
 #include <QAbstractSlider>
 #include <QXMLStreamWriter>
 #include <QXMLStreamReader>
+#include <QTimer>
 #include "item.h"
 #include "addellipsedialogimpl.h"
 #include "addcusordialogimpl.h"
 #include "configuredialogimpl.h"
 #include "table.h"
+#include "TUIOSender.h"
 #include <iostream>
 
 
@@ -29,6 +32,7 @@
 #include "ui_mainwindow.h"
 
 class Table ;
+class TUIOSender ;
 
 class MainWindowImpl : public QMainWindow , public Ui::MainWindow
 {
@@ -39,10 +43,14 @@ public:
     QGraphicsScene *scene ;
     QTimeLine *timer;
     bool animationStarted ;
+    bool txStarted ;
     int framerange;
     Table *table;
     int cursorId;
     int tangibleId;
+    QTimer *packetTimer;
+    TUIOSender *mainSender;
+    int count ;
     void readEllipse(QXmlStreamReader * xmlReader);
     void readCursor(QXmlStreamReader * xmlReader);
     void readPolygon(QXmlStreamReader * xmlReader);
@@ -62,6 +70,9 @@ void showAddCursorDialog();
 void showAddEllipseDialog();
 void animationslidertime(int n);
 void showConfigureDialog();
+void startTx();
+void restartPacketTimer();
+void resetTx();
 
 
 

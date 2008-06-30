@@ -8,6 +8,7 @@
 #include <QTimeLine>
 #include <QGraphicsItemAnimation>
 #include "tangible_type.h"
+#include "TouchData.h"
 #include <iostream>
 
 class SceneEllipse : public QGraphicsEllipseItem,public Tangible_Type
@@ -16,7 +17,7 @@ class SceneEllipse : public QGraphicsEllipseItem,public Tangible_Type
 
 	public : 
 			SceneEllipse();
-			
+			//TouchData OSCdata;
 			
 			
 	

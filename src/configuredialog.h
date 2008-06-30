@@ -1,13 +1,13 @@
 #ifndef __CONFIGUREDIALOG_H__
 #define __CONFIGUREDIALOG_H__
 
-
 #include <QtCore/QVariant>
 #include <QtGui/QAction>
 #include <QtGui/QApplication>
 #include <QtGui/QButtonGroup>
 #include <QtGui/QDialog>
 #include <QtGui/QLabel>
+#include <QtGui/QLineEdit>
 #include <QtGui/QPushButton>
 #include <QtGui/QRadioButton>
 #include <QtGui/QSpinBox>
@@ -18,10 +18,6 @@ class Ui_configureDialog
 {
 public:
     QLabel *label;
-    QSpinBox *spinBox;
-    QSpinBox *spinBox_2;
-    QSpinBox *spinBox_3;
-    QSpinBox *spinBox_4;
     QLabel *label_2;
     QLabel *label_3;
     QSpinBox *spinBox_5;
@@ -34,6 +30,7 @@ public:
     QRadioButton *radioButton;
     QRadioButton *radioButton_2;
     QLabel *label_5;
+    QLineEdit *lineEdit;
 
     void setupUi(QDialog *configureDialog)
     {
@@ -46,28 +43,16 @@ public:
     configureDialog->setWindowIcon(icon);
     label = new QLabel(configureDialog);
     label->setObjectName(QString::fromUtf8("label"));
-    label->setGeometry(QRect(90, 100, 61, 16));
-    spinBox = new QSpinBox(configureDialog);
-    spinBox->setObjectName(QString::fromUtf8("spinBox"));
-    spinBox->setGeometry(QRect(20, 130, 42, 22));
-    spinBox_2 = new QSpinBox(configureDialog);
-    spinBox_2->setObjectName(QString::fromUtf8("spinBox_2"));
-    spinBox_2->setGeometry(QRect(70, 130, 42, 22));
-    spinBox_3 = new QSpinBox(configureDialog);
-    spinBox_3->setObjectName(QString::fromUtf8("spinBox_3"));
-    spinBox_3->setGeometry(QRect(120, 130, 42, 22));
-    spinBox_4 = new QSpinBox(configureDialog);
-    spinBox_4->setObjectName(QString::fromUtf8("spinBox_4"));
-    spinBox_4->setGeometry(QRect(170, 130, 42, 22));
+    label->setGeometry(QRect(120, 100, 61, 16));
     label_2 = new QLabel(configureDialog);
     label_2->setObjectName(QString::fromUtf8("label_2"));
     label_2->setGeometry(QRect(230, 130, 16, 31));
     label_3 = new QLabel(configureDialog);
     label_3->setObjectName(QString::fromUtf8("label_3"));
-    label_3->setGeometry(QRect(270, 100, 71, 16));
+    label_3->setGeometry(QRect(260, 100, 71, 16));
     spinBox_5 = new QSpinBox(configureDialog);
     spinBox_5->setObjectName(QString::fromUtf8("spinBox_5"));
-    spinBox_5->setGeometry(QRect(270, 130, 81, 22));
+    spinBox_5->setGeometry(QRect(250, 130, 81, 22));
     pushButton = new QPushButton(configureDialog);
     pushButton->setObjectName(QString::fromUtf8("pushButton"));
     pushButton->setGeometry(QRect(90, 240, 75, 23));
@@ -95,10 +80,9 @@ public:
     label_5 = new QLabel(configureDialog);
     label_5->setObjectName(QString::fromUtf8("label_5"));
     label_5->setGeometry(QRect(30, 190, 111, 20));
-    QWidget::setTabOrder(spinBox, spinBox_2);
-    QWidget::setTabOrder(spinBox_2, spinBox_3);
-    QWidget::setTabOrder(spinBox_3, spinBox_4);
-    QWidget::setTabOrder(spinBox_4, spinBox_5);
+    lineEdit = new QLineEdit(configureDialog);
+    lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
+    lineEdit->setGeometry(QRect(70, 130, 151, 22));
     QWidget::setTabOrder(spinBox_5, radioButton);
     QWidget::setTabOrder(radioButton, radioButton_2);
     QWidget::setTabOrder(radioButton_2, pushButton_2);

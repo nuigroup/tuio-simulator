@@ -29,6 +29,7 @@ AddEllipseDialogImpl::AddEllipseDialogImpl(MainWindowImpl *win,QWidget * parent,
     	fillColourComboBox->setCurrentIndex(
     	fillColourComboBox->findText("limegreen"));
     	local_ellipse = new SceneEllipse();
+    	local_ellipse->fiducial.replace(0,2);
 		
 	}
 	
@@ -44,7 +45,7 @@ void AddEllipseDialogImpl::addEllipse()
     local_ellipse->h = Ellipse_height->value();
     
     mywin->tangibleId++ ;
-    local_ellipse->Id = mywin->tangibleId ;
+    local_ellipse->OSCdata->ID = mywin->tangibleId ;
 
     
     
@@ -59,8 +60,7 @@ void AddEllipseDialogImpl::addEllipse()
 
 void AddEllipseDialogImpl::addFiducial()
 {
-	local_ellipse->fiducial.append(fiducialBox->value());
-	fiducialBox->setValue(0);
+	local_ellipse->fiducial.replace(0,fiducialBox->value());
 	
 }
 

@@ -11,14 +11,17 @@ Table::Table(MainWindowImpl *win)
 	setFlag(QGraphicsItem::ItemIsFocusable,false);
 	setFlag(QGraphicsItem::ItemIsSelectable,true);
 	setCursor(Qt::PointingHandCursor);
+	OSCdata = new TouchData;
+	OSCdata->packetUpdate = false ;
+	OSCdata->active = false ;
 }
 
   void Table::mouseReleaseEvent(QGraphicsSceneMouseEvent *mouseEvent)
 	{
 
 		
-		active = false ;
-		std::cout << "Table Mouse Release Event CursorId  "<< Id << "\n" ;
+		OSCdata->active = false ;
+		std::cout << "Table Mouse Release Event CursorId  "<< OSCdata->ID << "\n" ;
 		QGraphicsItem::mouseReleaseEvent(mouseEvent);
 
 
@@ -26,11 +29,17 @@ Table::Table(MainWindowImpl *win)
 
   void Table::mousePressEvent(QGraphicsSceneMouseEvent *mouseEvent)
 	{
-		
+		QPointF presentPos ;
 		mywin->cursorId++;
-		Id = mywin->cursorId;
-		active = true ;
-		std::cout << "Table Mouse Press Event CursorId  "<< Id << "\n" ;
+		OSCdata->ID = mywin->cursorId;
+		OSCdata->active = true ;
+		std::cout << "Table Mouse Press Event CursorId  "<< OSCdata->ID << "\n" ;
+		presentPos = mouseEvent->scenePos();
+		OSCdata->X = presentPos.rx()/600 ;
+		OSCdata->Y = presentPos.ry()/400 ;
+		OSCdata->LX = presentPos.rx()/600 ;
+		OSCdata->LY = presentPos.ry()/500 ;
+		mywin->table->OSCdata->packetUpdate = true ;
 		QGraphicsItem::mousePressEvent(mouseEvent);
 
 
@@ -38,7 +47,10 @@ Table::Table(MainWindowImpl *win)
 	
   void Table::mouseMoveEvent(QGraphicsSceneMouseEvent *mouseEvent)
 	{
-		std::cout << "Table Mouse Move Event  Cursor Id  "<< Id << "\n" ;
+		std::cout << "Table Mouse Move Event  Cursor Id  "<< OSCdata->ID << "\n" ;
+		OSCdata->X = (mouseEvent->scenePos()).rx()/600 ;
+		OSCdata->Y = (mouseEvent->scenePos()).ry()/400 ;
+		mywin->table->OSCdata->packetUpdate = true ;
 		QGraphicsItem::mouseMoveEvent(mouseEvent);
 
 

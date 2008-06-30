@@ -38,7 +38,7 @@ void AddCursorDialogImpl::addCursor()
     local_cursor->animation->setTimeLine(mywin->timer);
     
     mywin->cursorId++ ;
-    local_cursor->Id = mywin->cursorId ;
+    local_cursor->OSCdata->ID = mywin->cursorId ;
     
     QBrush *local_brush = new QBrush;
     local_cursor->colour = qvariant_cast<QColor>(fillColourComboBox->itemData(fillColourComboBox->currentIndex()));    

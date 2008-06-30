@@ -7,12 +7,22 @@
 #include "setpathwinodwimpl.h"
 #include "tangible_type.h"
 
+static bool Verbose = false ;
+
+#define ADDRESS "127.0.0.1"
+#define PORT 3333
+
+
 
 
 MainWindowImpl::MainWindowImpl( QWidget * parent, Qt::WFlags f) 
 	: QMainWindow(parent, f)
 	
 {	
+	
+
+	
+	
 	framerange = 500;
 	setupUi(this);
 	animationSlider->setTickInterval(framerange/10);
@@ -21,10 +31,12 @@ MainWindowImpl::MainWindowImpl( QWidget * parent, Qt::WFlags f)
 	animationSlider->setTickPosition(QSlider::TicksBelow);
 	scene = new QGraphicsScene;
 	animationStarted = false;
+	txStarted = false ;
 	QPen pen;
 	pen.setBrush(Qt::blue);
 	table = new Table(this) ;
 	table->setRect(5,5,600,400);
+	//table->setPen(pen);
 	scene->addItem(table);
 	//QGraphicsRectItem *rect =  scene->addRect(5,5,600,400,pen);
 	//rect->setFlag(QGraphicsItem::ItemIsSelectable,false);
@@ -32,8 +44,8 @@ MainWindowImpl::MainWindowImpl( QWidget * parent, Qt::WFlags f)
     view->setRenderHints(QPainter::Antialiasing
                          | QPainter::TextAntialiasing);
 
-	myitem *item;
-	item  = new myitem();
+	//myitem *item;
+	//item  = new myitem();
 	//scene->addItem(item);
 	
 	timer = new QTimeLine(10000);
@@ -46,6 +58,20 @@ MainWindowImpl::MainWindowImpl( QWidget * parent, Qt::WFlags f)
 	animationtime->setMinimum(1);
 	animationtime->setMaximum(100000);
 	animationtime->setValue(10000);
+	
+	cursorId   = 0;
+	tangibleId = 0 ;
+	packetTimer = new QTimer ;
+	mainSender = new TUIOSender(this);
+	
+	std::string ip_address = ADDRESS;
+	int port = PORT;
+	mainSender->connectSocket(ip_address,port);
+	
+	packetTimer->setInterval(40);
+	count = 0 ;
+	
+
 	
 	view->setCursor(Qt::PointingHandCursor);
 	connect(addItemButton,SIGNAL(clicked()),this,SLOT(showDialog()));
@@ -62,15 +88,27 @@ MainWindowImpl::MainWindowImpl( QWidget * parent, Qt::WFlags f)
 	connect(saveItemButton,SIGNAL(clicked()),this,SLOT(saveItem()));
 	connect(uploadItemButton,SIGNAL(clicked()),this,SLOT(uploadItem()));
 	connect(configureButton,SIGNAL(clicked()),this,SLOT(showConfigureDialog()));
+	connect(startTxButton,SIGNAL(clicked()),this,SLOT(startTx()));
+	connect(packetTimer,SIGNAL(timeout()),this,SLOT(restartPacketTimer()));
+	connect(resetButton,SIGNAL(clicked()),this,SLOT(resetTx()));
 
-    item->animation->setItem(item);
-    item->animation->setTimeLine(timer);
+    //item->animation->setItem(item);
+    //item->animation->setTimeLine(timer);
     
-    cursorId   = 0;
-    tangibleId = 0 ;
 
 
 	
+}
+
+void MainWindowImpl::resetTx()
+{
+	this->timer->stop();
+	timer->setCurrentTime(0);
+	this->timer->stop();
+	startAnimation_Radio->setChecked(false);
+	startAnimationButton->setText("Start Animation");
+	this->animationStarted = false ;
+	mainSender->resetTx();
 }
 
 void MainWindowImpl::showDialog()
@@ -116,8 +154,21 @@ void MainWindowImpl::deleteItem()
                                "Please Select an item and then try again."));
      
               while (!list.isEmpty())
-             delete list.takeFirst();
-	
+         {		
+         	QGraphicsItem *localitem = list.takeFirst();
+         	Tangible_Type *myTangible = dynamic_cast<Tangible_Type*>(localitem);
+         	if (myTangible)
+         	{
+         	std::cout << "Deleting animation" << "\n" ;
+         	delete myTangible->animation;
+         	std::cout << "Deleting OSCData" << "\n" ;
+         	delete myTangible->OSCdata ;
+         	std::cout << "Deleting Item" << "\n" ;
+            delete localitem;
+        	}
+
+             
+         }
 }
 
 void MainWindowImpl::startAnimation()
@@ -153,6 +204,8 @@ void MainWindowImpl::animationslidertime(int n)
 	timer->setCurrentTime((animationtime->value()*n)/framerange);
 	this->timer->stop();
 	startAnimation_Radio->setChecked(true);
+	startAnimationButton->setText("Stop Animation");
+	this->animationStarted = true ;
 	this->timer->start();
 	
 }
@@ -166,6 +219,38 @@ void MainWindowImpl::animationFinished()
 		startAnimation_Radio->setChecked(false);
 		this->timer->stop();
 }
+
+void MainWindowImpl::startTx()
+{
+	
+	if (this->txStarted)
+
+	{
+		
+		packetTimer->stop();
+		this->txStarted = false ;
+		startTxButton->setText("Start Transmission");
+		
+	}
+	else
+
+	{
+			packetTimer->start();
+			startTxButton->setText("Stop  Transmission");
+			this->txStarted = true ;
+			
+	}
+	
+}
+
+void MainWindowImpl::restartPacketTimer()
+{
+	if (Verbose) std::cout << "Send Packet	" << count << "\n" ;
+	mainSender->frame();
+	packetTimer->start();
+	count++ ;
+}
+
 
 void MainWindowImpl::showConfigureDialog()
 {
@@ -315,9 +400,10 @@ void MainWindowImpl::saveItem()
 	xmlWriter.writeEndElement();
 	
 	
-	for(int j = 0 ; j < (myTangible->fiducial).size() ; j++ )
+	//for(int j = 0 ; j < (myTangible->fiducial).size() ; j++ )
+	if ((myTangible->fiducial).size())
 	{	xmlWriter.writeStartElement("Fiducial");
-		str_x.setNum((myTangible->fiducial).at(j));
+		str_x.setNum((myTangible->fiducial).at(0));
 		xmlWriter.writeAttribute("Value",str_x);
 		xmlWriter.writeEndElement();
 	}
@@ -328,6 +414,7 @@ void MainWindowImpl::saveItem()
 		
 	
 	xmlWriter.writeStartElement("Path");
+	std::cout << "path_size  " << myTangible->path_x.size() << "\n"  ;
 	
 	for (int j = 0 ; j < myTangible->path_x.size() ; j++ )
 	{

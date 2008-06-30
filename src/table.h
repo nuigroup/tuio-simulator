@@ -3,9 +3,11 @@
 
 #include <QGraphicsRectItem>
 #include <QGraphicsItem>
+#include <QPointF>
 #include <QtGui>
 #include <iostream>
 #include "mainwindowimpl.h"
+#include "TouchData.h"
 
 
 class Table : public QGraphicsRectItem
@@ -14,8 +16,8 @@ class Table : public QGraphicsRectItem
 			Table(MainWindowImpl *win);
 			QGraphicsScene *myscene ;
 			MainWindowImpl *mywin;
-			bool active;  // Used to represent whether the mouse cursor is an active tnagible cursor
-			int Id ; 
+			TouchData *OSCdata ;
+			
 			
 	private :
 			

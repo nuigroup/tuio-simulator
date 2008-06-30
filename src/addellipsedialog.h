@@ -98,11 +98,12 @@ public:
     label_3->setText(QApplication::translate("addEllipseDialog", "Width", 0, QApplication::UnicodeUTF8));
     label_4->setText(QApplication::translate("addEllipseDialog", "Height", 0, QApplication::UnicodeUTF8));
     label_5->setText(QApplication::translate("addEllipseDialog", "Set Colour", 0, QApplication::UnicodeUTF8));
-    addFiducialButton->setText(QApplication::translate("addEllipseDialog", "Add Fiducial", 0, QApplication::UnicodeUTF8));
+    addFiducialButton->setText(QApplication::translate("addEllipseDialog", "Set Fiducial", 0, QApplication::UnicodeUTF8));
     Q_UNUSED(addEllipseDialog);
     } // retranslateUi
 
 };
+
 
 
 namespace Ui3 {

@@ -1,0 +1,248 @@
+// !$*UTF8*$!
+{
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Release;
+		activeExecutable = B2C161D80DC8C6690082E97E /* TuioDemo */;
+		activeTarget = 8D1107260486CEB800E47090 /* TuioDemo */;
+		addToTargets = (
+			8D1107260486CEB800E47090 /* TuioDemo */,
+		);
+		codeSenseManager = B2C161EB0DC8C68D0082E97E /* Code sense */;
+		executables = (
+			B2C161D80DC8C6690082E97E /* TuioDemo */,
+		);
+		perUserDictionary = {
+			"PBXConfiguration.PBXBreakpointsDataSource.v1:1CA23EDF0692099D00951B8B" = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXBreakpointsDataSource_BreakpointID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					20,
+					284,
+					20,
+					184,
+					184,
+					114,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXBreakpointsDataSource_ActionID,
+					PBXBreakpointsDataSource_TypeID,
+					PBXBreakpointsDataSource_BreakpointID,
+					PBXBreakpointsDataSource_UseID,
+					PBXBreakpointsDataSource_LocationID,
+					PBXBreakpointsDataSource_ConditionID,
+					PBXBreakpointsDataSource_IgnoreCountID,
+					PBXBreakpointsDataSource_ContinueID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXExecutablesDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXExecutablesDataSource_NameID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					22,
+					300,
+					544,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXExecutablesDataSource_ActiveFlagID,
+					PBXExecutablesDataSource_NameID,
+					PBXExecutablesDataSource_CommentsID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					656,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXFindDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFindDataSource_LocationID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					200,
+					670.20849609375,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFindDataSource_MessageID,
+					PBXFindDataSource_LocationID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					616,
+					60,
+					20,
+					48,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 234353135;
+			PBXWorkspaceStateSaveDate = 234353135;
+		};
+		sourceControlManager = B2C161EA0DC8C68D0082E97E /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	8D1107260486CEB800E47090 /* TuioDemo */ = {
+		activeExec = 0;
+		executables = (
+			B2C161D80DC8C6690082E97E /* TuioDemo */,
+		);
+	};
+	8D1107310486CEB800E47090 /* Info.plist */ = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{15, 12}, {1265, 761}}";
+		};
+	};
+	B20EE3C60C340C4B00026AC5 /* TuioClient.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1206, 4550}}";
+			sepNavSelRange = "{3237, 5}";
+			sepNavVisRange = "{2150, 1965}";
+			sepNavWindowFrame = "{{15, 12}, {1265, 761}}";
+		};
+	};
+	B20EE3C70C340C4B00026AC5 /* TuioClient.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1206, 1414}}";
+			sepNavSelRange = "{1311, 0}";
+			sepNavVisRange = "{622, 992}";
+			sepNavWindowFrame = "{{15, 12}, {1265, 761}}";
+		};
+	};
+	B20EE3C80C340C4B00026AC5 /* TuioCursor.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1206, 700}}";
+			sepNavSelRange = "{1361, 0}";
+			sepNavVisRange = "{95, 1340}";
+			sepNavWindowFrame = "{{15, 12}, {1265, 761}}";
+		};
+	};
+	B20EE3C90C340C4B00026AC5 /* TuioDemo.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1206, 2926}}";
+			sepNavSelRange = "{2206, 0}";
+			sepNavVisRange = "{4136, 1029}";
+			sepNavWindowFrame = "{{15, 12}, {1265, 761}}";
+		};
+	};
+	B20EE3CA0C340C4B00026AC5 /* TuioDemo.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1206, 1148}}";
+			sepNavSelRange = "{1753, 10}";
+			sepNavVisRange = "{1153, 915}";
+			sepNavWindowFrame = "{{15, 12}, {1265, 761}}";
+		};
+	};
+	B20EE3D00C340C6800026AC5 /* TuioListener.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1206, 633}}";
+			sepNavSelRange = "{1409, 0}";
+			sepNavVisRange = "{0, 1498}";
+			sepNavWindowFrame = "{{15, 12}, {1265, 761}}";
+		};
+	};
+	B20EE3D10C340C6800026AC5 /* TuioObject.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1206, 1190}}";
+			sepNavSelRange = "{2276, 0}";
+			sepNavVisRange = "{885, 1161}";
+			sepNavWindowFrame = "{{15, 12}, {1265, 761}}";
+		};
+	};
+	B21A79B80DC789FA00CC2EDA /* TuioPoint.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1206, 1190}}";
+			sepNavSelRange = "{1204, 0}";
+			sepNavVisRange = "{1203, 956}";
+			sepNavWindowFrame = "{{15, 12}, {1265, 761}}";
+		};
+	};
+	B2C161D80DC8C6690082E97E /* TuioDemo */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+			"PBXLSLaunchAction-0" = {
+				PBXLSLaunchAction = 0;
+				PBXLSLaunchStyle = 4;
+				class = XCIndigoRunLaunchConfig;
+				commandLineArgs = (
+				);
+				displayName = "iPhone Simulator runner";
+				environment = {
+				};
+				identifier = com.apple.Xcode.launch.iPhoneSimulatorRunConfig;
+				remoteHostInfo = "";
+				startActionInfo = "";
+			};
+		};
+		customDataFormattersEnabled = 1;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = TuioDemo;
+		sourceDirectories = (
+		);
+		startupPath = "<<ProductDirectory>>";
+	};
+	B2C161EA0DC8C68D0082E97E /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+		};
+	};
+	B2C161EB0DC8C68D0082E97E /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	B2D071BD0DCB81F9002EEA92 /* TuioContainer.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1206, 1792}}";
+			sepNavSelRange = "{1106, 0}";
+			sepNavVisRange = "{1149, 1157}";
+			sepNavWindowFrame = "{{15, 12}, {1265, 761}}";
+		};
+	};
+}

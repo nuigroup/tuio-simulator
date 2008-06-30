@@ -35,8 +35,9 @@ DialogImpl::DialogImpl(MainWindowImpl *win,QWidget * parent, Qt::WFlags f)
     fillColourComboBox->addItem(name, QColor(name));
     
     fillColourComboBox->setCurrentIndex(
-      fillColourComboBox->findText("mediumslateblue"));
+      fillColourComboBox->findText("blue"));
       item  = new myitem();
+      item->fiducial.replace(0,1);
 	
 }
 
@@ -53,9 +54,11 @@ void DialogImpl::addNewItem()
 	item->setPolygon(*mypolygon);
 	myscene->addItem(item);
     item->animation->setItem(item);
+    //item->animation->setScene(myscene);
     item->animation->setTimeLine(mywin->timer);
+    
     mywin->tangibleId++ ;
-    item->Id = mywin->tangibleId ;
+    item->OSCdata->ID = mywin->tangibleId ;
     
     QBrush *local_brush = new QBrush;
     item->colour = qvariant_cast<QColor>(fillColourComboBox->itemData(fillColourComboBox->currentIndex()));    
@@ -87,8 +90,7 @@ void DialogImpl::addNewVertex()
 
 void DialogImpl::addFiducial()
 {
-	item->fiducial.append(fiducialBox->value());
-	fiducialBox->setValue(0);
+	item->fiducial.replace(0,fiducialBox->value());
 	
 }
 

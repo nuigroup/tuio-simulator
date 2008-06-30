@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'mainwindow.ui'
 **
-** Created: Thu Jun 26 09:11:01 2008
+** Created: Mon Jun 30 20:58:55 2008
 **      by: Qt User Interface Compiler version 4.4.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -49,8 +49,9 @@ public:
     QPushButton *deleteItemButton;
     QPushButton *saveItemButton;
     QPushButton *uploadItemButton;
-    QPushButton *pushButton;
+    QPushButton *startTxButton;
     QPushButton *configureButton;
+    QPushButton *resetButton;
     QSpacerItem *horizontalSpacer;
     QMenuBar *menubar;
     QStatusBar *statusbar;
@@ -74,7 +75,7 @@ public:
     view->setObjectName(QString::fromUtf8("view"));
     view->viewport()->setProperty("cursor", QVariant(QCursor(Qt::PointingHandCursor)));
 
-    gridLayout->addWidget(view, 0, 0, 1, 12);
+    gridLayout->addWidget(view, 0, 0, 1, 13);
 
     addItemButton = new QPushButton(centralwidget);
     addItemButton->setObjectName(QString::fromUtf8("addItemButton"));
@@ -117,7 +118,7 @@ public:
     animationSlider->setCursor(QCursor(Qt::PointingHandCursor));
     animationSlider->setOrientation(Qt::Horizontal);
 
-    gridLayout->addWidget(animationSlider, 1, 10, 1, 2);
+    gridLayout->addWidget(animationSlider, 1, 10, 1, 3);
 
     addEllipseButton = new QPushButton(centralwidget);
     addEllipseButton->setObjectName(QString::fromUtf8("addEllipseButton"));
@@ -144,19 +145,24 @@ public:
 
     gridLayout->addWidget(uploadItemButton, 2, 5, 1, 2);
 
-    pushButton = new QPushButton(centralwidget);
-    pushButton->setObjectName(QString::fromUtf8("pushButton"));
+    startTxButton = new QPushButton(centralwidget);
+    startTxButton->setObjectName(QString::fromUtf8("startTxButton"));
 
-    gridLayout->addWidget(pushButton, 2, 7, 1, 2);
+    gridLayout->addWidget(startTxButton, 2, 7, 1, 2);
 
     configureButton = new QPushButton(centralwidget);
     configureButton->setObjectName(QString::fromUtf8("configureButton"));
 
     gridLayout->addWidget(configureButton, 2, 9, 1, 2);
 
+    resetButton = new QPushButton(centralwidget);
+    resetButton->setObjectName(QString::fromUtf8("resetButton"));
+
+    gridLayout->addWidget(resetButton, 2, 11, 1, 1);
+
     horizontalSpacer = new QSpacerItem(240, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-    gridLayout->addItem(horizontalSpacer, 2, 11, 1, 1);
+    gridLayout->addItem(horizontalSpacer, 2, 12, 1, 1);
 
     MainWindow->setCentralWidget(centralwidget);
     menubar = new QMenuBar(MainWindow);
@@ -201,8 +207,9 @@ public:
     deleteItemButton->setText(QApplication::translate("MainWindow", "Delete Item", 0, QApplication::UnicodeUTF8));
     saveItemButton->setText(QApplication::translate("MainWindow", "Save Item", 0, QApplication::UnicodeUTF8));
     uploadItemButton->setText(QApplication::translate("MainWindow", "Upload Item", 0, QApplication::UnicodeUTF8));
-    pushButton->setText(QApplication::translate("MainWindow", "Start Transmission", 0, QApplication::UnicodeUTF8));
+    startTxButton->setText(QApplication::translate("MainWindow", "Start Transmission", 0, QApplication::UnicodeUTF8));
     configureButton->setText(QApplication::translate("MainWindow", "Configure Transmission", 0, QApplication::UnicodeUTF8));
+    resetButton->setText(QApplication::translate("MainWindow", "Reset", 0, QApplication::UnicodeUTF8));
     toolBar->setWindowTitle(QApplication::translate("MainWindow", "toolBar", 0, QApplication::UnicodeUTF8));
     Q_UNUSED(MainWindow);
     } // retranslateUi

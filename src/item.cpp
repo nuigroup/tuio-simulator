@@ -13,7 +13,7 @@ myitem::myitem(QTimeLine* timer,QGraphicsItem *parent,QGraphicsScene *scene):QGr
             }*/
   
        //setPolygon(*mypolygon);
-       animation = new QGraphicsItemAnimation;
+    animation = new TUIOanimation;
 
     setFlag(QGraphicsItem::ItemIsMovable, true);
     setFlag(QGraphicsItem::ItemIsFocusable, true);
@@ -23,6 +23,11 @@ myitem::myitem(QTimeLine* timer,QGraphicsItem *parent,QGraphicsScene *scene):QGr
     tangible_type = 1;
     tangible_geom = QString("Polygon");
     fiducial.append(1);
+    OSCdata = new TouchData;
+    OSCdata->X = (scenePos()).rx() ;
+    OSCdata->LX = (scenePos()).rx() ;
+    OSCdata->Y = (scenePos()).ry() ;
+    OSCdata->LY = (scenePos()).ry() ;
 
     
     
@@ -54,7 +59,7 @@ myitem::myitem(QTimeLine* timer,QGraphicsItem *parent,QGraphicsScene *scene):QGr
   void myitem::mouseReleaseEvent(QGraphicsSceneMouseEvent *mouseEvent)
 	{
 
-		std::cout << "Polygon Mouse Release Event TangibleId  " << Id << "\n" ;
+		//std::cout << "Polygon Mouse Release Event TangibleId  " << OSCdata->ID << "\n" ;
 		QGraphicsItem::mouseReleaseEvent(mouseEvent);
 
 
@@ -62,7 +67,7 @@ myitem::myitem(QTimeLine* timer,QGraphicsItem *parent,QGraphicsScene *scene):QGr
 
   void myitem::mousePressEvent(QGraphicsSceneMouseEvent *mouseEvent)
 	{
-		std::cout << "Polygon Mouse Press Event TangibleId  " << Id << "\n" ;
+		//std::cout << "Polygon Mouse Press Event TangibleId  " << OSCdata->ID << "\n" ;
 		QGraphicsItem::mousePressEvent(mouseEvent);
 
 
@@ -70,7 +75,10 @@ myitem::myitem(QTimeLine* timer,QGraphicsItem *parent,QGraphicsScene *scene):QGr
 	
   void myitem::mouseMoveEvent(QGraphicsSceneMouseEvent *mouseEvent)
 	{
-		std::cout << "Polygon Mouse Move Event TangibleId  " << Id << "\n" ;
+		//std::cout << "Polygon Mouse Move Event TangibleId  " << OSCdata->ID << "\n" ;
+		OSCdata->X = (mouseEvent->scenePos()).rx()/600 ;
+		OSCdata->Y = (mouseEvent->scenePos()).ry()/400 ;
+		OSCdata->packetUpdate = true ;
 		QGraphicsItem::mouseMoveEvent(mouseEvent);
 
 

@@ -211,7 +211,7 @@
     </rect>
    </property>
    <property name="text" >
-    <string>Add Fiducial</string>
+    <string>Set Fiducial</string>
    </property>
   </widget>
  </widget>

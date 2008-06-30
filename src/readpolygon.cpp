@@ -1,12 +1,20 @@
 #include "mainwindowimpl.h"
 #include "item.h"
 #include <QList>
+#include <QDebug>
+static bool Verbose = true ;
+
 void MainWindowImpl::readPolygon(QXmlStreamReader * xmlReader)
 {
 	
 	myitem *local_item = new myitem();
-	int position_x = 0,position_y = 0,w = 1,h = 1,fiducial = 1,count = 0;
+	float position_x = 0,position_y = 0;
+	int w = 1,h = 1, fiducial = 1,count = 0;
 	QPolygon *mypolygon = new QPolygon;
+	
+	
+    tangibleId++ ;
+    local_item->OSCdata->ID = tangibleId ;
 
 	
 	while (!xmlReader->atEnd())
@@ -18,6 +26,7 @@ void MainWindowImpl::readPolygon(QXmlStreamReader * xmlReader)
 			{
 				local_item->setPolygon(*mypolygon);
 				scene->addItem(local_item);
+				if ( Verbose ) std::cout << "Position is " << position_x << position_y << "\n" ;
 				local_item->moveBy(position_x,position_y);
 				std::cout << "Moving ploygon " << position_x <<"\t"<< position_y << "\n";
     			local_item->animation->setItem(local_item);
@@ -31,9 +40,14 @@ void MainWindowImpl::readPolygon(QXmlStreamReader * xmlReader)
 			
 			else if (xmlReader->name() ==  "Position" )
 			{
-				position_x = (xmlReader->attributes().value("Position_x")).toString().toInt();
-				position_y = (xmlReader->attributes().value("Position_y")).toString().toInt();
-				std::cout << "Moving cursor " << position_x <<"\t"<< position_y << "\n";
+				QString str_x,str_y;
+				float test ;
+				position_x = (xmlReader->attributes().value("Position_x")).toString().toFloat();
+				position_y = (xmlReader->attributes().value("Position_y")).toString().toFloat();
+				str_x = (xmlReader->attributes().value("Position_x")).toString() ;
+				test = str_x.toFloat();
+				if ( Verbose ) qDebug() << "Position in string  " << str_x  <<  "In float  "<<test << "\n" ;
+				//std::cout << "Moving cursor " << position_x <<"\t"<< position_y << "\n";
 				//QMessageBox::information(this,"QMTSim","Setting Position");
 			}
 				
@@ -100,8 +114,8 @@ void MainWindowImpl::readPolygon(QXmlStreamReader * xmlReader)
 							pathx = false;
 							pathy = false;
 							local_item->animation->setPosAt(i / 500.0, QPointF(x,y));
-         					local_item->path_x.insert(i,x);
-         					local_item->path_y.insert(i,y);
+         					local_item->path_x.replace(i,x);
+         					local_item->path_y.replace(i,y);
 							i++;
 						}
 						

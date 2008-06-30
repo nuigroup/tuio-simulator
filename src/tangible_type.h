@@ -5,6 +5,9 @@
 #include <QList>
 #include <QColor>
 #include <QGraphicsItemAnimation>
+#include "TouchData.h"
+#include "TUIOanimation.h"
+
 
 class Tangible_Type
 {
@@ -15,14 +18,15 @@ class Tangible_Type
 			QList<int> fiducial;
 			QList<double> path_x;
 			QList<double> path_y;
-			QGraphicsItemAnimation *animation;
+			TUIOanimation *animation;
 			QList<double> vertex_x;
 			QList<double> vertex_y;
 			int r,h,w;
 			QColor colour;
-			
-			int Id;
-			bool heldUp ; // flag to 
+			TouchData *OSCdata;
+			//int Id;
+
+
 			
 			int getType();
 };

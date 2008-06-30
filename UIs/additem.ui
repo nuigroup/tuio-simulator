@@ -37,10 +37,10 @@
   <widget class="QLabel" name="label" >
    <property name="geometry" >
     <rect>
-     <x>20</x>
-     <y>10</y>
-     <width>346</width>
-     <height>45</height>
+     <x>9</x>
+     <y>9</y>
+     <width>382</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="text" >
@@ -50,9 +50,9 @@
   <widget class="QSpinBox" name="X_Vertex" >
    <property name="geometry" >
     <rect>
-     <x>120</x>
-     <y>60</y>
-     <width>70</width>
+     <x>134</x>
+     <y>58</y>
+     <width>77</width>
      <height>20</height>
     </rect>
    </property>
@@ -60,9 +60,9 @@
   <widget class="QSpinBox" name="Y_Vertex" >
    <property name="geometry" >
     <rect>
-     <x>200</x>
-     <y>60</y>
-     <width>70</width>
+     <x>221</x>
+     <y>58</y>
+     <width>77</width>
      <height>20</height>
     </rect>
    </property>
@@ -70,10 +70,10 @@
   <widget class="QPushButton" name="AddVertex" >
    <property name="geometry" >
     <rect>
-     <x>290</x>
-     <y>60</y>
-     <width>101</width>
-     <height>20</height>
+     <x>304</x>
+     <y>56</y>
+     <width>87</width>
+     <height>25</height>
     </rect>
    </property>
    <property name="text" >
@@ -83,23 +83,23 @@
   <widget class="QLabel" name="label_4" >
    <property name="geometry" >
     <rect>
-     <x>210</x>
-     <y>80</y>
-     <width>21</width>
-     <height>41</height>
+     <x>220</x>
+     <y>90</y>
+     <width>41</width>
+     <height>21</height>
     </rect>
    </property>
    <property name="text" >
-    <string>Y</string>
+    <string>          Y</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_2" >
    <property name="geometry" >
     <rect>
-     <x>10</x>
-     <y>250</y>
-     <width>208</width>
-     <height>45</height>
+     <x>9</x>
+     <y>244</y>
+     <width>289</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="text" >
@@ -109,10 +109,10 @@
   <widget class="QLabel" name="label_5" >
    <property name="geometry" >
     <rect>
-     <x>10</x>
-     <y>80</y>
-     <width>91</width>
-     <height>41</height>
+     <x>9</x>
+     <y>87</y>
+     <width>71</width>
+     <height>42</height>
     </rect>
    </property>
    <property name="text" >
@@ -122,10 +122,10 @@
   <widget class="QLabel" name="label_3" >
    <property name="geometry" >
     <rect>
-     <x>150</x>
-     <y>80</y>
-     <width>21</width>
-     <height>41</height>
+     <x>160</x>
+     <y>90</y>
+     <width>16</width>
+     <height>21</height>
     </rect>
    </property>
    <property name="text" >
@@ -135,10 +135,10 @@
   <widget class="QPushButton" name="AddItem" >
    <property name="geometry" >
     <rect>
-     <x>130</x>
-     <y>180</y>
-     <width>75</width>
-     <height>23</height>
+     <x>86</x>
+     <y>213</y>
+     <width>77</width>
+     <height>25</height>
     </rect>
    </property>
    <property name="text" >
@@ -148,16 +148,101 @@
   <widget class="QSpinBox" name="VertexNumber" >
    <property name="geometry" >
     <rect>
-     <x>10</x>
-     <y>60</y>
-     <width>70</width>
+     <x>9</x>
+     <y>58</y>
+     <width>71</width>
      <height>20</height>
     </rect>
    </property>
   </widget>
+  <widget class="QPushButton" name="cancelButton" >
+   <property name="geometry" >
+    <rect>
+     <x>221</x>
+     <y>213</y>
+     <width>77</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Cancel</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="fillColourComboBox" >
+   <property name="geometry" >
+    <rect>
+     <x>9</x>
+     <y>137</y>
+     <width>101</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6" >
+   <property name="geometry" >
+    <rect>
+     <x>40</x>
+     <y>160</y>
+     <width>71</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Set Colour</string>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="fiducialBox" >
+   <property name="geometry" >
+    <rect>
+     <x>197</x>
+     <y>137</y>
+     <width>101</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="addFiducialButton" >
+   <property name="geometry" >
+    <rect>
+     <x>304</x>
+     <y>135</y>
+     <width>87</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Set Fiducial</string>
+   </property>
+  </widget>
  </widget>
+ <tabstops>
+  <tabstop>VertexNumber</tabstop>
+  <tabstop>X_Vertex</tabstop>
+  <tabstop>Y_Vertex</tabstop>
+  <tabstop>AddVertex</tabstop>
+  <tabstop>fillColourComboBox</tabstop>
+  <tabstop>AddItem</tabstop>
+  <tabstop>cancelButton</tabstop>
+ </tabstops>
  <resources>
   <include location="../resource.qrc" />
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>cancelButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>237</x>
+     <y>191</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>199</x>
+     <y>146</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

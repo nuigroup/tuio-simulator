@@ -13,7 +13,7 @@
    <string>Add Ellipse</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="../QMTSim 1.0/resource.qrc" >
+   <iconset>
     <normaloff>:/newPrefix/logo.jpg</normaloff>:/newPrefix/logo.jpg</iconset>
   </property>
   <widget class="QSpinBox" name="Ellipse_x" >
@@ -177,7 +177,7 @@
     </rect>
    </property>
    <property name="text" >
-    <string>Add Fiducial</string>
+    <string>Set Fiducial</string>
    </property>
   </widget>
  </widget>

@@ -9,6 +9,7 @@
 #include <QGraphicsItemAnimation>
 #include <QBrush>
 #include "tangible_type.h"
+#include "TouchData.h"
 #include <iostream>
 
 class SceneCursor : public QGraphicsEllipseItem , public Tangible_Type
@@ -18,7 +19,7 @@ class SceneCursor : public QGraphicsEllipseItem , public Tangible_Type
 
 	public : 
 			SceneCursor();
-		
+			//TouchData OSCdata;
 			QBrush *local_brush;
 			
 	

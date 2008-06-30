@@ -11,6 +11,7 @@
 #include <QTimeLine>
 #include <QGraphicsItemAnimation>
 #include "tangible_type.h"
+
 #include <iostream>
 
 
@@ -22,10 +23,6 @@ class myitem : public QGraphicsPolygonItem ,public Tangible_Type
 	
 	
 	public : 
-			
-
-			
-			
 			myitem(QTimeLine* timer= 0,QGraphicsItem *parent =0 ,QGraphicsScene *scene = 0); 
 			
 	protected :

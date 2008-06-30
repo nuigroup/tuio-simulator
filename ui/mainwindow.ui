@@ -32,7 +32,7 @@
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout" >
-    <item row="0" column="0" colspan="12" >
+    <item row="0" column="0" colspan="13" >
      <widget class="QGraphicsView" name="view" >
       <property name="cursor" stdset="0" >
        <cursorShape>PointingHandCursor</cursorShape>
@@ -91,7 +91,7 @@
       </property>
      </widget>
     </item>
-    <item row="1" column="10" colspan="2" >
+    <item row="1" column="10" colspan="3" >
      <widget class="QSlider" name="animationSlider" >
       <property name="cursor" >
        <cursorShape>PointingHandCursor</cursorShape>
@@ -137,7 +137,7 @@
      </widget>
     </item>
     <item row="2" column="7" colspan="2" >
-     <widget class="QPushButton" name="pushButton" >
+     <widget class="QPushButton" name="startTxButton" >
       <property name="text" >
        <string>Start Transmission</string>
       </property>
@@ -151,6 +151,13 @@
      </widget>
     </item>
     <item row="2" column="11" >
+     <widget class="QPushButton" name="resetButton" >
+      <property name="text" >
+       <string>Reset</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="12" >
      <spacer name="horizontalSpacer" >
       <property name="orientation" >
        <enum>Qt::Horizontal</enum>

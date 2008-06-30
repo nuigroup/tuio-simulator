@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'additem.ui'
 **
-** Created: Thu Jun 26 09:11:01 2008
+** Created: Mon Jun 30 20:58:54 2008
 **      by: Qt User Interface Compiler version 4.4.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -132,7 +132,7 @@ public:
     AddItem->setText(QApplication::translate("Dialog", "Add Item", 0, QApplication::UnicodeUTF8));
     cancelButton->setText(QApplication::translate("Dialog", "Cancel", 0, QApplication::UnicodeUTF8));
     label_6->setText(QApplication::translate("Dialog", "Set Colour", 0, QApplication::UnicodeUTF8));
-    addFiducialButton->setText(QApplication::translate("Dialog", "Add Fiducial", 0, QApplication::UnicodeUTF8));
+    addFiducialButton->setText(QApplication::translate("Dialog", "Set Fiducial", 0, QApplication::UnicodeUTF8));
     Q_UNUSED(Dialog);
     } // retranslateUi
 

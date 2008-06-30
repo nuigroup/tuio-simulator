@@ -4,7 +4,8 @@ SceneCursor::SceneCursor()
 {
 	
 	
-	animation = new QGraphicsItemAnimation;
+	//animation = new QGraphicsItemAnimation;
+	animation = new TUIOanimation;
     setFlag(QGraphicsItem::ItemIsMovable, true);
     setFlag(QGraphicsItem::ItemIsFocusable, true);
     setFlag(QGraphicsItem::ItemIsSelectable,true);
@@ -13,13 +14,19 @@ SceneCursor::SceneCursor()
     setBrush(*local_brush);
     tangible_type = 3;
     tangible_geom = QString("Cursor");
+    OSCdata = new TouchData;
+    OSCdata->X = (scenePos()).rx() ;
+    OSCdata->LX = (scenePos()).rx() ;
+    OSCdata->Y = (scenePos()).ry() ;
+    OSCdata->LY = (scenePos()).ry() ;
+    
     
 }
 
   void SceneCursor::mouseReleaseEvent(QGraphicsSceneMouseEvent *mouseEvent)
 	{
 
-		std::cout << "Cursor Mouse Release Event CursorID  " << Id  << "\n" ;
+		//std::cout << "Cursor Mouse Release Event CursorID  " << OSCdata->ID  << "\n" ;
 		QGraphicsItem::mouseReleaseEvent(mouseEvent);
 
 
@@ -27,7 +34,7 @@ SceneCursor::SceneCursor()
 
   void SceneCursor::mousePressEvent(QGraphicsSceneMouseEvent *mouseEvent)
 	{
-		std::cout << "Cursor Mouse Press Event CursorId  " << Id << "\n" ;
+		//std::cout << "Cursor Mouse Press Event CursorId  " << OSCdata->ID << "\n" ;
 		QGraphicsItem::mousePressEvent(mouseEvent);
 
 
@@ -35,7 +42,10 @@ SceneCursor::SceneCursor()
 	
   void SceneCursor::mouseMoveEvent(QGraphicsSceneMouseEvent *mouseEvent)
 	{
-		std::cout << "Cursor Mouse Move Event CursorId  " << Id << "\n" ;
+		//std::cout << "Cursor Mouse Move Event CursorId  " << OSCdata->ID << "\n" ;
+		OSCdata->X = (mouseEvent->scenePos()).rx()/600 ;
+		OSCdata->Y = (mouseEvent->scenePos()).ry()/400 ;
+		OSCdata->packetUpdate = true ;
 		QGraphicsItem::mouseMoveEvent(mouseEvent);
 
 

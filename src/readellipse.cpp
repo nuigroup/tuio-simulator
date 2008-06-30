@@ -7,7 +7,11 @@ void MainWindowImpl::readEllipse(QXmlStreamReader * xmlReader)
 {
 	
 	SceneEllipse *local_ellipse = new SceneEllipse();
-	int position_x = 0,position_y = 0,w = 1,h = 1,fiducial = 2;
+	float position_x = 0,position_y = 0; 
+	int w = 1,h = 1,fiducial = 2;
+	
+    tangibleId++ ;
+    local_ellipse->OSCdata->ID = tangibleId ;
 
 	
 	while (!xmlReader->atEnd())
@@ -34,9 +38,9 @@ void MainWindowImpl::readEllipse(QXmlStreamReader * xmlReader)
 			
 			else if (xmlReader->name() ==  "Position" )
 			{
-				position_x = (xmlReader->attributes().value("Position_x")).toString().toInt();
-				position_y = (xmlReader->attributes().value("Position_y")).toString().toInt();
-				std::cout << "Moving cursor " << position_x <<"\t"<< position_y << "\n";
+				position_x = (xmlReader->attributes().value("Position_x")).toString().toFloat();
+				position_y = (xmlReader->attributes().value("Position_y")).toString().toFloat();
+				//std::cout << "Moving cursor " << position_x <<"\t"<< position_y << "\n";
 				//QMessageBox::information(this,"QMTSim","Setting Position");
 			}
 				
@@ -97,8 +101,8 @@ void MainWindowImpl::readEllipse(QXmlStreamReader * xmlReader)
 							pathx = false;
 							pathy = false;
 							local_ellipse->animation->setPosAt(i / 500.0, QPointF(x,y));
-         					local_ellipse->path_x.insert(i,x);
-         					local_ellipse->path_y.insert(i,y);
+         					local_ellipse->path_x.replace(i,x);
+         					local_ellipse->path_y.replace(i,y);
 							i++;
 						}
 						
