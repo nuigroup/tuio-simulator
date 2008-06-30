@@ -43,8 +43,8 @@ SceneCursor::SceneCursor()
   void SceneCursor::mouseMoveEvent(QGraphicsSceneMouseEvent *mouseEvent)
 	{
 		//std::cout << "Cursor Mouse Move Event CursorId  " << OSCdata->ID << "\n" ;
-		OSCdata->X = (mouseEvent->scenePos()).rx()/600 ;
-		OSCdata->Y = (mouseEvent->scenePos()).ry()/400 ;
+		OSCdata->X = (mouseEvent->scenePos()).rx() ;
+		OSCdata->Y = (mouseEvent->scenePos()).ry() ;
 		OSCdata->packetUpdate = true ;
 		QGraphicsItem::mouseMoveEvent(mouseEvent);
 

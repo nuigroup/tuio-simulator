@@ -59,6 +59,7 @@ void DialogImpl::addNewItem()
     
     mywin->tangibleId++ ;
     item->OSCdata->ID = mywin->tangibleId ;
+    item->OSCdata->tagID = mywin->tangibleId ;
     
     QBrush *local_brush = new QBrush;
     item->colour = qvariant_cast<QColor>(fillColourComboBox->itemData(fillColourComboBox->currentIndex()));    

@@ -12,6 +12,7 @@ void MainWindowImpl::readEllipse(QXmlStreamReader * xmlReader)
 	
     tangibleId++ ;
     local_ellipse->OSCdata->ID = tangibleId ;
+    local_ellipse->OSCdata->tagID = tangibleId ;
 
 	
 	while (!xmlReader->atEnd())

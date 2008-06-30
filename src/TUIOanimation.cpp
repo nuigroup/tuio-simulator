@@ -24,8 +24,8 @@ void TUIOanimation::afterAnimationStep( qreal step )
 	QGraphicsItem *localItem = item();
 	Tangible_Type *myTangible = dynamic_cast<Tangible_Type*>(localItem);
 	myTangible->OSCdata->packetUpdate = true ;
-	myTangible->OSCdata->X = (localItem->scenePos()).rx()/600;
-	myTangible->OSCdata->Y = (localItem->scenePos()).ry()/400;
+	myTangible->OSCdata->X = (localItem->scenePos()).rx();
+	myTangible->OSCdata->Y = (localItem->scenePos()).ry();
 	
 	
 	

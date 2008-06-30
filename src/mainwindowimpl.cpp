@@ -68,7 +68,7 @@ MainWindowImpl::MainWindowImpl( QWidget * parent, Qt::WFlags f)
 	int port = PORT;
 	mainSender->connectSocket(ip_address,port);
 	
-	packetTimer->setInterval(40);
+	packetTimer->setInterval(100);
 	count = 0 ;
 	
 
@@ -91,6 +91,8 @@ MainWindowImpl::MainWindowImpl( QWidget * parent, Qt::WFlags f)
 	connect(startTxButton,SIGNAL(clicked()),this,SLOT(startTx()));
 	connect(packetTimer,SIGNAL(timeout()),this,SLOT(restartPacketTimer()));
 	connect(resetButton,SIGNAL(clicked()),this,SLOT(resetTx()));
+	
+	t.start();
 
     //item->animation->setItem(item);
     //item->animation->setTimeLine(timer);
@@ -228,6 +230,7 @@ void MainWindowImpl::startTx()
 	{
 		
 		packetTimer->stop();
+		mainSender->lastTime = t.elapsed();
 		this->txStarted = false ;
 		startTxButton->setText("Start Transmission");
 		

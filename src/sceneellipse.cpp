@@ -65,8 +65,8 @@ SceneEllipse::SceneEllipse()
   void SceneEllipse::mouseMoveEvent(QGraphicsSceneMouseEvent *mouseEvent)
 	{
 		//std::cout << "Ellipse Mouse Move Event TangibleId  " << OSCdata->ID << "\n" ;
-		OSCdata->X = (mouseEvent->scenePos()).rx()/600 ;
-		OSCdata->Y = (mouseEvent->scenePos()).ry()/400 ;
+		OSCdata->X = (mouseEvent->scenePos()).rx() ;
+		OSCdata->Y = (mouseEvent->scenePos()).ry() ;
 		OSCdata->packetUpdate = true ;
 		QGraphicsItem::mouseMoveEvent(mouseEvent);
 

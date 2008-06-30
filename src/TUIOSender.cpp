@@ -9,6 +9,7 @@ TUIOSender::TUIOSender( MainWindowImpl *win)
 	
 	mywin = win ;
 	fseq = 0 ;
+	lastSpeed = 0.0 ;
 	transmitSocket = NULL;
 	
 	
@@ -43,24 +44,34 @@ void TUIOSender::resetTx()
 
 void TUIOSender::frame()
 {
-	int aliveItems = 0 ;
-	int aliveCursor = 0 ;
+
 	if(!transmitSocket)
 	{
 		std::cout << "Socket Not Initialized " << "\n" ;
 		return;
 	}
 	
+	int currentTime = mywin->t.elapsed() ;
+	int dt = lastTime - currentTime ;
+	lastTime = currentTime ;
+	
 	char pbuffer[OUTPUT_BUFFER_SIZE]; // for set messages 
 	char qbuffer[OUTPUT_BUFFER_SIZE]; // for alive and fseq message
+	char qObjbuffer[OUTPUT_BUFFER_SIZE]; // for alive and fseq message
 	osc::OutboundPacketStream p( pbuffer, OUTPUT_BUFFER_SIZE );
 	osc::OutboundPacketStream q( qbuffer, OUTPUT_BUFFER_SIZE );
+	osc::OutboundPacketStream qObj( qObjbuffer, OUTPUT_BUFFER_SIZE );
 	
 	p.Clear();
 	p << osc::BeginBundle();
 	
 	q.Clear();
 	q << osc::BeginBundle();
+	qObj.Clear();
+	qObj << osc::BeginBundle();
+	
+		q << osc::BeginMessage( "/tuio/2Dcur" ) << "alive" ;
+		qObj << osc::BeginMessage( "/tuio/2Dobj" ) << "alive" ;
 	
 	if (Verbose) std::cout << "Table is active \t" << mywin->table->OSCdata->active<<"\n" ;
 
@@ -74,16 +85,16 @@ void TUIOSender::frame()
 			float dx = d->X - d->LX ;
 			float dy = d->Y - d->LY ;
 			float m = sqrtf((dx*dx) + (dy*dy));
-			p << osc::BeginMessage( "/tuio/2Dcur" ) << "set" << d->ID << d->X << d->Y << dx << dy << m << osc::EndMessage;
+			p << osc::BeginMessage( "/tuio/2Dcur" ) << "set" << d->ID << (d->X)/600 << (d->Y)/400 << dx/600 << dy/400 << m << osc::EndMessage;
 			d->LX = d->X ;
 			d->LY = d->Y ;
 			if (Verbose) std::cout << "Table Crsor set" << "\n" ;
 			mywin->table->OSCdata->packetUpdate = false ;
 		}
 		
-		q << osc::BeginMessage( "/tuio/2Dcur" ) << "alive" << d->ID << osc::EndMessage;
-		if (Verbose) std::cout << "Table Cursor alive" << "\n" ;
-		aliveCursor++ ;
+		q << d->ID ;
+	
+	
 		
 	}
 	
@@ -109,14 +120,20 @@ void TUIOSender::frame()
 			if ( myTangible->tangible_type == 3 )
 			{
 				p << osc::BeginMessage( "/tuio/2Dcur" ) ;
-				p << "set" << d->ID << d->X << d->Y << dx << dy << m << osc::EndMessage;
+				p << "set" << d->ID << (d->X)/600 << (d->Y)/400 << dx << dy << m << osc::EndMessage;
 				if (Verbose) std::cout << "Animation Cursor Set  " << "\n" ;
 			}
 			else if ( myTangible->tangible_type == 1 || myTangible->tangible_type == 2 )
 			{
 				float n = 0 ;
+				float speed = m/dt;
+				float accel = (speed - lastSpeed)/dt ;
+				lastSpeed = speed ; 
+				float newm = sqrtf(m/2);
+				//qDebug() << newm << endl ;
+
 				p << osc::BeginMessage( "/tuio/2Dobj" ) ;
-				p << "set" << d->ID  << d->tagID << d->X << d->Y << n << n << n << n  << m << n << osc::EndMessage;
+				p << "set" << d->ID  << d->tagID << (d->X)/600 << (d->Y)/400 << n << newm << newm << n  << accel << n << osc::EndMessage;
 				if (Verbose) std::cout << "Animation Object Set  " << "\n" ;
 			}
 			
@@ -127,43 +144,39 @@ void TUIOSender::frame()
 		
 			if ( myTangible->tangible_type == 3 )
 			{
-				q << osc::BeginMessage( "/tuio/2Dcur" ) ;
-				q << "alive" << d->ID << osc::EndMessage;
-				if (Verbose) std::cout << "Animation Cursor alive  " << "\n" ;
-				aliveCursor++;
+				//q << osc::BeginMessage( "/tuio/2Dcur" ) ;
+				q << d->ID ;
+							
 			}
 			else if ( myTangible->tangible_type == 1 || myTangible->tangible_type == 2  )
 			{
-				q << osc::BeginMessage( "/tuio/2Dobj" ) ;
-				q << "alive" << d->ID << osc::EndMessage;
-				if (Verbose) std::cout << "Animation Object Alive " << "\n" ;
-				aliveItems++;
+				qObj <<  d->ID ;
+				
 			}
 			
 			
 		
 	}
 	
-	if (!aliveCursor)
-		q << osc::BeginMessage( "/tuio/2Dcur" ) << "alive" << osc::EndMessage;
-	if (!aliveItems)
-		q << osc::BeginMessage( "/tuio/2Dobj" ) << "alive" << osc::EndMessage;
+	q << osc::EndMessage;
+	qObj << osc::EndMessage;
 		
 	
 	fseq++;
 	
-	q << osc::BeginMessage( "/tuio/2Dcur" ) << "fseq" << fseq << osc::EndMessage;
+	p << osc::BeginMessage( "/tuio/2Dcur" ) << "fseq" << fseq << osc::EndMessage;
 	p << osc::EndBundle;
 	q << osc::EndBundle;
 		
 	//std::cout << "P is ready " << p.IsReady() << "\n" ;
 	//std::cout << "Q is ready " << q.IsReady() << "\n" ;
 	
+	if(q.IsReady())
+		transmitSocket->Send( q.Data(), q.Size() );
 		
 	if(p.IsReady())
 		transmitSocket->Send( p.Data(), p.Size() );
-	if(q.IsReady())
-		transmitSocket->Send( q.Data(), q.Size() );
+
 	
 	
 }

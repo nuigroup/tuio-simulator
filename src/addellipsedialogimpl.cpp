@@ -46,6 +46,7 @@ void AddEllipseDialogImpl::addEllipse()
     
     mywin->tangibleId++ ;
     local_ellipse->OSCdata->ID = mywin->tangibleId ;
+    local_ellipse->OSCdata->tagID = mywin->tangibleId ;
 
     
     

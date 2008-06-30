@@ -76,8 +76,8 @@ myitem::myitem(QTimeLine* timer,QGraphicsItem *parent,QGraphicsScene *scene):QGr
   void myitem::mouseMoveEvent(QGraphicsSceneMouseEvent *mouseEvent)
 	{
 		//std::cout << "Polygon Mouse Move Event TangibleId  " << OSCdata->ID << "\n" ;
-		OSCdata->X = (mouseEvent->scenePos()).rx()/600 ;
-		OSCdata->Y = (mouseEvent->scenePos()).ry()/400 ;
+		OSCdata->X = (mouseEvent->scenePos()).rx() ;
+		OSCdata->Y = (mouseEvent->scenePos()).ry() ;
 		OSCdata->packetUpdate = true ;
 		QGraphicsItem::mouseMoveEvent(mouseEvent);
 

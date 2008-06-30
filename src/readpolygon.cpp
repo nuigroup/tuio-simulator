@@ -15,6 +15,7 @@ void MainWindowImpl::readPolygon(QXmlStreamReader * xmlReader)
 	
     tangibleId++ ;
     local_item->OSCdata->ID = tangibleId ;
+    local_item->OSCdata->tagID = tangibleId ;
 
 	
 	while (!xmlReader->atEnd())

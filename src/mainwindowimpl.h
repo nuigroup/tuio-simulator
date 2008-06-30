@@ -18,6 +18,7 @@
 #include <QXMLStreamWriter>
 #include <QXMLStreamReader>
 #include <QTimer>
+#include <QTime>
 #include "item.h"
 #include "addellipsedialogimpl.h"
 #include "addcusordialogimpl.h"
@@ -42,6 +43,7 @@ public:
 	
     QGraphicsScene *scene ;
     QTimeLine *timer;
+    QTime t;
     bool animationStarted ;
     bool txStarted ;
     int framerange;

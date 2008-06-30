@@ -30,6 +30,8 @@ class TUIOSender
 			std::string ip_address; 
 			int port;
 			int fseq ;
+			int lastTime ;
+			float lastSpeed ;
 
 			void frame();
 			UdpTransmitSocket *transmitSocket;
