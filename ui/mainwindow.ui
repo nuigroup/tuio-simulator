@@ -5,14 +5,26 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>899</width>
-    <height>625</height>
+    <width>1200</width>
+    <height>636</height>
    </rect>
+  </property>
+  <property name="sizePolicy" >
+   <sizepolicy vsizetype="Expanding" hsizetype="Expanding" >
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="minimumSize" >
    <size>
-    <width>100</width>
-    <height>100</height>
+    <width>1200</width>
+    <height>636</height>
+   </size>
+  </property>
+  <property name="maximumSize" >
+   <size>
+    <width>1200</width>
+    <height>636</height>
    </size>
   </property>
   <property name="windowTitle" >
@@ -27,13 +39,25 @@
     <rect>
      <x>0</x>
      <y>33</y>
-     <width>899</width>
-     <height>573</height>
+     <width>1200</width>
+     <height>584</height>
     </rect>
    </property>
-   <layout class="QGridLayout" name="gridLayout" >
-    <item row="0" column="0" colspan="13" >
+   <layout class="QGridLayout" name="gridLayout_2" >
+    <item row="0" column="0" >
      <widget class="QGraphicsView" name="view" >
+      <property name="sizePolicy" >
+       <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize" >
+       <size>
+        <width>930</width>
+        <height>500</height>
+       </size>
+      </property>
       <property name="cursor" stdset="0" >
        <cursorShape>PointingHandCursor</cursorShape>
       </property>
@@ -42,133 +66,259 @@
       </property>
      </widget>
     </item>
-    <item row="1" column="0" >
-     <widget class="QPushButton" name="addItemButton" >
-      <property name="text" >
-       <string>Add Polygon</string>
+    <item row="0" column="1" >
+     <widget class="QGroupBox" name="groupBox" >
+      <property name="sizePolicy" >
+       <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
       </property>
-     </widget>
-    </item>
-    <item row="1" column="1" >
-     <widget class="QPushButton" name="setPathButton" >
-      <property name="text" >
-       <string>Set Path</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="2" >
-     <widget class="QPushButton" name="startAnimationButton" >
-      <property name="text" >
-       <string>Start Animation</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="3" >
-     <widget class="QRadioButton" name="startAnimation_Radio" >
-      <property name="text" >
-       <string/>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="4" colspan="2" >
-     <widget class="QProgressBar" name="animationProgressBar" >
-      <property name="value" >
-       <number>24</number>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="6" colspan="2" >
-     <widget class="QSpinBox" name="animationtime" >
-      <property name="statusTip" >
-       <string>Time in milliseconds</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="8" colspan="2" >
-     <widget class="QPushButton" name="setAnimationTimeButton" >
-      <property name="text" >
-       <string>Set Animation Time</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="10" colspan="3" >
-     <widget class="QSlider" name="animationSlider" >
-      <property name="cursor" >
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="orientation" >
-       <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="0" >
-     <widget class="QPushButton" name="addEllipseButton" >
-      <property name="text" >
-       <string>Add Ellipse</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="1" >
-     <widget class="QPushButton" name="addCursorButton" >
-      <property name="text" >
-       <string>Add Cursor</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="2" >
-     <widget class="QPushButton" name="deleteItemButton" >
-      <property name="text" >
-       <string>Delete Item</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="3" colspan="2" >
-     <widget class="QPushButton" name="saveItemButton" >
-      <property name="text" >
-       <string>Save Item</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="5" colspan="2" >
-     <widget class="QPushButton" name="uploadItemButton" >
-      <property name="text" >
-       <string>Upload Item</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="7" colspan="2" >
-     <widget class="QPushButton" name="startTxButton" >
-      <property name="text" >
-       <string>Start Transmission</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="9" colspan="2" >
-     <widget class="QPushButton" name="configureButton" >
-      <property name="text" >
-       <string>Configure Transmission</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="11" >
-     <widget class="QPushButton" name="resetButton" >
-      <property name="text" >
-       <string>Reset</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="12" >
-     <spacer name="horizontalSpacer" >
-      <property name="orientation" >
-       <enum>Qt::Horizontal</enum>
-      </property>
-      <property name="sizeHint" stdset="0" >
+      <property name="minimumSize" >
        <size>
-        <width>240</width>
-        <height>20</height>
+        <width>221</width>
+        <height>491</height>
        </size>
       </property>
-     </spacer>
+      <property name="maximumSize" >
+       <size>
+        <width>221</width>
+        <height>491</height>
+       </size>
+      </property>
+      <property name="title" >
+       <string>Debug Window</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout" >
+       <item row="0" column="0" >
+        <widget class="QLabel" name="fseqLabel" >
+         <property name="text" >
+          <string>Fseq  : </string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" >
+        <widget class="QLabel" name="label" >
+         <property name="text" >
+          <string>Alive Cursors</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" >
+        <widget class="QListWidget" name="aliveCursorList" >
+         <property name="maximumSize" >
+          <size>
+           <width>200</width>
+           <height>95</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0" >
+        <widget class="QLabel" name="label_2" >
+         <property name="text" >
+          <string>Cursor Set</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0" >
+        <widget class="QListWidget" name="setCursorList" >
+         <property name="maximumSize" >
+          <size>
+           <width>200</width>
+           <height>95</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0" >
+        <widget class="QLabel" name="label_3" >
+         <property name="text" >
+          <string>Alive Object</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0" >
+        <widget class="QListWidget" name="aliveObjectList" >
+         <property name="maximumSize" >
+          <size>
+           <width>200</width>
+           <height>95</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0" >
+        <widget class="QLabel" name="label_4" >
+         <property name="text" >
+          <string>Object Set</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="0" >
+        <widget class="QListWidget" name="setObjectList" >
+         <property name="maximumSize" >
+          <size>
+           <width>200</width>
+           <height>95</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="1" column="0" >
+     <layout class="QHBoxLayout" name="horizontalLayout" >
+      <property name="sizeConstraint" >
+       <enum>QLayout::SetFixedSize</enum>
+      </property>
+      <item>
+       <widget class="QPushButton" name="addItemButton" >
+        <property name="text" >
+         <string>Add Polygon</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="setPathButton" >
+        <property name="text" >
+         <string>Set Path</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="startAnimationButton" >
+        <property name="text" >
+         <string>Start Animation</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="startAnimation_Radio" >
+        <property name="text" >
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QProgressBar" name="animationProgressBar" >
+        <property name="value" >
+         <number>24</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSpinBox" name="animationtime" >
+        <property name="statusTip" >
+         <string>Time in milliseconds</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="setAnimationTimeButton" >
+        <property name="text" >
+         <string>Set Animation Time</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSlider" name="animationSlider" >
+        <property name="cursor" >
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="2" column="0" >
+     <layout class="QHBoxLayout" name="horizontalLayout_2" >
+      <property name="sizeConstraint" >
+       <enum>QLayout::SetFixedSize</enum>
+      </property>
+      <item>
+       <widget class="QPushButton" name="addEllipseButton" >
+        <property name="text" >
+         <string>Add Ellipse</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="addCursorButton" >
+        <property name="text" >
+         <string>Add Cursor</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="deleteItemButton" >
+        <property name="text" >
+         <string>Delete Item</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="saveItemButton" >
+        <property name="text" >
+         <string>Save Item</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="uploadItemButton" >
+        <property name="text" >
+         <string>Upload Item</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="startTxButton" >
+        <property name="text" >
+         <string>Start Transmission</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="configureButton" >
+        <property name="text" >
+         <string>Configure Transmission</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="resetButton" >
+        <property name="text" >
+         <string>Reset</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="debugButton" >
+        <property name="text" >
+         <string>Debug</string>
+        </property>
+        <property name="checkable" >
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer" >
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0" >
+         <size>
+          <width>78</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
     </item>
    </layout>
   </widget>
@@ -177,7 +327,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>899</width>
+     <width>1200</width>
      <height>21</height>
     </rect>
    </property>
@@ -186,8 +336,8 @@
    <property name="geometry" >
     <rect>
      <x>0</x>
-     <y>606</y>
-     <width>899</width>
+     <y>617</y>
+     <width>1200</width>
      <height>19</height>
     </rect>
    </property>
@@ -197,7 +347,7 @@
     <rect>
      <x>0</x>
      <y>21</y>
-     <width>899</width>
+     <width>1200</width>
      <height>12</height>
     </rect>
    </property>
@@ -223,12 +373,28 @@
    <slot>toggle()</slot>
    <hints>
     <hint type="sourcelabel" >
-     <x>212</x>
-     <y>567</y>
+     <x>253</x>
+     <y>575</y>
     </hint>
     <hint type="destinationlabel" >
-     <x>272</x>
-     <y>567</y>
+     <x>285</x>
+     <y>571</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>debugButton</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>groupBox</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>778</x>
+     <y>595</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>1097</x>
+     <y>540</y>
     </hint>
    </hints>
   </connection>

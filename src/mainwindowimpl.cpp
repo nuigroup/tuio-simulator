@@ -25,6 +25,8 @@ MainWindowImpl::MainWindowImpl( QWidget * parent, Qt::WFlags f)
 	
 	framerange = 500;
 	setupUi(this);
+	layout()->setSizeConstraint(QLayout::SetFixedSize);
+	groupBox->hide();
 	animationSlider->setTickInterval(framerange/10);
 	animationSlider->setTracking(false);
 	animationSlider->setRange(0,framerange);

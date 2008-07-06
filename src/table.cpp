@@ -21,7 +21,7 @@ Table::Table(MainWindowImpl *win)
 
 		
 		OSCdata->active = false ;
-		std::cout << "Table Mouse Release Event CursorId  "<< OSCdata->ID << "\n" ;
+		//std::cout << "Table Mouse Release Event CursorId  "<< OSCdata->ID << "\n" ;
 		QGraphicsItem::mouseReleaseEvent(mouseEvent);
 
 
@@ -33,7 +33,7 @@ Table::Table(MainWindowImpl *win)
 		mywin->cursorId++;
 		OSCdata->ID = mywin->cursorId;
 		OSCdata->active = true ;
-		std::cout << "Table Mouse Press Event CursorId  "<< OSCdata->ID << "\n" ;
+		//std::cout << "Table Mouse Press Event CursorId  "<< OSCdata->ID << "\n" ;
 		presentPos = mouseEvent->scenePos();
 		OSCdata->X = presentPos.rx() ;
 		OSCdata->Y = presentPos.ry();
@@ -47,7 +47,7 @@ Table::Table(MainWindowImpl *win)
 	
   void Table::mouseMoveEvent(QGraphicsSceneMouseEvent *mouseEvent)
 	{
-		std::cout << "Table Mouse Move Event  Cursor Id  "<< OSCdata->ID << "\n" ;
+		//std::cout << "Table Mouse Move Event  Cursor Id  "<< OSCdata->ID << "\n" ;
 		OSCdata->X = (mouseEvent->scenePos()).rx() ;
 		OSCdata->Y = (mouseEvent->scenePos()).ry() ;
 		mywin->table->OSCdata->packetUpdate = true ;

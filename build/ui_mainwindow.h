@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'mainwindow.ui'
 **
-** Created: Tue Jul 1 01:16:55 2008
+** Created: Sun Jul 6 09:47:50 2008
 **      by: Qt User Interface Compiler version 4.4.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -16,6 +16,10 @@
 #include <QtGui/QButtonGroup>
 #include <QtGui/QGraphicsView>
 #include <QtGui/QGridLayout>
+#include <QtGui/QGroupBox>
+#include <QtGui/QHBoxLayout>
+#include <QtGui/QLabel>
+#include <QtGui/QListWidget>
 #include <QtGui/QMainWindow>
 #include <QtGui/QMenuBar>
 #include <QtGui/QProgressBar>
@@ -34,8 +38,20 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QGridLayout *gridLayout;
+    QGridLayout *gridLayout_2;
     QGraphicsView *view;
+    QGroupBox *groupBox;
+    QGridLayout *gridLayout;
+    QLabel *fseqLabel;
+    QLabel *label;
+    QListWidget *aliveCursorList;
+    QLabel *label_2;
+    QListWidget *setCursorList;
+    QLabel *label_3;
+    QListWidget *aliveObjectList;
+    QLabel *label_4;
+    QListWidget *setObjectList;
+    QHBoxLayout *horizontalLayout;
     QPushButton *addItemButton;
     QPushButton *setPathButton;
     QPushButton *startAnimationButton;
@@ -44,6 +60,7 @@ public:
     QSpinBox *animationtime;
     QPushButton *setAnimationTimeButton;
     QSlider *animationSlider;
+    QHBoxLayout *horizontalLayout_2;
     QPushButton *addEllipseButton;
     QPushButton *addCursorButton;
     QPushButton *deleteItemButton;
@@ -52,6 +69,7 @@ public:
     QPushButton *startTxButton;
     QPushButton *configureButton;
     QPushButton *resetButton;
+    QPushButton *debugButton;
     QSpacerItem *horizontalSpacer;
     QMenuBar *menubar;
     QStatusBar *statusbar;
@@ -61,125 +79,216 @@ public:
     {
     if (MainWindow->objectName().isEmpty())
         MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-    MainWindow->resize(899, 625);
-    MainWindow->setMinimumSize(QSize(100, 100));
+    MainWindow->resize(1200, 636);
+    QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    sizePolicy.setHorizontalStretch(0);
+    sizePolicy.setVerticalStretch(0);
+    sizePolicy.setHeightForWidth(MainWindow->sizePolicy().hasHeightForWidth());
+    MainWindow->setSizePolicy(sizePolicy);
+    MainWindow->setMinimumSize(QSize(1200, 636));
+    MainWindow->setMaximumSize(QSize(1200, 636));
     QIcon icon;
     icon.addPixmap(QPixmap(QString::fromUtf8(":/newPrefix/logo.jpg")), QIcon::Normal, QIcon::Off);
     MainWindow->setWindowIcon(icon);
     centralwidget = new QWidget(MainWindow);
     centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
-    centralwidget->setGeometry(QRect(0, 33, 899, 573));
-    gridLayout = new QGridLayout(centralwidget);
-    gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+    centralwidget->setGeometry(QRect(0, 33, 1200, 584));
+    gridLayout_2 = new QGridLayout(centralwidget);
+    gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
     view = new QGraphicsView(centralwidget);
     view->setObjectName(QString::fromUtf8("view"));
+    QSizePolicy sizePolicy1(QSizePolicy::Fixed, QSizePolicy::Fixed);
+    sizePolicy1.setHorizontalStretch(0);
+    sizePolicy1.setVerticalStretch(0);
+    sizePolicy1.setHeightForWidth(view->sizePolicy().hasHeightForWidth());
+    view->setSizePolicy(sizePolicy1);
+    view->setMinimumSize(QSize(930, 500));
     view->viewport()->setProperty("cursor", QVariant(QCursor(Qt::PointingHandCursor)));
 
-    gridLayout->addWidget(view, 0, 0, 1, 13);
+    gridLayout_2->addWidget(view, 0, 0, 1, 1);
 
+    groupBox = new QGroupBox(centralwidget);
+    groupBox->setObjectName(QString::fromUtf8("groupBox"));
+    sizePolicy1.setHeightForWidth(groupBox->sizePolicy().hasHeightForWidth());
+    groupBox->setSizePolicy(sizePolicy1);
+    groupBox->setMinimumSize(QSize(221, 491));
+    groupBox->setMaximumSize(QSize(221, 491));
+    gridLayout = new QGridLayout(groupBox);
+    gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+    fseqLabel = new QLabel(groupBox);
+    fseqLabel->setObjectName(QString::fromUtf8("fseqLabel"));
+
+    gridLayout->addWidget(fseqLabel, 0, 0, 1, 1);
+
+    label = new QLabel(groupBox);
+    label->setObjectName(QString::fromUtf8("label"));
+
+    gridLayout->addWidget(label, 1, 0, 1, 1);
+
+    aliveCursorList = new QListWidget(groupBox);
+    aliveCursorList->setObjectName(QString::fromUtf8("aliveCursorList"));
+    aliveCursorList->setMaximumSize(QSize(200, 95));
+
+    gridLayout->addWidget(aliveCursorList, 2, 0, 1, 1);
+
+    label_2 = new QLabel(groupBox);
+    label_2->setObjectName(QString::fromUtf8("label_2"));
+
+    gridLayout->addWidget(label_2, 3, 0, 1, 1);
+
+    setCursorList = new QListWidget(groupBox);
+    setCursorList->setObjectName(QString::fromUtf8("setCursorList"));
+    setCursorList->setMaximumSize(QSize(200, 95));
+
+    gridLayout->addWidget(setCursorList, 4, 0, 1, 1);
+
+    label_3 = new QLabel(groupBox);
+    label_3->setObjectName(QString::fromUtf8("label_3"));
+
+    gridLayout->addWidget(label_3, 5, 0, 1, 1);
+
+    aliveObjectList = new QListWidget(groupBox);
+    aliveObjectList->setObjectName(QString::fromUtf8("aliveObjectList"));
+    aliveObjectList->setMaximumSize(QSize(200, 95));
+
+    gridLayout->addWidget(aliveObjectList, 6, 0, 1, 1);
+
+    label_4 = new QLabel(groupBox);
+    label_4->setObjectName(QString::fromUtf8("label_4"));
+
+    gridLayout->addWidget(label_4, 7, 0, 1, 1);
+
+    setObjectList = new QListWidget(groupBox);
+    setObjectList->setObjectName(QString::fromUtf8("setObjectList"));
+    setObjectList->setMaximumSize(QSize(200, 95));
+
+    gridLayout->addWidget(setObjectList, 8, 0, 1, 1);
+
+
+    gridLayout_2->addWidget(groupBox, 0, 1, 1, 1);
+
+    horizontalLayout = new QHBoxLayout();
+    horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+    horizontalLayout->setSizeConstraint(QLayout::SetFixedSize);
     addItemButton = new QPushButton(centralwidget);
     addItemButton->setObjectName(QString::fromUtf8("addItemButton"));
 
-    gridLayout->addWidget(addItemButton, 1, 0, 1, 1);
+    horizontalLayout->addWidget(addItemButton);
 
     setPathButton = new QPushButton(centralwidget);
     setPathButton->setObjectName(QString::fromUtf8("setPathButton"));
 
-    gridLayout->addWidget(setPathButton, 1, 1, 1, 1);
+    horizontalLayout->addWidget(setPathButton);
 
     startAnimationButton = new QPushButton(centralwidget);
     startAnimationButton->setObjectName(QString::fromUtf8("startAnimationButton"));
 
-    gridLayout->addWidget(startAnimationButton, 1, 2, 1, 1);
+    horizontalLayout->addWidget(startAnimationButton);
 
     startAnimation_Radio = new QRadioButton(centralwidget);
     startAnimation_Radio->setObjectName(QString::fromUtf8("startAnimation_Radio"));
 
-    gridLayout->addWidget(startAnimation_Radio, 1, 3, 1, 1);
+    horizontalLayout->addWidget(startAnimation_Radio);
 
     animationProgressBar = new QProgressBar(centralwidget);
     animationProgressBar->setObjectName(QString::fromUtf8("animationProgressBar"));
     animationProgressBar->setValue(24);
 
-    gridLayout->addWidget(animationProgressBar, 1, 4, 1, 2);
+    horizontalLayout->addWidget(animationProgressBar);
 
     animationtime = new QSpinBox(centralwidget);
     animationtime->setObjectName(QString::fromUtf8("animationtime"));
 
-    gridLayout->addWidget(animationtime, 1, 6, 1, 2);
+    horizontalLayout->addWidget(animationtime);
 
     setAnimationTimeButton = new QPushButton(centralwidget);
     setAnimationTimeButton->setObjectName(QString::fromUtf8("setAnimationTimeButton"));
 
-    gridLayout->addWidget(setAnimationTimeButton, 1, 8, 1, 2);
+    horizontalLayout->addWidget(setAnimationTimeButton);
 
     animationSlider = new QSlider(centralwidget);
     animationSlider->setObjectName(QString::fromUtf8("animationSlider"));
     animationSlider->setCursor(QCursor(Qt::PointingHandCursor));
     animationSlider->setOrientation(Qt::Horizontal);
 
-    gridLayout->addWidget(animationSlider, 1, 10, 1, 3);
+    horizontalLayout->addWidget(animationSlider);
 
+
+    gridLayout_2->addLayout(horizontalLayout, 1, 0, 1, 1);
+
+    horizontalLayout_2 = new QHBoxLayout();
+    horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
+    horizontalLayout_2->setSizeConstraint(QLayout::SetFixedSize);
     addEllipseButton = new QPushButton(centralwidget);
     addEllipseButton->setObjectName(QString::fromUtf8("addEllipseButton"));
 
-    gridLayout->addWidget(addEllipseButton, 2, 0, 1, 1);
+    horizontalLayout_2->addWidget(addEllipseButton);
 
     addCursorButton = new QPushButton(centralwidget);
     addCursorButton->setObjectName(QString::fromUtf8("addCursorButton"));
 
-    gridLayout->addWidget(addCursorButton, 2, 1, 1, 1);
+    horizontalLayout_2->addWidget(addCursorButton);
 
     deleteItemButton = new QPushButton(centralwidget);
     deleteItemButton->setObjectName(QString::fromUtf8("deleteItemButton"));
 
-    gridLayout->addWidget(deleteItemButton, 2, 2, 1, 1);
+    horizontalLayout_2->addWidget(deleteItemButton);
 
     saveItemButton = new QPushButton(centralwidget);
     saveItemButton->setObjectName(QString::fromUtf8("saveItemButton"));
 
-    gridLayout->addWidget(saveItemButton, 2, 3, 1, 2);
+    horizontalLayout_2->addWidget(saveItemButton);
 
     uploadItemButton = new QPushButton(centralwidget);
     uploadItemButton->setObjectName(QString::fromUtf8("uploadItemButton"));
 
-    gridLayout->addWidget(uploadItemButton, 2, 5, 1, 2);
+    horizontalLayout_2->addWidget(uploadItemButton);
 
     startTxButton = new QPushButton(centralwidget);
     startTxButton->setObjectName(QString::fromUtf8("startTxButton"));
 
-    gridLayout->addWidget(startTxButton, 2, 7, 1, 2);
+    horizontalLayout_2->addWidget(startTxButton);
 
     configureButton = new QPushButton(centralwidget);
     configureButton->setObjectName(QString::fromUtf8("configureButton"));
 
-    gridLayout->addWidget(configureButton, 2, 9, 1, 2);
+    horizontalLayout_2->addWidget(configureButton);
 
     resetButton = new QPushButton(centralwidget);
     resetButton->setObjectName(QString::fromUtf8("resetButton"));
 
-    gridLayout->addWidget(resetButton, 2, 11, 1, 1);
+    horizontalLayout_2->addWidget(resetButton);
 
-    horizontalSpacer = new QSpacerItem(240, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+    debugButton = new QPushButton(centralwidget);
+    debugButton->setObjectName(QString::fromUtf8("debugButton"));
+    debugButton->setCheckable(true);
 
-    gridLayout->addItem(horizontalSpacer, 2, 12, 1, 1);
+    horizontalLayout_2->addWidget(debugButton);
+
+    horizontalSpacer = new QSpacerItem(78, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+    horizontalLayout_2->addItem(horizontalSpacer);
+
+
+    gridLayout_2->addLayout(horizontalLayout_2, 2, 0, 1, 1);
 
     MainWindow->setCentralWidget(centralwidget);
     menubar = new QMenuBar(MainWindow);
     menubar->setObjectName(QString::fromUtf8("menubar"));
-    menubar->setGeometry(QRect(0, 0, 899, 21));
+    menubar->setGeometry(QRect(0, 0, 1200, 21));
     MainWindow->setMenuBar(menubar);
     statusbar = new QStatusBar(MainWindow);
     statusbar->setObjectName(QString::fromUtf8("statusbar"));
-    statusbar->setGeometry(QRect(0, 606, 899, 19));
+    statusbar->setGeometry(QRect(0, 617, 1200, 19));
     MainWindow->setStatusBar(statusbar);
     toolBar = new QToolBar(MainWindow);
     toolBar->setObjectName(QString::fromUtf8("toolBar"));
-    toolBar->setGeometry(QRect(0, 21, 899, 12));
+    toolBar->setGeometry(QRect(0, 21, 1200, 12));
     MainWindow->addToolBar(Qt::TopToolBarArea, toolBar);
 
     retranslateUi(MainWindow);
     QObject::connect(startAnimationButton, SIGNAL(clicked()), startAnimation_Radio, SLOT(toggle()));
+    QObject::connect(debugButton, SIGNAL(toggled(bool)), groupBox, SLOT(setVisible(bool)));
 
     QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
@@ -192,6 +301,12 @@ public:
     view->setToolTip(QString());
 #endif // QT_NO_TOOLTIP
 
+    groupBox->setTitle(QApplication::translate("MainWindow", "Debug Window", 0, QApplication::UnicodeUTF8));
+    fseqLabel->setText(QApplication::translate("MainWindow", "Fseq  : ", 0, QApplication::UnicodeUTF8));
+    label->setText(QApplication::translate("MainWindow", "Alive Cursors", 0, QApplication::UnicodeUTF8));
+    label_2->setText(QApplication::translate("MainWindow", "Cursor Set", 0, QApplication::UnicodeUTF8));
+    label_3->setText(QApplication::translate("MainWindow", "Alive Object", 0, QApplication::UnicodeUTF8));
+    label_4->setText(QApplication::translate("MainWindow", "Object Set", 0, QApplication::UnicodeUTF8));
     addItemButton->setText(QApplication::translate("MainWindow", "Add Polygon", 0, QApplication::UnicodeUTF8));
     setPathButton->setText(QApplication::translate("MainWindow", "Set Path", 0, QApplication::UnicodeUTF8));
     startAnimationButton->setText(QApplication::translate("MainWindow", "Start Animation", 0, QApplication::UnicodeUTF8));
@@ -210,6 +325,7 @@ public:
     startTxButton->setText(QApplication::translate("MainWindow", "Start Transmission", 0, QApplication::UnicodeUTF8));
     configureButton->setText(QApplication::translate("MainWindow", "Configure Transmission", 0, QApplication::UnicodeUTF8));
     resetButton->setText(QApplication::translate("MainWindow", "Reset", 0, QApplication::UnicodeUTF8));
+    debugButton->setText(QApplication::translate("MainWindow", "Debug", 0, QApplication::UnicodeUTF8));
     toolBar->setWindowTitle(QApplication::translate("MainWindow", "toolBar", 0, QApplication::UnicodeUTF8));
     Q_UNUSED(MainWindow);
     } // retranslateUi

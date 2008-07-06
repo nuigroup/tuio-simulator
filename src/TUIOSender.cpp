@@ -1,6 +1,8 @@
 #include "TUIOSender.h"
 #include "tangible_type.h"
 #include <iostream>
+#include <QString>
+#include <QLabel>
 
 static bool Verbose = false ;
 
@@ -37,13 +39,23 @@ void TUIOSender::resetTx()
 	q << osc::BeginBundle();
 	q << osc::BeginMessage( "/tuio/2Dcur" ) << "alive" << osc::EndMessage;
 	q << osc::BeginMessage( "/tuio/2Dobj" ) << "alive" << osc::EndMessage;
+	mywin->aliveCursorList->clear();
+	mywin->aliveObjectList->clear();
+	mywin->setCursorList->clear();
+	mywin->setObjectList->clear();
+	mywin->aliveCursorList->addItem("Reset");
+	mywin->aliveObjectList->addItem("Reset");
+	mywin->setObjectList->addItem("Reset");
+	mywin->setCursorList->addItem("Reset");
 	q << osc::EndBundle;
 	if(q.IsReady())
 		transmitSocket->Send( q.Data(), q.Size() );
 }
 
 void TUIOSender::frame()
-{
+{	
+	QString str_ID,str_x,str_y; // for use in debug window
+	QString aliveCursors =  "",aliveObjects = "" ;
 
 	if(!transmitSocket)
 	{
@@ -86,6 +98,8 @@ void TUIOSender::frame()
 			float dy = d->Y - d->LY ;
 			float m = sqrtf((dx*dx) + (dy*dy));
 			p << osc::BeginMessage( "/tuio/2Dcur" ) << "set" << d->ID << (d->X)/600 << (d->Y)/400 << dx/600 << dy/400 << m << osc::EndMessage;
+			mywin->setCursorList->addItem("Cursor Set   "+ str_ID.setNum(d->ID) +  "    X  " + str_x.setNum(d->X) + "     Y " + str_y.setNum(d->Y));
+			mywin->setCursorList->scrollToBottom();
 			d->LX = d->X ;
 			d->LY = d->Y ;
 			if (Verbose) std::cout << "Table Crsor set" << "\n" ;
@@ -93,6 +107,8 @@ void TUIOSender::frame()
 		}
 		
 		q << d->ID ;
+		aliveCursors += str_ID.setNum(d->ID) ;
+		aliveCursors +=  "\t" ;
 	
 	
 		
@@ -121,6 +137,8 @@ void TUIOSender::frame()
 			{
 				p << osc::BeginMessage( "/tuio/2Dcur" ) ;
 				p << "set" << d->ID << (d->X)/600 << (d->Y)/400 << dx << dy << m << osc::EndMessage;
+				mywin->setCursorList->addItem("Cursor Set   "+ str_ID.setNum(d->ID) +  "    X  " + str_x.setNum(d->X) + "     Y " + str_y.setNum(d->Y));
+				mywin->setCursorList->scrollToBottom();
 				if (Verbose) std::cout << "Animation Cursor Set  " << "\n" ;
 			}
 			else if ( myTangible->tangible_type == 1 || myTangible->tangible_type == 2 )
@@ -134,6 +152,8 @@ void TUIOSender::frame()
 
 				p << osc::BeginMessage( "/tuio/2Dobj" ) ;
 				p << "set" << d->ID  << d->tagID << (d->X)/600 << (d->Y)/400 << n << newm << newm << n  << accel << n << osc::EndMessage;
+				mywin->setObjectList->addItem("Object Set   "+ str_ID.setNum(d->ID) +  "    X  " + str_x.setNum(d->X) + "     Y " + str_y.setNum(d->Y));
+				mywin->setObjectList->scrollToBottom();
 				if (Verbose) std::cout << "Animation Object Set  " << "\n" ;
 			}
 			
@@ -146,11 +166,15 @@ void TUIOSender::frame()
 			{
 				//q << osc::BeginMessage( "/tuio/2Dcur" ) ;
 				q << d->ID ;
+				aliveCursors += str_ID.setNum(d->ID) ;
+				aliveCursors +=  "\t" ;
 							
 			}
 			else if ( myTangible->tangible_type == 1 || myTangible->tangible_type == 2  )
 			{
 				qObj <<  d->ID ;
+				aliveObjects += str_ID.setNum(d->ID) ;
+				aliveObjects +=  "\t" ;
 				
 			}
 			
@@ -158,11 +182,16 @@ void TUIOSender::frame()
 		
 	}
 	
+	mywin->aliveObjectList->addItem("Alive Objects   " + aliveObjects);
+	mywin->aliveObjectList->scrollToBottom();
+	mywin->aliveCursorList->addItem("Alive Cursors   " + aliveCursors);
+	mywin->aliveCursorList->scrollToBottom();
 	q << osc::EndMessage;
 	qObj << osc::EndMessage;
 		
 	
 	fseq++;
+	mywin->fseqLabel->setText("Fseq  :   " + str_x.setNum(fseq));
 	
 	p << osc::BeginMessage( "/tuio/2Dcur" ) << "fseq" << fseq << osc::EndMessage;
 	p << osc::EndBundle;
