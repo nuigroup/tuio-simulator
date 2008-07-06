@@ -107,8 +107,9 @@ void TUIOSender::frame()
 		}
 		
 		q << d->ID ;
+		aliveCursors +=  "  " ;
 		aliveCursors += str_ID.setNum(d->ID) ;
-		aliveCursors +=  "\t" ;
+		
 	
 	
 		
@@ -166,15 +167,17 @@ void TUIOSender::frame()
 			{
 				//q << osc::BeginMessage( "/tuio/2Dcur" ) ;
 				q << d->ID ;
+				aliveCursors +=  "  " ;
 				aliveCursors += str_ID.setNum(d->ID) ;
-				aliveCursors +=  "\t" ;
+				
 							
 			}
 			else if ( myTangible->tangible_type == 1 || myTangible->tangible_type == 2  )
 			{
 				qObj <<  d->ID ;
+				aliveObjects +=  "  " ;
 				aliveObjects += str_ID.setNum(d->ID) ;
-				aliveObjects +=  "\t" ;
+				
 				
 			}
 			
