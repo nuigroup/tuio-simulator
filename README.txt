@@ -1,6 +1,6 @@
 --- This page will be updated soon.
 
-For QMTSim 1.0 , when the simulator is run for the first time, the scene contains only one object.
+For QMTSim 1.0 , when the simulator is run for the first time, the scene contains no object.
 Extra customized objects can be put using the dialog.
 
 In order to move the object, drag it with the left mouse button pressed.
@@ -13,5 +13,10 @@ Add atleast three points .
 Preview the path and set it for the item.
 
 Select the time of animation and then start the animation.Pause and stop will be done by the same button.
+
+The items can be selected and saved in a XML file. Any number of objects can be saved in a file and they can be uploaded 
+again , saving the time to re-create them and set their properties.
+
+The TUIO data transmission is fully implemented and tested using TUIO Demo and TUIO Dump.Transmission can be stopped at any time and then resumed again.
 
 --The ReadMe will be made more organized soon.
