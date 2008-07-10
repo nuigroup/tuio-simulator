@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'mainwindow.ui'
 **
-** Created: Sun Jul 6 09:47:50 2008
+** Created: Fri Jul 11 00:11:25 2008
 **      by: Qt User Interface Compiler version 4.4.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -21,6 +21,7 @@
 #include <QtGui/QLabel>
 #include <QtGui/QListWidget>
 #include <QtGui/QMainWindow>
+#include <QtGui/QMenu>
 #include <QtGui/QMenuBar>
 #include <QtGui/QProgressBar>
 #include <QtGui/QPushButton>
@@ -37,6 +38,16 @@ QT_BEGIN_NAMESPACE
 class Ui_MainWindow
 {
 public:
+    QAction *actionSave;
+    QAction *actionUpload;
+    QAction *actionDebug;
+    QAction *actionReadme;
+    QAction *actionAbout_QMTSim;
+    QAction *actionExit;
+    QAction *actionAbout_Qt;
+    QAction *actionPolygon;
+    QAction *actionEllipse;
+    QAction *actionCursor;
     QWidget *centralwidget;
     QGridLayout *gridLayout_2;
     QGraphicsView *view;
@@ -72,6 +83,9 @@ public:
     QPushButton *debugButton;
     QSpacerItem *horizontalSpacer;
     QMenuBar *menubar;
+    QMenu *menuFile;
+    QMenu *menuHelp;
+    QMenu *menuAdd;
     QStatusBar *statusbar;
     QToolBar *toolBar;
 
@@ -90,6 +104,26 @@ public:
     QIcon icon;
     icon.addPixmap(QPixmap(QString::fromUtf8(":/newPrefix/logo.jpg")), QIcon::Normal, QIcon::Off);
     MainWindow->setWindowIcon(icon);
+    actionSave = new QAction(MainWindow);
+    actionSave->setObjectName(QString::fromUtf8("actionSave"));
+    actionUpload = new QAction(MainWindow);
+    actionUpload->setObjectName(QString::fromUtf8("actionUpload"));
+    actionDebug = new QAction(MainWindow);
+    actionDebug->setObjectName(QString::fromUtf8("actionDebug"));
+    actionReadme = new QAction(MainWindow);
+    actionReadme->setObjectName(QString::fromUtf8("actionReadme"));
+    actionAbout_QMTSim = new QAction(MainWindow);
+    actionAbout_QMTSim->setObjectName(QString::fromUtf8("actionAbout_QMTSim"));
+    actionExit = new QAction(MainWindow);
+    actionExit->setObjectName(QString::fromUtf8("actionExit"));
+    actionAbout_Qt = new QAction(MainWindow);
+    actionAbout_Qt->setObjectName(QString::fromUtf8("actionAbout_Qt"));
+    actionPolygon = new QAction(MainWindow);
+    actionPolygon->setObjectName(QString::fromUtf8("actionPolygon"));
+    actionEllipse = new QAction(MainWindow);
+    actionEllipse->setObjectName(QString::fromUtf8("actionEllipse"));
+    actionCursor = new QAction(MainWindow);
+    actionCursor->setObjectName(QString::fromUtf8("actionCursor"));
     centralwidget = new QWidget(MainWindow);
     centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
     centralwidget->setGeometry(QRect(0, 33, 1200, 584));
@@ -276,6 +310,12 @@ public:
     menubar = new QMenuBar(MainWindow);
     menubar->setObjectName(QString::fromUtf8("menubar"));
     menubar->setGeometry(QRect(0, 0, 1200, 21));
+    menuFile = new QMenu(menubar);
+    menuFile->setObjectName(QString::fromUtf8("menuFile"));
+    menuHelp = new QMenu(menubar);
+    menuHelp->setObjectName(QString::fromUtf8("menuHelp"));
+    menuAdd = new QMenu(menubar);
+    menuAdd->setObjectName(QString::fromUtf8("menuAdd"));
     MainWindow->setMenuBar(menubar);
     statusbar = new QStatusBar(MainWindow);
     statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -285,6 +325,20 @@ public:
     toolBar->setObjectName(QString::fromUtf8("toolBar"));
     toolBar->setGeometry(QRect(0, 21, 1200, 12));
     MainWindow->addToolBar(Qt::TopToolBarArea, toolBar);
+
+    menubar->addAction(menuFile->menuAction());
+    menubar->addAction(menuAdd->menuAction());
+    menubar->addAction(menuHelp->menuAction());
+    menuFile->addAction(actionSave);
+    menuFile->addAction(actionUpload);
+    menuFile->addAction(actionDebug);
+    menuFile->addAction(actionExit);
+    menuHelp->addAction(actionReadme);
+    menuHelp->addAction(actionAbout_QMTSim);
+    menuHelp->addAction(actionAbout_Qt);
+    menuAdd->addAction(actionPolygon);
+    menuAdd->addAction(actionEllipse);
+    menuAdd->addAction(actionCursor);
 
     retranslateUi(MainWindow);
     QObject::connect(startAnimationButton, SIGNAL(clicked()), startAnimation_Radio, SLOT(toggle()));
@@ -296,6 +350,16 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
     MainWindow->setWindowTitle(QApplication::translate("MainWindow", "QMTSim", 0, QApplication::UnicodeUTF8));
+    actionSave->setText(QApplication::translate("MainWindow", "Save", 0, QApplication::UnicodeUTF8));
+    actionUpload->setText(QApplication::translate("MainWindow", "Upload", 0, QApplication::UnicodeUTF8));
+    actionDebug->setText(QApplication::translate("MainWindow", "Debug", 0, QApplication::UnicodeUTF8));
+    actionReadme->setText(QApplication::translate("MainWindow", "Readme", 0, QApplication::UnicodeUTF8));
+    actionAbout_QMTSim->setText(QApplication::translate("MainWindow", "About QMTSim", 0, QApplication::UnicodeUTF8));
+    actionExit->setText(QApplication::translate("MainWindow", "Exit", 0, QApplication::UnicodeUTF8));
+    actionAbout_Qt->setText(QApplication::translate("MainWindow", "About Qt", 0, QApplication::UnicodeUTF8));
+    actionPolygon->setText(QApplication::translate("MainWindow", "Polygon", 0, QApplication::UnicodeUTF8));
+    actionEllipse->setText(QApplication::translate("MainWindow", "Ellipse", 0, QApplication::UnicodeUTF8));
+    actionCursor->setText(QApplication::translate("MainWindow", "Cursor", 0, QApplication::UnicodeUTF8));
 
 #ifndef QT_NO_TOOLTIP
     view->setToolTip(QString());
@@ -326,8 +390,10 @@ public:
     configureButton->setText(QApplication::translate("MainWindow", "Configure Transmission", 0, QApplication::UnicodeUTF8));
     resetButton->setText(QApplication::translate("MainWindow", "Reset", 0, QApplication::UnicodeUTF8));
     debugButton->setText(QApplication::translate("MainWindow", "Debug", 0, QApplication::UnicodeUTF8));
+    menuFile->setTitle(QApplication::translate("MainWindow", "File", 0, QApplication::UnicodeUTF8));
+    menuHelp->setTitle(QApplication::translate("MainWindow", "Help", 0, QApplication::UnicodeUTF8));
+    menuAdd->setTitle(QApplication::translate("MainWindow", "Add", 0, QApplication::UnicodeUTF8));
     toolBar->setWindowTitle(QApplication::translate("MainWindow", "toolBar", 0, QApplication::UnicodeUTF8));
-    Q_UNUSED(MainWindow);
     } // retranslateUi
 
 };

@@ -93,6 +93,18 @@ MainWindowImpl::MainWindowImpl( QWidget * parent, Qt::WFlags f)
 	connect(startTxButton,SIGNAL(clicked()),this,SLOT(startTx()));
 	connect(packetTimer,SIGNAL(timeout()),this,SLOT(restartPacketTimer()));
 	connect(resetButton,SIGNAL(clicked()),this,SLOT(resetTx()));
+	connect(actionSave, SIGNAL(triggered()), this, SLOT(saveItem()));
+	connect(actionUpload, SIGNAL(triggered()), this, SLOT(uploadItem()));
+	connect(actionExit, SIGNAL(triggered()), this, SLOT(close()));
+	connect(actionDebug, SIGNAL(triggered()), this, SLOT(showDebugWindow()));
+	connect(actionPolygon, SIGNAL(triggered()), this, SLOT(showDialog()));
+	connect(actionEllipse, SIGNAL(triggered()), this, SLOT(showAddEllipseDialog()));
+	connect(actionCursor, SIGNAL(triggered()), this, SLOT(showAddCursorDialog()));
+	connect(actionAbout_Qt, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
+	connect(actionAbout_QMTSim, SIGNAL(triggered()),this, SLOT(showAboutQMTSim()));
+
+
+	
 	
 	t.start();
 
@@ -113,6 +125,12 @@ void MainWindowImpl::resetTx()
 	startAnimationButton->setText("Start Animation");
 	this->animationStarted = false ;
 	mainSender->resetTx();
+}
+
+void MainWindowImpl::showAboutQMTSim()
+{
+	AboutQMTSimImpl *aboutSim  = new AboutQMTSimImpl();
+	aboutSim->show();
 }
 
 void MainWindowImpl::showDialog()
@@ -572,3 +590,20 @@ void MainWindowImpl::uploadItem()
     
     return;
 }
+
+void MainWindowImpl::showDebugWindow()
+{
+	if (debugButton->isDown())
+	{
+		debugButton->setDown(0);
+		groupBox->setVisible(0);
+	}
+	else 
+	{
+		debugButton->setDown(1);
+		groupBox->setVisible(1);
+	}
+
+}
+
+

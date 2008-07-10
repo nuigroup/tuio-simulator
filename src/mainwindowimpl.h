@@ -25,6 +25,7 @@
 #include "configuredialogimpl.h"
 #include "table.h"
 #include "TUIOSender.h"
+#include "aboutQMTSimImpl.h"
 #include <iostream>
 
 
@@ -75,6 +76,9 @@ void showConfigureDialog();
 void startTx();
 void restartPacketTimer();
 void resetTx();
+void showDebugWindow();
+void showAboutQMTSim();
+
 
 
 

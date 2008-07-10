@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'mainwindowimpl.h'
 **
-** Created: Sun Jul 6 09:48:42 2008
+** Created: Fri Jul 11 00:12:45 2008
 **      by: The Qt Meta Object Compiler version 59 (Qt 4.4.0)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_MainWindowImpl[] = {
        1,       // revision
        0,       // classname
        0,    0, // classinfo
-      15,   10, // methods
+      17,   10, // methods
        0,    0, // properties
        0,    0, // enums/sets
 
@@ -43,6 +43,8 @@ static const uint qt_meta_data_MainWindowImpl[] = {
      232,   15,   15,   15, 0x08,
      242,   15,   15,   15, 0x08,
      263,   15,   15,   15, 0x08,
+     273,   15,   15,   15, 0x08,
+     291,   15,   15,   15, 0x08,
 
        0        // eod
 };
@@ -55,6 +57,7 @@ static const char qt_meta_stringdata_MainWindowImpl[] = {
     "showAddEllipseDialog()\0n\0"
     "animationslidertime(int)\0showConfigureDialog()\0"
     "startTx()\0restartPacketTimer()\0resetTx()\0"
+    "showDebugWindow()\0showAboutQMTSim()\0"
 };
 
 const QMetaObject MainWindowImpl::staticMetaObject = {
@@ -99,8 +102,10 @@ int MainWindowImpl::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         case 12: startTx(); break;
         case 13: restartPacketTimer(); break;
         case 14: resetTx(); break;
+        case 15: showDebugWindow(); break;
+        case 16: showAboutQMTSim(); break;
         }
-        _id -= 15;
+        _id -= 17;
     }
     return _id;
 }
