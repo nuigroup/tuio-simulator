@@ -14,6 +14,8 @@ HEADERS = ip/IpEndpointName.h \
  src/TUIOSender.h \
  src/TUIOanimation.h \
  src/TouchData.h \
+ src/aboutQMTSim.h \
+ src/aboutQMTSimImpl.h \
  src/addcursordialog.h \
  src/addcusordialogimpl.h \
  src/addellipsedialog.h \
@@ -29,9 +31,7 @@ HEADERS = ip/IpEndpointName.h \
  src/setpathwindow.h \
  src/setpathwinodwimpl.h \
  src/table.h \
- src/tangible_type.h \
- src/aboutQMTSim.h \
- src/aboutQMTSimImpl.h
+ src/tangible_type.h
 INCLUDEPATH += ip osc
 LIBS += -lwinmm -lws2_32
 MOC_DIR = build
@@ -45,6 +45,7 @@ SOURCES = ip/IpEndpointName.cpp \
  osc/OscTypes.cpp \
  src/TUIOSender.cpp \
  src/TUIOanimation.cpp \
+ src/aboutQMTSimImpl.cpp \
  src/addcusordialogimpl.cpp \
  src/addellipsedialogimpl.cpp \
  src/configuredialogimpl.cpp \
@@ -60,7 +61,6 @@ SOURCES = ip/IpEndpointName.cpp \
  src/setpathscene.cpp \
  src/setpathwinodwimpl.cpp \
  src/table.cpp \
- src/tangible_type.cpp \
- src/aboutQMTSimImpl.cpp
+ src/tangible_type.cpp
 TEMPLATE = app
 UI_DIR = build

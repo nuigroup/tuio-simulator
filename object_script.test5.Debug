@@ -6,6 +6,7 @@ INPUT(
 ./build\OscTypes.o
 ./build\TUIOSender.o
 ./build\TUIOanimation.o
+./build\aboutQMTSimImpl.o
 ./build\addcusordialogimpl.o
 ./build\addellipsedialogimpl.o
 ./build\configuredialogimpl.o
@@ -22,13 +23,12 @@ INPUT(
 ./build\setpathwinodwimpl.o
 ./build\table.o
 ./build\tangible_type.o
-./build\aboutQMTSimImpl.o
+./build\moc_aboutQMTSimImpl.o
 ./build\moc_addcusordialogimpl.o
 ./build\moc_addellipsedialogimpl.o
 ./build\moc_dialogimpl.o
 ./build\moc_mainwindowimpl.o
 ./build\moc_setpathscene.o
 ./build\moc_setpathwinodwimpl.o
-./build\moc_aboutQMTSimImpl.o
 ./build\qrc_resource.o
 );

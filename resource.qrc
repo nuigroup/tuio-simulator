@@ -2,4 +2,34 @@
   <qresource prefix="newPrefix" >
     <file>logo.jpg</file>
   </qresource>
+  <qresource prefix="newPrefix" >
+    <file>icons/readme.png</file>
+  </qresource>
+  <qresource prefix="newPrefix" >
+    <file>icons/qt4.jpg</file>
+  </qresource>
+  <qresource prefix="newPrefix" >
+    <file>icons/about-icon2.jpg</file>
+  </qresource>
+  <qresource prefix="newPrefix" >
+    <file>icons/pointing-finger.jpg</file>
+  </qresource>
+  <qresource prefix="newPrefix" >
+    <file>icons/polygon.jpg</file>
+  </qresource>
+  <qresource prefix="newPrefix" >
+    <file>icons/System - Shutdown.png</file>
+  </qresource>
+  <qresource prefix="newPrefix" >
+    <file>icons/ellipse.gif</file>
+  </qresource>
+  <qresource prefix="newPrefix" >
+    <file>icons/upload.jpg</file>
+  </qresource>
+  <qresource prefix="newPrefix" >
+    <file>icons/debug_icon.gif</file>
+  </qresource>
+  <qresource prefix="newPrefix" >
+    <file>icons/save.jpg</file>
+  </qresource>
 </RCC>
