@@ -23,7 +23,7 @@ public:
         aboutQMTSim->setObjectName(QString::fromUtf8("aboutQMTSim"));
     aboutQMTSim->resize(459, 324);
     QIcon icon;
-    icon.addPixmap(QPixmap(QString::fromUtf8(":/newPrefix/logo.jpg")), QIcon::Normal, QIcon::Off);
+    icon.addPixmap(QPixmap(QString::fromUtf8(":/newPrefix/logo.png")), QIcon::Normal, QIcon::Off);
     aboutQMTSim->setWindowIcon(icon);
     label = new QLabel(aboutQMTSim);
     label->setObjectName(QString::fromUtf8("label"));
@@ -50,7 +50,7 @@ public:
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:14pt;\">mr.ashish.rai@gmail.com</p>\n"
 "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top"
         ":0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:14pt;\"></p>\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:14pt;\"><img src=\":/newPrefix/logo.jpg\" /></p></body></html>", 0, QApplication::UnicodeUTF8));
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:14pt;\"><img src=\":/newPrefix/logo.png\" /></p></body></html>", 0, QApplication::UnicodeUTF8));
     pushButton->setText(QApplication::translate("aboutQMTSim", "OK", 0, QApplication::UnicodeUTF8));
     Q_UNUSED(aboutQMTSim);
     } // retranslateUi

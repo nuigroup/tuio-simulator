@@ -29,7 +29,7 @@ void MainWindowImpl::readPolygon(QXmlStreamReader * xmlReader)
 				scene->addItem(local_item);
 				if ( Verbose ) std::cout << "Position is " << position_x << position_y << "\n" ;
 				local_item->moveBy(position_x,position_y);
-				std::cout << "Moving ploygon " << position_x <<"\t"<< position_y << "\n";
+				//std::cout << "Moving ploygon " << position_x <<"\t"<< position_y << "\n";
     			local_item->animation->setItem(local_item);
     			local_item->animation->setTimeLine(timer);
     			update();

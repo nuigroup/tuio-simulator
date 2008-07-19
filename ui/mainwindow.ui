@@ -32,7 +32,7 @@
   </property>
   <property name="windowIcon" >
    <iconset resource="../resource.qrc" >
-    <normaloff>:/newPrefix/logo.jpg</normaloff>:/newPrefix/logo.jpg</iconset>
+    <normaloff>:/newPrefix/logo.png</normaloff>:/newPrefix/logo.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget" >
    <property name="geometry" >
@@ -392,7 +392,7 @@
   <action name="actionSave" >
    <property name="icon" >
     <iconset resource="../resource.qrc" >
-     <normaloff>:/newPrefix/icons/save.jpg</normaloff>:/newPrefix/icons/save.jpg</iconset>
+     <normaloff>:/newPrefix/icons/save.png</normaloff>:/newPrefix/icons/save.png</iconset>
    </property>
    <property name="text" >
     <string>Save</string>
@@ -401,7 +401,7 @@
   <action name="actionUpload" >
    <property name="icon" >
     <iconset resource="../resource.qrc" >
-     <normaloff>:/newPrefix/icons/upload.jpg</normaloff>:/newPrefix/icons/upload.jpg</iconset>
+     <normaloff>:/newPrefix/icons/upload.png</normaloff>:/newPrefix/icons/upload.png</iconset>
    </property>
    <property name="text" >
     <string>Upload</string>
@@ -410,7 +410,7 @@
   <action name="actionDebug" >
    <property name="icon" >
     <iconset resource="../resource.qrc" >
-     <normaloff>:/newPrefix/icons/debug_icon.gif</normaloff>:/newPrefix/icons/debug_icon.gif</iconset>
+     <normaloff>:/newPrefix/icons/debug_icon.png</normaloff>:/newPrefix/icons/debug_icon.png</iconset>
    </property>
    <property name="text" >
     <string>Debug</string>
@@ -428,7 +428,7 @@
   <action name="actionAbout_QMTSim" >
    <property name="icon" >
     <iconset resource="../resource.qrc" >
-     <normaloff>:/newPrefix/logo.jpg</normaloff>:/newPrefix/logo.jpg</iconset>
+     <normaloff>:/newPrefix/logo.png</normaloff>:/newPrefix/logo.png</iconset>
    </property>
    <property name="text" >
     <string>About QMTSim</string>
@@ -446,7 +446,7 @@
   <action name="actionAbout_Qt" >
    <property name="icon" >
     <iconset resource="../resource.qrc" >
-     <normaloff>:/newPrefix/icons/qt4.jpg</normaloff>:/newPrefix/icons/qt4.jpg</iconset>
+     <normaloff>:/newPrefix/icons/qt4.png</normaloff>:/newPrefix/icons/qt4.png</iconset>
    </property>
    <property name="text" >
     <string>About Qt</string>
@@ -455,7 +455,7 @@
   <action name="actionPolygon" >
    <property name="icon" >
     <iconset resource="../resource.qrc" >
-     <normaloff>:/newPrefix/icons/polygon.jpg</normaloff>:/newPrefix/icons/polygon.jpg</iconset>
+     <normaloff>:/newPrefix/icons/polygon.png</normaloff>:/newPrefix/icons/polygon.png</iconset>
    </property>
    <property name="text" >
     <string>Polygon</string>
@@ -464,7 +464,7 @@
   <action name="actionEllipse" >
    <property name="icon" >
     <iconset resource="../resource.qrc" >
-     <normaloff>:/newPrefix/icons/ellipse.gif</normaloff>:/newPrefix/icons/ellipse.gif</iconset>
+     <normaloff>:/newPrefix/icons/ellipse.png</normaloff>:/newPrefix/icons/ellipse.png</iconset>
    </property>
    <property name="text" >
     <string>Ellipse</string>
@@ -473,7 +473,7 @@
   <action name="actionCursor" >
    <property name="icon" >
     <iconset resource="../resource.qrc" >
-     <normaloff>:/newPrefix/icons/pointing-finger.jpg</normaloff>:/newPrefix/icons/pointing-finger.jpg</iconset>
+     <normaloff>:/newPrefix/icons/pointing-finger.png</normaloff>:/newPrefix/icons/pointing-finger.png</iconset>
    </property>
    <property name="text" >
     <string>Cursor</string>

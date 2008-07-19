@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'mainwindow.ui'
 **
-** Created: Fri Jul 18 19:14:35 2008
+** Created: Sat Jul 19 23:22:26 2008
 **      by: Qt User Interface Compiler version 4.4.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -102,22 +102,22 @@ public:
     MainWindow->setMinimumSize(QSize(1200, 636));
     MainWindow->setMaximumSize(QSize(1200, 636));
     QIcon icon;
-    icon.addPixmap(QPixmap(QString::fromUtf8(":/newPrefix/logo.jpg")), QIcon::Normal, QIcon::Off);
+    icon.addPixmap(QPixmap(QString::fromUtf8(":/newPrefix/logo.png")), QIcon::Normal, QIcon::Off);
     MainWindow->setWindowIcon(icon);
     actionSave = new QAction(MainWindow);
     actionSave->setObjectName(QString::fromUtf8("actionSave"));
     QIcon icon1;
-    icon1.addPixmap(QPixmap(QString::fromUtf8(":/newPrefix/icons/save.jpg")), QIcon::Normal, QIcon::Off);
+    icon1.addPixmap(QPixmap(QString::fromUtf8(":/newPrefix/icons/save.png")), QIcon::Normal, QIcon::Off);
     actionSave->setIcon(icon1);
     actionUpload = new QAction(MainWindow);
     actionUpload->setObjectName(QString::fromUtf8("actionUpload"));
     QIcon icon2;
-    icon2.addPixmap(QPixmap(QString::fromUtf8(":/newPrefix/icons/upload.jpg")), QIcon::Normal, QIcon::Off);
+    icon2.addPixmap(QPixmap(QString::fromUtf8(":/newPrefix/icons/upload.png")), QIcon::Normal, QIcon::Off);
     actionUpload->setIcon(icon2);
     actionDebug = new QAction(MainWindow);
     actionDebug->setObjectName(QString::fromUtf8("actionDebug"));
     QIcon icon3;
-    icon3.addPixmap(QPixmap(QString::fromUtf8(":/newPrefix/icons/debug_icon.gif")), QIcon::Normal, QIcon::Off);
+    icon3.addPixmap(QPixmap(QString::fromUtf8(":/newPrefix/icons/debug_icon.png")), QIcon::Normal, QIcon::Off);
     actionDebug->setIcon(icon3);
     actionReadme = new QAction(MainWindow);
     actionReadme->setObjectName(QString::fromUtf8("actionReadme"));
@@ -135,22 +135,22 @@ public:
     actionAbout_Qt = new QAction(MainWindow);
     actionAbout_Qt->setObjectName(QString::fromUtf8("actionAbout_Qt"));
     QIcon icon6;
-    icon6.addPixmap(QPixmap(QString::fromUtf8(":/newPrefix/icons/qt4.jpg")), QIcon::Normal, QIcon::Off);
+    icon6.addPixmap(QPixmap(QString::fromUtf8(":/newPrefix/icons/qt4.png")), QIcon::Normal, QIcon::Off);
     actionAbout_Qt->setIcon(icon6);
     actionPolygon = new QAction(MainWindow);
     actionPolygon->setObjectName(QString::fromUtf8("actionPolygon"));
     QIcon icon7;
-    icon7.addPixmap(QPixmap(QString::fromUtf8(":/newPrefix/icons/polygon.jpg")), QIcon::Normal, QIcon::Off);
+    icon7.addPixmap(QPixmap(QString::fromUtf8(":/newPrefix/icons/polygon.png")), QIcon::Normal, QIcon::Off);
     actionPolygon->setIcon(icon7);
     actionEllipse = new QAction(MainWindow);
     actionEllipse->setObjectName(QString::fromUtf8("actionEllipse"));
     QIcon icon8;
-    icon8.addPixmap(QPixmap(QString::fromUtf8(":/newPrefix/icons/ellipse.gif")), QIcon::Normal, QIcon::Off);
+    icon8.addPixmap(QPixmap(QString::fromUtf8(":/newPrefix/icons/ellipse.png")), QIcon::Normal, QIcon::Off);
     actionEllipse->setIcon(icon8);
     actionCursor = new QAction(MainWindow);
     actionCursor->setObjectName(QString::fromUtf8("actionCursor"));
     QIcon icon9;
-    icon9.addPixmap(QPixmap(QString::fromUtf8(":/newPrefix/icons/pointing-finger.jpg")), QIcon::Normal, QIcon::Off);
+    icon9.addPixmap(QPixmap(QString::fromUtf8(":/newPrefix/icons/pointing-finger.png")), QIcon::Normal, QIcon::Off);
     actionCursor->setIcon(icon9);
     centralwidget = new QWidget(MainWindow);
     centralwidget->setObjectName(QString::fromUtf8("centralwidget"));

@@ -1,4 +1,4 @@
-CONFIG += console qt release warn_on
+CONFIG += qt release warn_on
 DESTDIR = bin
 FORMS = ui/additem.ui ui/mainwindow.ui
 HEADERS = ip/IpEndpointName.h \

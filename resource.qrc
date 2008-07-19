@@ -1,35 +1,35 @@
 <RCC>
   <qresource prefix="newPrefix" >
-    <file>logo.jpg</file>
+    <file>logo.png</file>
   </qresource>
   <qresource prefix="newPrefix" >
     <file>icons/readme.png</file>
   </qresource>
   <qresource prefix="newPrefix" >
-    <file>icons/qt4.jpg</file>
+    <file>icons/qt4.png</file>
   </qresource>
   <qresource prefix="newPrefix" >
-    <file>icons/about-icon2.jpg</file>
+    <file>icons/about-icon2.png</file>
   </qresource>
   <qresource prefix="newPrefix" >
-    <file>icons/pointing-finger.jpg</file>
+    <file>icons/pointing-finger.png</file>
   </qresource>
   <qresource prefix="newPrefix" >
-    <file>icons/polygon.jpg</file>
+    <file>icons/polygon.png</file>
   </qresource>
   <qresource prefix="newPrefix" >
     <file>icons/System - Shutdown.png</file>
   </qresource>
   <qresource prefix="newPrefix" >
-    <file>icons/ellipse.gif</file>
+    <file>icons/ellipse.png</file>
   </qresource>
   <qresource prefix="newPrefix" >
-    <file>icons/upload.jpg</file>
+    <file>icons/upload.png</file>
   </qresource>
   <qresource prefix="newPrefix" >
-    <file>icons/debug_icon.gif</file>
+    <file>icons/debug_icon.png</file>
   </qresource>
   <qresource prefix="newPrefix" >
-    <file>icons/save.jpg</file>
+    <file>icons/save.png</file>
   </qresource>
 </RCC>

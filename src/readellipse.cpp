@@ -25,7 +25,7 @@ void MainWindowImpl::readEllipse(QXmlStreamReader * xmlReader)
 
 				scene->addItem(local_ellipse);
 				local_ellipse->moveBy(position_x+w/2,position_y+h/2);
-				std::cout << "Moving ellipse " << position_x+w/2 <<"\t"<< position_y+h/2 << "\n";
+				//std::cout << "Moving ellipse " << position_x+w/2 <<"\t"<< position_y+h/2 << "\n";
     			local_ellipse->animation->setItem(local_ellipse);
     			local_ellipse->animation->setTimeLine(timer);
     			local_ellipse->w = w;

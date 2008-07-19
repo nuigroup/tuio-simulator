@@ -27,7 +27,7 @@ TUIOSender::~TUIOSender()
 void TUIOSender::connectSocket(std::string ip_address, int port)
 {
 	transmitSocket = new UdpTransmitSocket( IpEndpointName( ip_address.c_str(), port ) );
-	printf("Socket Initialized : %s Port : %i\n\n", ip_address.c_str(), port);
+	//printf("Socket Initialized : %s Port : %i\n\n", ip_address.c_str(), port);
 	fseq = 0;
 }
 
