@@ -37,7 +37,7 @@ public:
         addEllipseDialog->setObjectName(QString::fromUtf8("addEllipseDialog"));
     addEllipseDialog->resize(400, 300);
     QIcon icon;
-    icon.addPixmap(QPixmap(QString::fromUtf8(":/newPrefix/logo.jpg")), QIcon::Normal, QIcon::Off);
+    icon.addPixmap(QPixmap(QString::fromUtf8(":/newPrefix/logo.png")), QIcon::Normal, QIcon::Off);
     addEllipseDialog->setWindowIcon(icon);
     Ellipse_x = new QSpinBox(addEllipseDialog);
     Ellipse_x->setObjectName(QString::fromUtf8("Ellipse_x"));

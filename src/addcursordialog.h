@@ -33,7 +33,7 @@ public:
         addCursorDialog->setObjectName(QString::fromUtf8("addCursorDialog"));
     addCursorDialog->resize(400, 300);
     QIcon icon;
-    icon.addPixmap(QPixmap(QString::fromUtf8(":/newPrefix/logo.jpg")), QIcon::Normal, QIcon::Off);
+    icon.addPixmap(QPixmap(QString::fromUtf8(":/newPrefix/logo.png")), QIcon::Normal, QIcon::Off);
     addCursorDialog->setWindowIcon(icon);
     addCursorButton = new QPushButton(addCursorDialog);
     addCursorButton->setObjectName(QString::fromUtf8("addCursorButton"));

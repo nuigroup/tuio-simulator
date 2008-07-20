@@ -49,7 +49,7 @@ public:
     SetPathWindow->setWindowModality(Qt::ApplicationModal);
     SetPathWindow->resize(900, 607);
     QIcon icon;
-    icon.addPixmap(QPixmap(QString::fromUtf8(":/newPrefix/logo.jpg")), QIcon::Normal, QIcon::Off);
+    icon.addPixmap(QPixmap(QString::fromUtf8(":/newPrefix/logo.png")), QIcon::Normal, QIcon::Off);
     SetPathWindow->setWindowIcon(icon);
     centralwidget = new QWidget(SetPathWindow);
     centralwidget->setObjectName(QString::fromUtf8("centralwidget"));

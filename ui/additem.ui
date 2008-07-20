@@ -23,7 +23,7 @@
   </property>
   <property name="windowIcon" >
    <iconset resource="../resource.qrc" >
-    <normaloff>:/newPrefix/logo.jpg</normaloff>:/newPrefix/logo.jpg</iconset>
+    <normaloff>:/newPrefix/logo.png</normaloff>:/newPrefix/logo.png</iconset>
   </property>
   <property name="toolTip" >
    <string>Add New Item</string>

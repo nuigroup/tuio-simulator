@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'additem.ui'
 **
-** Created: Sat Jul 19 23:22:26 2008
+** Created: Sun Jul 20 08:32:41 2008
 **      by: Qt User Interface Compiler version 4.4.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -53,7 +53,7 @@ public:
     Dialog->setSizePolicy(sizePolicy);
     Dialog->setFocusPolicy(Qt::ClickFocus);
     QIcon icon;
-    icon.addPixmap(QPixmap(QString::fromUtf8(":/newPrefix/logo.jpg")), QIcon::Normal, QIcon::Off);
+    icon.addPixmap(QPixmap(QString::fromUtf8(":/newPrefix/logo.png")), QIcon::Normal, QIcon::Off);
     Dialog->setWindowIcon(icon);
     Dialog->setSizeGripEnabled(true);
     Dialog->setModal(true);
