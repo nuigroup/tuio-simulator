@@ -40,6 +40,12 @@ SetPathWindowImpl::SetPathWindowImpl( QGraphicsItem *item,QWidget * parent, Qt::
 		connect(scene,SIGNAL(addPoint(double,double)),this,SLOT(addPointOfScene(double,double)));
 		connect(setPathButton,SIGNAL(clicked()),this,SLOT(setpath()));
 		connect(this,SIGNAL(setPathSignal()),this,SLOT(previewPath()));
+		startTimeBox->setMinimum(0);
+		startTimeBox->setMaximum(1);
+		stopTimeBox->setMinimum(0);
+		stopTimeBox->setMaximum(1);
+		startTimeBox->setValue(0);
+		stopTimeBox->setValue(1);
 		path = new QPainterPath;
 
 	}
@@ -154,6 +160,15 @@ void SetPathWindowImpl::bezierControlPoint (int i , double& cp1x, double& cp1y,d
 
 void SetPathWindowImpl::setpath()
 {
+	if (stopTimeBox->value() <= startTimeBox->value())
+	{
+		
+        QMessageBox::warning(this, tr("QMTSim"),
+                           tr("Start and Stop time are invalid.\n"
+                               "Start and Stop time is a normalized value between 0 and 1.\n "
+                               "Please correct it and try again"));
+                               return;
+	}
 	
 	if(pathset == 0 ) 
 		{
@@ -161,14 +176,36 @@ void SetPathWindowImpl::setpath()
 			std::cout<<"Path not previewed"<<"\n";
 		}
 
-		
+	double m = 1/(500.0 * (stopTimeBox->value() - startTimeBox->value()));
+	double j ;
+	double k = 0 ;		
     for (int i = 0; i < 500; ++i)
-        {
-
-         	setpathitem->animation->setPosAt(i / 500.0, path->pointAtPercent(i/500.0));
-         	setpathitem->path_x.replace(i,(path->pointAtPercent(i/500.0).x()));
-         	setpathitem->path_y.replace(i,(path->pointAtPercent(i/500.0).y()));
+        {	
+        	j  = i/500.0 ;	
+			if ((j >= startTimeBox->value()) && (j < stopTimeBox->value()) )
+			{
+			
+			setpathitem->animation->setPosAt(j, path->pointAtPercent(k));
+         	setpathitem->path_x.replace(i,(path->pointAtPercent(k).x()));
+         	setpathitem->path_y.replace(i,(path->pointAtPercent(k).y()));
+         	k =   k + m;
          	//std::cout << "path_x size  "<<setpathitem->path_y.size() << "\n" ;
+			}
+			else if ( j <= startTimeBox->value() )
+			{
+			setpathitem->animation->setPosAt(j, path->pointAtPercent(0)); // set to initial point
+         	setpathitem->path_x.replace(i,(path->pointAtPercent(0).x()));
+         	setpathitem->path_y.replace(i,(path->pointAtPercent(0).y()));
+			}
+			
+			else if ( j >= stopTimeBox->value() )
+			{
+			setpathitem->animation->setPosAt(j, path->pointAtPercent(1)); // set to final point
+         	setpathitem->path_x.replace(i,(path->pointAtPercent(1).x()));
+         	setpathitem->path_y.replace(i,(path->pointAtPercent(1).y()));
+			}
+			
+			
         }
         std::cout << "path_x size  "<<setpathitem->path_y.size() << "\n" ;
 		this->close();

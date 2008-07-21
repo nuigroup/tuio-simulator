@@ -29,6 +29,8 @@ public:
     QLabel *label_3;
     QLabel *label_4;
     QLabel *label_5;
+    QLabel *label_6;
+    QLabel *label_7;
     QLabel *label;
     QSpinBox *index;
     QDoubleSpinBox *pointx;
@@ -39,6 +41,8 @@ public:
     QPushButton *setPathButton;
     QSpacerItem *horizontalSpacer;
     QPushButton *CancelButton;
+    QDoubleSpinBox *startTimeBox;
+    QDoubleSpinBox *stopTimeBox;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -60,7 +64,7 @@ public:
     view->setObjectName(QString::fromUtf8("view"));
     view->viewport()->setProperty("cursor", QVariant(QCursor(Qt::CrossCursor)));
 
-    gridLayout->addWidget(view, 0, 0, 1, 11);
+    gridLayout->addWidget(view, 0, 0, 1, 13);
 
     label_2 = new QLabel(centralwidget);
     label_2->setObjectName(QString::fromUtf8("label_2"));
@@ -81,6 +85,16 @@ public:
     label_5->setObjectName(QString::fromUtf8("label_5"));
 
     gridLayout->addWidget(label_5, 1, 6, 1, 1);
+
+    label_6 = new QLabel(centralwidget);
+    label_6->setObjectName(QString::fromUtf8("label_6"));
+
+    gridLayout->addWidget(label_6, 1, 9, 1, 1);
+
+    label_7 = new QLabel(centralwidget);
+    label_7->setObjectName(QString::fromUtf8("label_7"));
+
+    gridLayout->addWidget(label_7, 1, 10, 1, 1);
 
     label = new QLabel(centralwidget);
     label->setObjectName(QString::fromUtf8("label"));
@@ -124,12 +138,22 @@ public:
 
     horizontalSpacer = new QSpacerItem(403, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-    gridLayout->addItem(horizontalSpacer, 2, 9, 1, 1);
+    gridLayout->addItem(horizontalSpacer, 2, 11, 1, 1);
 
     CancelButton = new QPushButton(centralwidget);
     CancelButton->setObjectName(QString::fromUtf8("CancelButton"));
 
-    gridLayout->addWidget(CancelButton, 2, 10, 1, 1);
+    gridLayout->addWidget(CancelButton, 2, 12, 1, 1);
+
+    startTimeBox = new QDoubleSpinBox(centralwidget);
+    startTimeBox->setObjectName(QString::fromUtf8("startTimeBox"));
+
+    gridLayout->addWidget(startTimeBox, 2, 9, 1, 1);
+
+    stopTimeBox = new QDoubleSpinBox(centralwidget);
+    stopTimeBox->setObjectName(QString::fromUtf8("stopTimeBox"));
+
+    gridLayout->addWidget(stopTimeBox, 2, 10, 1, 1);
 
     SetPathWindow->setCentralWidget(centralwidget);
     menubar = new QMenuBar(SetPathWindow);
@@ -159,6 +183,8 @@ public:
     label_3->setText(QApplication::translate("SetPathWindow", "X", 0, QApplication::UnicodeUTF8));
     label_4->setText(QApplication::translate("SetPathWindow", "Y", 0, QApplication::UnicodeUTF8));
     label_5->setText(QApplication::translate("SetPathWindow", "Smoothness", 0, QApplication::UnicodeUTF8));
+    label_6->setText(QApplication::translate("SetPathWindow", "Start Time", 0, QApplication::UnicodeUTF8));
+    label_7->setText(QApplication::translate("SetPathWindow", "Stop Time", 0, QApplication::UnicodeUTF8));
     label->setText(QApplication::translate("SetPathWindow", "Points Added", 0, QApplication::UnicodeUTF8));
     addPointButton->setText(QApplication::translate("SetPathWindow", "Add Point", 0, QApplication::UnicodeUTF8));
 
@@ -169,11 +195,20 @@ public:
     previewPathButton->setText(QApplication::translate("SetPathWindow", "Preview Path", 0, QApplication::UnicodeUTF8));
     setPathButton->setText(QApplication::translate("SetPathWindow", "Set Path", 0, QApplication::UnicodeUTF8));
     CancelButton->setText(QApplication::translate("SetPathWindow", "Cancel", 0, QApplication::UnicodeUTF8));
+
+#ifndef QT_NO_TOOLTIP
+    startTimeBox->setToolTip(QApplication::translate("SetPathWindow", "Normalized Value Between 0 and 1", 0, QApplication::UnicodeUTF8));
+#endif // QT_NO_TOOLTIP
+
+
+#ifndef QT_NO_TOOLTIP
+    stopTimeBox->setToolTip(QApplication::translate("SetPathWindow", "Normalized Value Between 0 and 1", 0, QApplication::UnicodeUTF8));
+#endif // QT_NO_TOOLTIP
+
     Q_UNUSED(SetPathWindow);
     } // retranslateUi
 
 };
-
 namespace Ui2 {
     class SetPathWindow: public Ui_SetPathWindow {};
 } // namespace Ui

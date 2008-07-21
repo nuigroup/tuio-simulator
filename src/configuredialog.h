@@ -39,7 +39,7 @@ public:
     configureDialog->setWindowModality(Qt::WindowModal);
     configureDialog->resize(400, 300);
     QIcon icon;
-    icon.addPixmap(QPixmap(QString::fromUtf8(":/newPrefix/logo.jpg")), QIcon::Normal, QIcon::Off);
+    icon.addPixmap(QPixmap(QString::fromUtf8(":/newPrefix/logo.png")), QIcon::Normal, QIcon::Off);
     configureDialog->setWindowIcon(icon);
     label = new QLabel(configureDialog);
     label->setObjectName(QString::fromUtf8("label"));

@@ -16,7 +16,7 @@
    <string>Set Animation Path</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="../resource.qrc" >
+   <iconset>
     <normaloff>:/newPrefix/logo.jpg</normaloff>:/newPrefix/logo.jpg</iconset>
   </property>
   <widget class="QWidget" name="centralwidget" >
@@ -29,7 +29,7 @@
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout" >
-    <item row="0" column="0" colspan="11" >
+    <item row="0" column="0" colspan="13" >
      <widget class="QGraphicsView" name="view" >
       <property name="cursor" stdset="0" >
        <cursorShape>CrossCursor</cursorShape>
@@ -64,6 +64,20 @@
      <widget class="QLabel" name="label_5" >
       <property name="text" >
        <string>Smoothness</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="9" >
+     <widget class="QLabel" name="label_6" >
+      <property name="text" >
+       <string>Start Time</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="10" >
+     <widget class="QLabel" name="label_7" >
+      <property name="text" >
+       <string>Stop Time</string>
       </property>
      </widget>
     </item>
@@ -110,7 +124,7 @@
       </property>
      </widget>
     </item>
-    <item row="2" column="9" >
+    <item row="2" column="11" >
      <spacer name="horizontalSpacer" >
       <property name="orientation" >
        <enum>Qt::Horizontal</enum>
@@ -123,10 +137,24 @@
       </property>
      </spacer>
     </item>
-    <item row="2" column="10" >
+    <item row="2" column="12" >
      <widget class="QPushButton" name="CancelButton" >
       <property name="text" >
        <string>Cancel</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="9" >
+     <widget class="QDoubleSpinBox" name="startTimeBox" >
+      <property name="toolTip" >
+       <string>Normalized Value Between 0 and 1</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="10" >
+     <widget class="QDoubleSpinBox" name="stopTimeBox" >
+      <property name="toolTip" >
+       <string>Normalized Value Between 0 and 1</string>
       </property>
      </widget>
     </item>

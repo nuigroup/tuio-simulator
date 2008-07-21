@@ -181,11 +181,11 @@ void MainWindowImpl::deleteItem()
          	Tangible_Type *myTangible = dynamic_cast<Tangible_Type*>(localitem);
          	if (myTangible)
          	{
-         	std::cout << "Deleting animation" << "\n" ;
+         	//std::cout << "Deleting animation" << "\n" ;
          	delete myTangible->animation;
-         	std::cout << "Deleting OSCData" << "\n" ;
+         	//std::cout << "Deleting OSCData" << "\n" ;
          	delete myTangible->OSCdata ;
-         	std::cout << "Deleting Item" << "\n" ;
+         	//std::cout << "Deleting Item" << "\n" ;
             delete localitem;
         	}
 
