@@ -410,7 +410,7 @@
   <action name="actionDebug" >
    <property name="icon" >
     <iconset resource="../resource.qrc" >
-     <normaloff>:/newPrefix/icons/debug_icon.png</normaloff>:/newPrefix/icons/debug_icon.png</iconset>
+     <normaloff>:/newPrefix/icons/debug.png</normaloff>:/newPrefix/icons/debug.png</iconset>
    </property>
    <property name="text" >
     <string>Debug</string>
@@ -419,7 +419,7 @@
   <action name="actionReadme" >
    <property name="icon" >
     <iconset resource="../resource.qrc" >
-     <normaloff>:/newPrefix/icons/readme.png</normaloff>:/newPrefix/icons/readme.png</iconset>
+     <normaloff>:/newPrefix/icons/cursor.png</normaloff>:/newPrefix/icons/cursor.png</iconset>
    </property>
    <property name="text" >
     <string>Readme</string>
@@ -437,7 +437,7 @@
   <action name="actionExit" >
    <property name="icon" >
     <iconset resource="../resource.qrc" >
-     <normaloff>:/newPrefix/icons/System - Shutdown.png</normaloff>:/newPrefix/icons/System - Shutdown.png</iconset>
+     <normaloff>:/newPrefix/icons/exit.png</normaloff>:/newPrefix/icons/exit.png</iconset>
    </property>
    <property name="text" >
     <string>Exit</string>
@@ -473,7 +473,7 @@
   <action name="actionCursor" >
    <property name="icon" >
     <iconset resource="../resource.qrc" >
-     <normaloff>:/newPrefix/icons/pointing-finger.png</normaloff>:/newPrefix/icons/pointing-finger.png</iconset>
+     <normaloff>:/newPrefix/icons/cursor.png</normaloff>:/newPrefix/icons/cursor.png</iconset>
    </property>
    <property name="text" >
     <string>Cursor</string>

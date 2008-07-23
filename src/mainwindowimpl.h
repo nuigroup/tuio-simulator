@@ -57,6 +57,10 @@ public:
     void readEllipse(QXmlStreamReader * xmlReader);
     void readCursor(QXmlStreamReader * xmlReader);
     void readPolygon(QXmlStreamReader * xmlReader);
+    
+    signals :
+	void frameSignal();
+	void resetTxSignal();
 
 	
 private slots:

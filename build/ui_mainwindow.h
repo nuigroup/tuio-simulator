@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'mainwindow.ui'
 **
-** Created: Wed Jul 23 13:12:21 2008
+** Created: Thu Jul 24 01:02:58 2008
 **      by: Qt User Interface Compiler version 4.4.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -117,12 +117,12 @@ public:
     actionDebug = new QAction(MainWindow);
     actionDebug->setObjectName(QString::fromUtf8("actionDebug"));
     QIcon icon3;
-    icon3.addPixmap(QPixmap(QString::fromUtf8(":/newPrefix/icons/debug_icon.png")), QIcon::Normal, QIcon::Off);
+    icon3.addPixmap(QPixmap(QString::fromUtf8(":/newPrefix/icons/debug.png")), QIcon::Normal, QIcon::Off);
     actionDebug->setIcon(icon3);
     actionReadme = new QAction(MainWindow);
     actionReadme->setObjectName(QString::fromUtf8("actionReadme"));
     QIcon icon4;
-    icon4.addPixmap(QPixmap(QString::fromUtf8(":/newPrefix/icons/readme.png")), QIcon::Normal, QIcon::Off);
+    icon4.addPixmap(QPixmap(QString::fromUtf8(":/newPrefix/icons/cursor.png")), QIcon::Normal, QIcon::Off);
     actionReadme->setIcon(icon4);
     actionAbout_QMTSim = new QAction(MainWindow);
     actionAbout_QMTSim->setObjectName(QString::fromUtf8("actionAbout_QMTSim"));
@@ -130,7 +130,7 @@ public:
     actionExit = new QAction(MainWindow);
     actionExit->setObjectName(QString::fromUtf8("actionExit"));
     QIcon icon5;
-    icon5.addPixmap(QPixmap(QString::fromUtf8(":/newPrefix/icons/System - Shutdown.png")), QIcon::Normal, QIcon::Off);
+    icon5.addPixmap(QPixmap(QString::fromUtf8(":/newPrefix/icons/exit.png")), QIcon::Normal, QIcon::Off);
     actionExit->setIcon(icon5);
     actionAbout_Qt = new QAction(MainWindow);
     actionAbout_Qt->setObjectName(QString::fromUtf8("actionAbout_Qt"));
@@ -149,9 +149,7 @@ public:
     actionEllipse->setIcon(icon8);
     actionCursor = new QAction(MainWindow);
     actionCursor->setObjectName(QString::fromUtf8("actionCursor"));
-    QIcon icon9;
-    icon9.addPixmap(QPixmap(QString::fromUtf8(":/newPrefix/icons/pointing-finger.png")), QIcon::Normal, QIcon::Off);
-    actionCursor->setIcon(icon9);
+    actionCursor->setIcon(icon4);
     centralwidget = new QWidget(MainWindow);
     centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
     centralwidget->setGeometry(QRect(0, 33, 1200, 584));

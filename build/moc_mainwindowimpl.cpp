@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'mainwindowimpl.h'
 **
-** Created: Wed Jul 23 13:14:04 2008
+** Created: Thu Jul 24 01:16:58 2008
 **      by: The Qt Meta Object Compiler version 59 (Qt 4.4.0)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,34 +23,39 @@ static const uint qt_meta_data_MainWindowImpl[] = {
        1,       // revision
        0,       // classname
        0,    0, // classinfo
-      17,   10, // methods
+      19,   10, // methods
        0,    0, // properties
        0,    0, // enums/sets
 
+ // signals: signature, parameters, type, tag, flags
+      16,   15,   15,   15, 0x05,
+      30,   15,   15,   15, 0x05,
+
  // slots: signature, parameters, type, tag, flags
-      16,   15,   15,   15, 0x08,
-      29,   15,   15,   15, 0x08,
-      42,   15,   15,   15, 0x08,
-      55,   15,   15,   15, 0x08,
-      66,   15,   15,   15, 0x08,
-      82,   15,   15,   15, 0x08,
-      99,   15,   15,   15, 0x08,
-     118,   15,   15,   15, 0x08,
-     138,   15,   15,   15, 0x08,
-     160,   15,   15,   15, 0x08,
-     185,  183,   15,   15, 0x08,
-     210,   15,   15,   15, 0x08,
-     232,   15,   15,   15, 0x08,
-     242,   15,   15,   15, 0x08,
-     263,   15,   15,   15, 0x08,
-     273,   15,   15,   15, 0x08,
-     291,   15,   15,   15, 0x08,
+      46,   15,   15,   15, 0x08,
+      59,   15,   15,   15, 0x08,
+      72,   15,   15,   15, 0x08,
+      85,   15,   15,   15, 0x08,
+      96,   15,   15,   15, 0x08,
+     112,   15,   15,   15, 0x08,
+     129,   15,   15,   15, 0x08,
+     148,   15,   15,   15, 0x08,
+     168,   15,   15,   15, 0x08,
+     190,   15,   15,   15, 0x08,
+     215,  213,   15,   15, 0x08,
+     240,   15,   15,   15, 0x08,
+     262,   15,   15,   15, 0x08,
+     272,   15,   15,   15, 0x08,
+     293,   15,   15,   15, 0x08,
+     303,   15,   15,   15, 0x08,
+     321,   15,   15,   15, 0x08,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_MainWindowImpl[] = {
-    "MainWindowImpl\0\0showDialog()\0deleteItem()\0"
+    "MainWindowImpl\0\0frameSignal()\0"
+    "resetTxSignal()\0showDialog()\0deleteItem()\0"
     "uploadItem()\0saveItem()\0setPathDialog()\0"
     "startAnimation()\0setanimationtime()\0"
     "animationFinished()\0showAddCursorDialog()\0"
@@ -87,26 +92,40 @@ int MainWindowImpl::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: showDialog(); break;
-        case 1: deleteItem(); break;
-        case 2: uploadItem(); break;
-        case 3: saveItem(); break;
-        case 4: setPathDialog(); break;
-        case 5: startAnimation(); break;
-        case 6: setanimationtime(); break;
-        case 7: animationFinished(); break;
-        case 8: showAddCursorDialog(); break;
-        case 9: showAddEllipseDialog(); break;
-        case 10: animationslidertime((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 11: showConfigureDialog(); break;
-        case 12: startTx(); break;
-        case 13: restartPacketTimer(); break;
-        case 14: resetTx(); break;
-        case 15: showDebugWindow(); break;
-        case 16: showAboutQMTSim(); break;
+        case 0: frameSignal(); break;
+        case 1: resetTxSignal(); break;
+        case 2: showDialog(); break;
+        case 3: deleteItem(); break;
+        case 4: uploadItem(); break;
+        case 5: saveItem(); break;
+        case 6: setPathDialog(); break;
+        case 7: startAnimation(); break;
+        case 8: setanimationtime(); break;
+        case 9: animationFinished(); break;
+        case 10: showAddCursorDialog(); break;
+        case 11: showAddEllipseDialog(); break;
+        case 12: animationslidertime((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 13: showConfigureDialog(); break;
+        case 14: startTx(); break;
+        case 15: restartPacketTimer(); break;
+        case 16: resetTx(); break;
+        case 17: showDebugWindow(); break;
+        case 18: showAboutQMTSim(); break;
         }
-        _id -= 17;
+        _id -= 19;
     }
     return _id;
+}
+
+// SIGNAL 0
+void MainWindowImpl::frameSignal()
+{
+    QMetaObject::activate(this, &staticMetaObject, 0, 0);
+}
+
+// SIGNAL 1
+void MainWindowImpl::resetTxSignal()
+{
+    QMetaObject::activate(this, &staticMetaObject, 1, 0);
 }
 QT_END_MOC_NAMESPACE

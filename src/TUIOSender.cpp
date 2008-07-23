@@ -14,7 +14,8 @@ TUIOSender::TUIOSender( MainWindowImpl *win)
 	lastSpeed = 0.0 ;
 	transmitSocket = NULL;
 	
-	
+	connect(win,SIGNAL(frameSignal()),this,SLOT(frameSlot()));
+	connect(win,SIGNAL(resetTxSignal()),this,SLOT(resetTxSlot()));
 
 	
 }
@@ -29,6 +30,11 @@ void TUIOSender::connectSocket(std::string ip_address, int port)
 	transmitSocket = new UdpTransmitSocket( IpEndpointName( ip_address.c_str(), port ) );
 	//printf("Socket Initialized : %s Port : %i\n\n", ip_address.c_str(), port);
 	fseq = 0;
+}
+
+void TUIOSender::resetTxSlot()
+{
+	resetTx();
 }
 
 void TUIOSender::resetTx()
@@ -50,6 +56,11 @@ void TUIOSender::resetTx()
 	q << osc::EndBundle;
 	if(q.IsReady())
 		transmitSocket->Send( q.Data(), q.Size() );
+}
+
+void TUIOSender::frameSlot()
+{
+	frame();
 }
 
 void TUIOSender::frame()

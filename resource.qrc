@@ -9,16 +9,13 @@
     <file>icons/qt4.png</file>
   </qresource>
   <qresource prefix="newPrefix" >
-    <file>icons/about-icon2.png</file>
-  </qresource>
-  <qresource prefix="newPrefix" >
-    <file>icons/pointing-finger.png</file>
+    <file>icons/cursor.png</file>
   </qresource>
   <qresource prefix="newPrefix" >
     <file>icons/polygon.png</file>
   </qresource>
   <qresource prefix="newPrefix" >
-    <file>icons/System - Shutdown.png</file>
+    <file>icons/exit.png</file>
   </qresource>
   <qresource prefix="newPrefix" >
     <file>icons/ellipse.png</file>
@@ -27,7 +24,7 @@
     <file>icons/upload.png</file>
   </qresource>
   <qresource prefix="newPrefix" >
-    <file>icons/debug_icon.png</file>
+    <file>icons/debug.png</file>
   </qresource>
   <qresource prefix="newPrefix" >
     <file>icons/save.png</file>

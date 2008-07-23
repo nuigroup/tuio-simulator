@@ -13,14 +13,15 @@
 #define OUTPUT_BUFFER_SIZE 2048
 
 #include <QList>
+#include <QObject>
 #include <string>
 #include "mainwindowimpl.h"
 #include "TouchData.h"
 #include "table.h"
 
-class TUIOSender
+class TUIOSender : public QObject
 {
-	
+Q_OBJECT
 	public :
 	
 
@@ -38,6 +39,10 @@ class TUIOSender
 
 			void connectSocket(std::string ip_address, int port);
 			void resetTx();
+			
+			private slots :
+			void frameSlot();
+			void resetTxSlot();
 };
 
 #endif // __TUIOSENDER_H__

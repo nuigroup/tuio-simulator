@@ -124,7 +124,8 @@ void MainWindowImpl::resetTx()
 	startAnimation_Radio->setChecked(false);
 	startAnimationButton->setText("Start Animation");
 	this->animationStarted = false ;
-	mainSender->resetTx();
+	//mainSender->resetTx();
+	emit resetTxSignal();
 }
 
 void MainWindowImpl::showAboutQMTSim()
@@ -269,7 +270,8 @@ void MainWindowImpl::startTx()
 void MainWindowImpl::restartPacketTimer()
 {
 	if (Verbose) std::cout << "Send Packet	" << count << "\n" ;
-	mainSender->frame();
+	//mainSender->frame();
+	emit frameSignal();
 	packetTimer->start();
 	count++ ;
 }
@@ -278,7 +280,7 @@ void MainWindowImpl::restartPacketTimer()
 void MainWindowImpl::showConfigureDialog()
 {
 
-	ConfigureDialogImpl *configure_Dialog = new ConfigureDialogImpl();
+	ConfigureDialogImpl *configure_Dialog = new ConfigureDialogImpl(this);
 	configure_Dialog->show();
 	
 }
