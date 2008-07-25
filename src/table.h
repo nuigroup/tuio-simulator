@@ -7,7 +7,9 @@
 #include <QtGui>
 #include <iostream>
 #include "mainwindowimpl.h"
+#include "scenecursor.h"
 #include "TouchData.h"
+#include <QGraphicsEllipseItem>
 
 
 class Table : public QGraphicsRectItem
@@ -17,7 +19,12 @@ class Table : public QGraphicsRectItem
 			QGraphicsScene *myscene ;
 			MainWindowImpl *mywin;
 			TouchData *OSCdata ;
+			SceneCursor *cursor1;
+			SceneCursor *cursor2;
+			QGraphicsEllipseItem *cursor3;
 			
+			double centrex,centrey;
+			bool twoFinger;
 			
 	private :
 			
