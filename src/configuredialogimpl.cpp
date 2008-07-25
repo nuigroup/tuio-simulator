@@ -14,6 +14,7 @@ ConfigureDialogImpl::ConfigureDialogImpl(MainWindowImpl *win,QWidget * parent, Q
 		indexBox->setValue(0);
 		indexBox->setMaximum(100);
 		indexBox->setMinimum(0);
+		portNumberBox->setMaximum(99999);
 	}
 	
 void ConfigureDialogImpl::newReciever()
@@ -26,6 +27,7 @@ void ConfigureDialogImpl::setReciever()
 {
 	newSender = new TUIOSender(mywin);
 	newSender->connectSocket((ipAddress->text()).toStdString(),portNumberBox->value());
+	close();
 
 }
 
