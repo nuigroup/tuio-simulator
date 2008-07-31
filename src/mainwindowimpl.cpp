@@ -7,6 +7,7 @@
 #include "setpathwinodwimpl.h"
 #include "tangible_type.h"
 
+
 static bool Verbose = false ;
 
 #define ADDRESS "127.0.0.1"
@@ -25,13 +26,18 @@ MainWindowImpl::MainWindowImpl( QWidget * parent, Qt::WFlags f)
 	
 	framerange = 500;
 	setupUi(this);
-	layout()->setSizeConstraint(QLayout::SetFixedSize);
-	groupBox->hide();
+	//layout()->setSizeConstraint(QLayout::SetNoConstraint);
+	//groupBox->hide();
 	animationSlider->setTickInterval(framerange/10);
 	animationSlider->setTracking(false);
 	animationSlider->setRange(0,framerange);
 	animationSlider->setTickPosition(QSlider::TicksBelow);
+	opacitySlider->setTickInterval(5);
+	opacitySlider->setTracking(false);
+	opacitySlider->setRange(30,100);
+	opacitySlider->setTickPosition(QSlider::TicksBelow);
 	scene = new QGraphicsScene;
+	scene->setBackgroundBrush(Qt::transparent);
 	animationStarted = false;
 	txStarted = false ;
 	QPen pen;
@@ -49,6 +55,8 @@ MainWindowImpl::MainWindowImpl( QWidget * parent, Qt::WFlags f)
 	//myitem *item;
 	//item  = new myitem();
 	//scene->addItem(item);
+	view->setWindowOpacity(0.3);
+	setWindowOpacity(0.7);
 	
 	timer = new QTimeLine(10000);
 	timer->setFrameRange(0, framerange);
@@ -73,6 +81,8 @@ MainWindowImpl::MainWindowImpl( QWidget * parent, Qt::WFlags f)
 	packetTimer->setInterval(100);
 	count = 0 ;
 	
+	myDebug = new debugWindowImpl;
+	
 
 	
 	view->setCursor(Qt::PointingHandCursor);
@@ -82,6 +92,7 @@ MainWindowImpl::MainWindowImpl( QWidget * parent, Qt::WFlags f)
 	connect(timer,SIGNAL(frameChanged(int)),animationProgressBar,SLOT(setValue(int )));
 	connect(setAnimationTimeButton,SIGNAL(clicked()),this,SLOT(setanimationtime()));
 	connect(animationSlider,SIGNAL(sliderMoved(int )),this,SLOT(animationslidertime(int)));	
+	connect(opacitySlider,SIGNAL(sliderMoved(int )),this,SLOT(opacitySliderImpl(int)));	
 	connect(timer,SIGNAL(frameChanged(int)),animationSlider,SLOT(setValue(int)));
 	connect(timer,SIGNAL(finished()),this,SLOT(animationFinished()));
 	connect(addEllipseButton,SIGNAL(clicked()),this,SLOT(showAddEllipseDialog()));
@@ -230,6 +241,17 @@ void MainWindowImpl::animationslidertime(int n)
 	startAnimationButton->setText("Stop Animation");
 	this->animationStarted = true ;
 	this->timer->start();
+	
+}
+
+
+void MainWindowImpl::opacitySliderImpl(int n)
+{
+	double d;
+	d = n/100.00;
+	this->setWindowOpacity(d);
+	//update();
+	//std::cout<<d<<"\n";
 	
 }
 
@@ -595,16 +617,8 @@ void MainWindowImpl::uploadItem()
 
 void MainWindowImpl::showDebugWindow()
 {
-	if (debugButton->isDown())
-	{
-		debugButton->setDown(0);
-		groupBox->setVisible(0);
-	}
-	else 
-	{
-		debugButton->setDown(1);
-		groupBox->setVisible(1);
-	}
+
+	myDebug->show();
 
 }
 

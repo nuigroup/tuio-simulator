@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'mainwindow.ui'
 **
-** Created: Fri Jul 25 20:43:48 2008
+** Created: Fri Aug 1 00:54:49 2008
 **      by: Qt User Interface Compiler version 4.4.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -16,10 +16,8 @@
 #include <QtGui/QButtonGroup>
 #include <QtGui/QGraphicsView>
 #include <QtGui/QGridLayout>
-#include <QtGui/QGroupBox>
 #include <QtGui/QHBoxLayout>
 #include <QtGui/QLabel>
-#include <QtGui/QListWidget>
 #include <QtGui/QMainWindow>
 #include <QtGui/QMenu>
 #include <QtGui/QMenuBar>
@@ -27,7 +25,6 @@
 #include <QtGui/QPushButton>
 #include <QtGui/QRadioButton>
 #include <QtGui/QSlider>
-#include <QtGui/QSpacerItem>
 #include <QtGui/QSpinBox>
 #include <QtGui/QStatusBar>
 #include <QtGui/QToolBar>
@@ -49,19 +46,8 @@ public:
     QAction *actionEllipse;
     QAction *actionCursor;
     QWidget *centralwidget;
-    QGridLayout *gridLayout_2;
-    QGraphicsView *view;
-    QGroupBox *groupBox;
     QGridLayout *gridLayout;
-    QLabel *fseqLabel;
-    QLabel *label;
-    QListWidget *aliveCursorList;
-    QLabel *label_2;
-    QListWidget *setCursorList;
-    QLabel *label_3;
-    QListWidget *aliveObjectList;
-    QLabel *label_4;
-    QListWidget *setObjectList;
+    QGraphicsView *view;
     QHBoxLayout *horizontalLayout;
     QPushButton *addItemButton;
     QPushButton *setPathButton;
@@ -80,8 +66,8 @@ public:
     QPushButton *startTxButton;
     QPushButton *configureButton;
     QPushButton *resetButton;
-    QPushButton *debugButton;
-    QSpacerItem *horizontalSpacer;
+    QSlider *opacitySlider;
+    QLabel *label;
     QMenuBar *menubar;
     QMenu *menuFile;
     QMenu *menuHelp;
@@ -93,14 +79,12 @@ public:
     {
     if (MainWindow->objectName().isEmpty())
         MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-    MainWindow->resize(1200, 636);
+    MainWindow->resize(955, 636);
     QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     sizePolicy.setHorizontalStretch(0);
     sizePolicy.setVerticalStretch(0);
     sizePolicy.setHeightForWidth(MainWindow->sizePolicy().hasHeightForWidth());
     MainWindow->setSizePolicy(sizePolicy);
-    MainWindow->setMinimumSize(QSize(1200, 636));
-    MainWindow->setMaximumSize(QSize(1200, 636));
     QIcon icon;
     icon.addPixmap(QPixmap(QString::fromUtf8(":/newPrefix/logo.png")), QIcon::Normal, QIcon::Off);
     MainWindow->setWindowIcon(icon);
@@ -152,9 +136,9 @@ public:
     actionCursor->setIcon(icon4);
     centralwidget = new QWidget(MainWindow);
     centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
-    centralwidget->setGeometry(QRect(0, 33, 1200, 584));
-    gridLayout_2 = new QGridLayout(centralwidget);
-    gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
+    centralwidget->setGeometry(QRect(0, 33, 955, 584));
+    gridLayout = new QGridLayout(centralwidget);
+    gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
     view = new QGraphicsView(centralwidget);
     view->setObjectName(QString::fromUtf8("view"));
     QSizePolicy sizePolicy1(QSizePolicy::Fixed, QSizePolicy::Fixed);
@@ -165,67 +149,7 @@ public:
     view->setMinimumSize(QSize(930, 500));
     view->viewport()->setProperty("cursor", QVariant(QCursor(Qt::PointingHandCursor)));
 
-    gridLayout_2->addWidget(view, 0, 0, 1, 1);
-
-    groupBox = new QGroupBox(centralwidget);
-    groupBox->setObjectName(QString::fromUtf8("groupBox"));
-    sizePolicy1.setHeightForWidth(groupBox->sizePolicy().hasHeightForWidth());
-    groupBox->setSizePolicy(sizePolicy1);
-    groupBox->setMinimumSize(QSize(221, 491));
-    groupBox->setMaximumSize(QSize(221, 491));
-    gridLayout = new QGridLayout(groupBox);
-    gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-    fseqLabel = new QLabel(groupBox);
-    fseqLabel->setObjectName(QString::fromUtf8("fseqLabel"));
-
-    gridLayout->addWidget(fseqLabel, 0, 0, 1, 1);
-
-    label = new QLabel(groupBox);
-    label->setObjectName(QString::fromUtf8("label"));
-
-    gridLayout->addWidget(label, 1, 0, 1, 1);
-
-    aliveCursorList = new QListWidget(groupBox);
-    aliveCursorList->setObjectName(QString::fromUtf8("aliveCursorList"));
-    aliveCursorList->setMaximumSize(QSize(200, 95));
-
-    gridLayout->addWidget(aliveCursorList, 2, 0, 1, 1);
-
-    label_2 = new QLabel(groupBox);
-    label_2->setObjectName(QString::fromUtf8("label_2"));
-
-    gridLayout->addWidget(label_2, 3, 0, 1, 1);
-
-    setCursorList = new QListWidget(groupBox);
-    setCursorList->setObjectName(QString::fromUtf8("setCursorList"));
-    setCursorList->setMaximumSize(QSize(200, 95));
-
-    gridLayout->addWidget(setCursorList, 4, 0, 1, 1);
-
-    label_3 = new QLabel(groupBox);
-    label_3->setObjectName(QString::fromUtf8("label_3"));
-
-    gridLayout->addWidget(label_3, 5, 0, 1, 1);
-
-    aliveObjectList = new QListWidget(groupBox);
-    aliveObjectList->setObjectName(QString::fromUtf8("aliveObjectList"));
-    aliveObjectList->setMaximumSize(QSize(200, 95));
-
-    gridLayout->addWidget(aliveObjectList, 6, 0, 1, 1);
-
-    label_4 = new QLabel(groupBox);
-    label_4->setObjectName(QString::fromUtf8("label_4"));
-
-    gridLayout->addWidget(label_4, 7, 0, 1, 1);
-
-    setObjectList = new QListWidget(groupBox);
-    setObjectList->setObjectName(QString::fromUtf8("setObjectList"));
-    setObjectList->setMaximumSize(QSize(200, 95));
-
-    gridLayout->addWidget(setObjectList, 8, 0, 1, 1);
-
-
-    gridLayout_2->addWidget(groupBox, 0, 1, 1, 1);
+    gridLayout->addWidget(view, 0, 0, 1, 1);
 
     horizontalLayout = new QHBoxLayout();
     horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
@@ -274,7 +198,7 @@ public:
     horizontalLayout->addWidget(animationSlider);
 
 
-    gridLayout_2->addLayout(horizontalLayout, 1, 0, 1, 1);
+    gridLayout->addLayout(horizontalLayout, 1, 0, 1, 1);
 
     horizontalLayout_2 = new QHBoxLayout();
     horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
@@ -319,23 +243,24 @@ public:
 
     horizontalLayout_2->addWidget(resetButton);
 
-    debugButton = new QPushButton(centralwidget);
-    debugButton->setObjectName(QString::fromUtf8("debugButton"));
-    debugButton->setCheckable(true);
+    opacitySlider = new QSlider(centralwidget);
+    opacitySlider->setObjectName(QString::fromUtf8("opacitySlider"));
+    opacitySlider->setOrientation(Qt::Horizontal);
 
-    horizontalLayout_2->addWidget(debugButton);
+    horizontalLayout_2->addWidget(opacitySlider);
 
-    horizontalSpacer = new QSpacerItem(78, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+    label = new QLabel(centralwidget);
+    label->setObjectName(QString::fromUtf8("label"));
 
-    horizontalLayout_2->addItem(horizontalSpacer);
+    horizontalLayout_2->addWidget(label);
 
 
-    gridLayout_2->addLayout(horizontalLayout_2, 2, 0, 1, 1);
+    gridLayout->addLayout(horizontalLayout_2, 2, 0, 1, 1);
 
     MainWindow->setCentralWidget(centralwidget);
     menubar = new QMenuBar(MainWindow);
     menubar->setObjectName(QString::fromUtf8("menubar"));
-    menubar->setGeometry(QRect(0, 0, 1200, 21));
+    menubar->setGeometry(QRect(0, 0, 955, 21));
     menuFile = new QMenu(menubar);
     menuFile->setObjectName(QString::fromUtf8("menuFile"));
     menuHelp = new QMenu(menubar);
@@ -345,11 +270,11 @@ public:
     MainWindow->setMenuBar(menubar);
     statusbar = new QStatusBar(MainWindow);
     statusbar->setObjectName(QString::fromUtf8("statusbar"));
-    statusbar->setGeometry(QRect(0, 617, 1200, 19));
+    statusbar->setGeometry(QRect(0, 617, 955, 19));
     MainWindow->setStatusBar(statusbar);
     toolBar = new QToolBar(MainWindow);
     toolBar->setObjectName(QString::fromUtf8("toolBar"));
-    toolBar->setGeometry(QRect(0, 21, 1200, 12));
+    toolBar->setGeometry(QRect(0, 21, 955, 12));
     MainWindow->addToolBar(Qt::TopToolBarArea, toolBar);
 
     menubar->addAction(menuFile->menuAction());
@@ -368,7 +293,6 @@ public:
 
     retranslateUi(MainWindow);
     QObject::connect(startAnimationButton, SIGNAL(clicked()), startAnimation_Radio, SLOT(toggle()));
-    QObject::connect(debugButton, SIGNAL(toggled(bool)), groupBox, SLOT(setVisible(bool)));
 
     QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
@@ -391,12 +315,6 @@ public:
     view->setToolTip(QString());
 #endif // QT_NO_TOOLTIP
 
-    groupBox->setTitle(QApplication::translate("MainWindow", "Debug Window", 0, QApplication::UnicodeUTF8));
-    fseqLabel->setText(QApplication::translate("MainWindow", "Fseq  : ", 0, QApplication::UnicodeUTF8));
-    label->setText(QApplication::translate("MainWindow", "Alive Cursors", 0, QApplication::UnicodeUTF8));
-    label_2->setText(QApplication::translate("MainWindow", "Cursor Set", 0, QApplication::UnicodeUTF8));
-    label_3->setText(QApplication::translate("MainWindow", "Alive Object", 0, QApplication::UnicodeUTF8));
-    label_4->setText(QApplication::translate("MainWindow", "Object Set", 0, QApplication::UnicodeUTF8));
     addItemButton->setText(QApplication::translate("MainWindow", "Add Polygon", 0, QApplication::UnicodeUTF8));
     setPathButton->setText(QApplication::translate("MainWindow", "Set Path", 0, QApplication::UnicodeUTF8));
     startAnimationButton->setText(QApplication::translate("MainWindow", "Start Animation", 0, QApplication::UnicodeUTF8));
@@ -415,7 +333,7 @@ public:
     startTxButton->setText(QApplication::translate("MainWindow", "Start Transmission", 0, QApplication::UnicodeUTF8));
     configureButton->setText(QApplication::translate("MainWindow", "Configure Transmission", 0, QApplication::UnicodeUTF8));
     resetButton->setText(QApplication::translate("MainWindow", "Reset", 0, QApplication::UnicodeUTF8));
-    debugButton->setText(QApplication::translate("MainWindow", "Debug", 0, QApplication::UnicodeUTF8));
+    label->setText(QApplication::translate("MainWindow", "Opacity", 0, QApplication::UnicodeUTF8));
     menuFile->setTitle(QApplication::translate("MainWindow", "File", 0, QApplication::UnicodeUTF8));
     menuHelp->setTitle(QApplication::translate("MainWindow", "Help", 0, QApplication::UnicodeUTF8));
     menuAdd->setTitle(QApplication::translate("MainWindow", "Add", 0, QApplication::UnicodeUTF8));

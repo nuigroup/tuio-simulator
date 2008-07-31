@@ -26,6 +26,7 @@
 #include "table.h"
 #include "TUIOSender.h"
 #include "aboutQMTSimImpl.h"
+#include "debugWindowImpl.h"
 #include <iostream>
 
 
@@ -35,6 +36,7 @@
 
 class Table ;
 class TUIOSender ;
+class debugWindowImpl;
 
 class MainWindowImpl : public QMainWindow , public Ui::MainWindow
 {
@@ -53,7 +55,9 @@ public:
     int tangibleId;
     QTimer *packetTimer;
     TUIOSender *mainSender;
+    debugWindowImpl *myDebug;
     int count ;
+    
     void readEllipse(QXmlStreamReader * xmlReader);
     void readCursor(QXmlStreamReader * xmlReader);
     void readPolygon(QXmlStreamReader * xmlReader);
@@ -76,6 +80,7 @@ void animationFinished();
 void showAddCursorDialog();
 void showAddEllipseDialog();
 void animationslidertime(int n);
+void opacitySliderImpl(int n);
 void showConfigureDialog();
 void startTx();
 void restartPacketTimer();

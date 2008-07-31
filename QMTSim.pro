@@ -31,7 +31,9 @@ HEADERS = ip/IpEndpointName.h \
  src/setpathwindow.h \
  src/setpathwinodwimpl.h \
  src/table.h \
- src/tangible_type.h
+ src/tangible_type.h \
+ src/debugWindow.h \
+ src/debugWindowImpl.h
 INCLUDEPATH += ip osc
 LIBS += -lwinmm -lws2_32
 MOC_DIR = build
@@ -61,6 +63,7 @@ SOURCES = ip/IpEndpointName.cpp \
  src/setpathscene.cpp \
  src/setpathwinodwimpl.cpp \
  src/table.cpp \
- src/tangible_type.cpp
+ src/tangible_type.cpp \
+ src/debugWindowImpl.cpp
 TEMPLATE = app
 UI_DIR = build

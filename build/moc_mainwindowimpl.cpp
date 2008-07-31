@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'mainwindowimpl.h'
 **
-** Created: Fri Jul 25 20:45:12 2008
+** Created: Fri Aug 1 00:56:23 2008
 **      by: The Qt Meta Object Compiler version 59 (Qt 4.4.0)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_MainWindowImpl[] = {
        1,       // revision
        0,       // classname
        0,    0, // classinfo
-      19,   10, // methods
+      20,   10, // methods
        0,    0, // properties
        0,    0, // enums/sets
 
@@ -43,12 +43,13 @@ static const uint qt_meta_data_MainWindowImpl[] = {
      168,   15,   15,   15, 0x08,
      190,   15,   15,   15, 0x08,
      215,  213,   15,   15, 0x08,
-     240,   15,   15,   15, 0x08,
-     262,   15,   15,   15, 0x08,
-     272,   15,   15,   15, 0x08,
-     293,   15,   15,   15, 0x08,
-     303,   15,   15,   15, 0x08,
-     321,   15,   15,   15, 0x08,
+     240,  213,   15,   15, 0x08,
+     263,   15,   15,   15, 0x08,
+     285,   15,   15,   15, 0x08,
+     295,   15,   15,   15, 0x08,
+     316,   15,   15,   15, 0x08,
+     326,   15,   15,   15, 0x08,
+     344,   15,   15,   15, 0x08,
 
        0        // eod
 };
@@ -60,7 +61,8 @@ static const char qt_meta_stringdata_MainWindowImpl[] = {
     "startAnimation()\0setanimationtime()\0"
     "animationFinished()\0showAddCursorDialog()\0"
     "showAddEllipseDialog()\0n\0"
-    "animationslidertime(int)\0showConfigureDialog()\0"
+    "animationslidertime(int)\0"
+    "opacitySliderImpl(int)\0showConfigureDialog()\0"
     "startTx()\0restartPacketTimer()\0resetTx()\0"
     "showDebugWindow()\0showAboutQMTSim()\0"
 };
@@ -105,14 +107,15 @@ int MainWindowImpl::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         case 10: showAddCursorDialog(); break;
         case 11: showAddEllipseDialog(); break;
         case 12: animationslidertime((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 13: showConfigureDialog(); break;
-        case 14: startTx(); break;
-        case 15: restartPacketTimer(); break;
-        case 16: resetTx(); break;
-        case 17: showDebugWindow(); break;
-        case 18: showAboutQMTSim(); break;
+        case 13: opacitySliderImpl((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 14: showConfigureDialog(); break;
+        case 15: startTx(); break;
+        case 16: restartPacketTimer(); break;
+        case 17: resetTx(); break;
+        case 18: showDebugWindow(); break;
+        case 19: showAboutQMTSim(); break;
         }
-        _id -= 19;
+        _id -= 20;
     }
     return _id;
 }
