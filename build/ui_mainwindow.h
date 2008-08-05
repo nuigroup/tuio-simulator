@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'mainwindow.ui'
 **
-** Created: Fri Aug 1 00:54:49 2008
+** Created: Tue Aug 5 22:41:47 2008
 **      by: Qt User Interface Compiler version 4.4.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -106,7 +106,7 @@ public:
     actionReadme = new QAction(MainWindow);
     actionReadme->setObjectName(QString::fromUtf8("actionReadme"));
     QIcon icon4;
-    icon4.addPixmap(QPixmap(QString::fromUtf8(":/newPrefix/icons/cursor.png")), QIcon::Normal, QIcon::Off);
+    icon4.addPixmap(QPixmap(QString::fromUtf8(":/newPrefix/icons/readme.png")), QIcon::Normal, QIcon::Off);
     actionReadme->setIcon(icon4);
     actionAbout_QMTSim = new QAction(MainWindow);
     actionAbout_QMTSim->setObjectName(QString::fromUtf8("actionAbout_QMTSim"));
@@ -133,7 +133,9 @@ public:
     actionEllipse->setIcon(icon8);
     actionCursor = new QAction(MainWindow);
     actionCursor->setObjectName(QString::fromUtf8("actionCursor"));
-    actionCursor->setIcon(icon4);
+    QIcon icon9;
+    icon9.addPixmap(QPixmap(QString::fromUtf8(":/newPrefix/icons/cursor.png")), QIcon::Normal, QIcon::Off);
+    actionCursor->setIcon(icon9);
     centralwidget = new QWidget(MainWindow);
     centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
     centralwidget->setGeometry(QRect(0, 33, 955, 584));

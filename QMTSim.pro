@@ -33,7 +33,9 @@ HEADERS = ip/IpEndpointName.h \
  src/table.h \
  src/tangible_type.h \
  src/debugWindow.h \
- src/debugWindowImpl.h
+ src/debugWindowImpl.h \
+ src/readmeDialog.h \
+ src/readmeDialogImpl.h
 INCLUDEPATH += ip osc
 LIBS += -lwinmm -lws2_32
 MOC_DIR = build
@@ -64,6 +66,7 @@ SOURCES = ip/IpEndpointName.cpp \
  src/setpathwinodwimpl.cpp \
  src/table.cpp \
  src/tangible_type.cpp \
- src/debugWindowImpl.cpp
+ src/debugWindowImpl.cpp \
+ src/readmeDialogImpl.cpp
 TEMPLATE = app
 UI_DIR = build

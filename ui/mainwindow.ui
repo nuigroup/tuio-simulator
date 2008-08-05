@@ -296,7 +296,7 @@
   <action name="actionReadme" >
    <property name="icon" >
     <iconset resource="../resource.qrc" >
-     <normaloff>:/newPrefix/icons/cursor.png</normaloff>:/newPrefix/icons/cursor.png</iconset>
+     <normaloff>:/newPrefix/icons/readme.png</normaloff>:/newPrefix/icons/readme.png</iconset>
    </property>
    <property name="text" >
     <string>Readme</string>

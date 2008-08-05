@@ -27,6 +27,7 @@
 #include "TUIOSender.h"
 #include "aboutQMTSimImpl.h"
 #include "debugWindowImpl.h"
+#include "readmeDialogImpl.h"
 #include <iostream>
 
 
@@ -37,6 +38,7 @@
 class Table ;
 class TUIOSender ;
 class debugWindowImpl;
+class readmeDialogImpl;
 
 class MainWindowImpl : public QMainWindow , public Ui::MainWindow
 {
@@ -56,6 +58,7 @@ public:
     QTimer *packetTimer;
     TUIOSender *mainSender;
     debugWindowImpl *myDebug;
+    readmeDialogImpl *myReadme;
     int count ;
     
     void readEllipse(QXmlStreamReader * xmlReader);
@@ -87,6 +90,7 @@ void restartPacketTimer();
 void resetTx();
 void showDebugWindow();
 void showAboutQMTSim();
+void showReadme();
 
 
 

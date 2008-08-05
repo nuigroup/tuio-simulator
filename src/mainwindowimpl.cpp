@@ -34,7 +34,7 @@ MainWindowImpl::MainWindowImpl( QWidget * parent, Qt::WFlags f)
 	animationSlider->setTickPosition(QSlider::TicksBelow);
 	opacitySlider->setTickInterval(5);
 	opacitySlider->setTracking(false);
-	opacitySlider->setRange(30,100);
+	opacitySlider->setRange(20,100);
 	opacitySlider->setTickPosition(QSlider::TicksBelow);
 	scene = new QGraphicsScene;
 	scene->setBackgroundBrush(Qt::transparent);
@@ -55,8 +55,9 @@ MainWindowImpl::MainWindowImpl( QWidget * parent, Qt::WFlags f)
 	//myitem *item;
 	//item  = new myitem();
 	//scene->addItem(item);
-	view->setWindowOpacity(0.3);
-	setWindowOpacity(0.7);
+	//view->setWindowOpacity(0);
+	setWindowOpacity(0.5);
+	//view->setStyleSheet("background: rgba(255, 255, 255, 30%);");
 	
 	timer = new QTimeLine(10000);
 	timer->setFrameRange(0, framerange);
@@ -82,6 +83,7 @@ MainWindowImpl::MainWindowImpl( QWidget * parent, Qt::WFlags f)
 	count = 0 ;
 	
 	myDebug = new debugWindowImpl;
+	myReadme = new readmeDialogImpl;
 	
 
 	
@@ -113,6 +115,7 @@ MainWindowImpl::MainWindowImpl( QWidget * parent, Qt::WFlags f)
 	connect(actionCursor, SIGNAL(triggered()), this, SLOT(showAddCursorDialog()));
 	connect(actionAbout_Qt, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
 	connect(actionAbout_QMTSim, SIGNAL(triggered()),this, SLOT(showAboutQMTSim()));
+	connect(actionReadme, SIGNAL(triggered()),this, SLOT(showReadme()));
 
 
 	
@@ -143,6 +146,11 @@ void MainWindowImpl::showAboutQMTSim()
 {
 	AboutQMTSimImpl *aboutSim  = new AboutQMTSimImpl();
 	aboutSim->show();
+}
+
+void MainWindowImpl::showReadme()
+{
+	myReadme->show();
 }
 
 void MainWindowImpl::showDialog()
