@@ -26,6 +26,7 @@ MainWindowImpl::MainWindowImpl( QWidget * parent, Qt::WFlags f)
 	
 	framerange = 500;
 	setupUi(this);
+	//setAttribute(Qt::WA_DeleteOnClose);
 	//layout()->setSizeConstraint(QLayout::SetNoConstraint);
 	//groupBox->hide();
 	animationSlider->setTickInterval(framerange/10);
@@ -628,6 +629,20 @@ void MainWindowImpl::showDebugWindow()
 
 	myDebug->show();
 
+}
+
+MainWindowImpl::~MainWindowImpl()
+{
+
+	delete myDebug;
+	delete myReadme;
+	delete table;
+	delete packetTimer;
+	delete timer;
+	delete mainSender;
+	delete scene;
+	
+	
 }
 
 

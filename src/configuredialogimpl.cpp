@@ -7,8 +7,7 @@ ConfigureDialogImpl::ConfigureDialogImpl(MainWindowImpl *win,QWidget * parent, Q
 	{
 		setupUi(this);
 		mywin = win ;
-		//connect(newRecieverButton,SIGNAL(clicked()),this,SLOT(newReciever()));
-		//connect(setRecieverButton,SIGNAL(clicked()),this,SLOT(setRecie()));
+		setAttribute(Qt::WA_DeleteOnClose);
 		connect(newRecieverButton,SIGNAL(clicked()),this,SLOT(newReciever()));
 		connect(applyButton,SIGNAL(clicked()),this,SLOT(setReciever()));
 		indexBox->setValue(0);

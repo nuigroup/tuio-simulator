@@ -8,6 +8,7 @@ SetPathWindowImpl::SetPathWindowImpl( QGraphicsItem *item,QWidget * parent, Qt::
 	: QMainWindow(parent, f)
 	{
 		setupUi(this);
+		setAttribute(Qt::WA_DeleteOnClose);
 		count = 0;
 		scene = new SetPathScene;
 		setpathitem = dynamic_cast<Tangible_Type*>(item);

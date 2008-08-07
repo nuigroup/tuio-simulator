@@ -4,6 +4,7 @@ AddEllipseDialogImpl::AddEllipseDialogImpl(MainWindowImpl *win,QWidget * parent,
 	: QDialog(parent, f)
 	{
 		setupUi(this);
+		setAttribute(Qt::WA_DeleteOnClose);
 		//mywin = new MainWindowImpl;
 		mywin = win;
 		//myscene = new QGraphicsScene;

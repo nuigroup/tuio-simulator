@@ -5,6 +5,7 @@ AddCursorDialogImpl::AddCursorDialogImpl(MainWindowImpl *win,QWidget * parent, Q
 	: QDialog(parent, f)
 	{
 		setupUi(this);
+		setAttribute(Qt::WA_DeleteOnClose);
 		//mywin = new MainWindowImpl;
 		mywin = win;
 		//myscene = new QGraphicsScene;

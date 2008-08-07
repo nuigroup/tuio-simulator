@@ -45,6 +45,7 @@ class MainWindowImpl : public QMainWindow , public Ui::MainWindow
 Q_OBJECT
 public:
 	MainWindowImpl( QWidget * parent = 0, Qt::WFlags f = 0 );
+	~MainWindowImpl();
 	
     QGraphicsScene *scene ;
     QTimeLine *timer;
@@ -91,6 +92,7 @@ void resetTx();
 void showDebugWindow();
 void showAboutQMTSim();
 void showReadme();
+//bool close();
 
 
 

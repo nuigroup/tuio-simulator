@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'addcusordialogimpl.h'
 **
-** Created: Tue Aug 5 22:43:06 2008
+** Created: Thu Aug 7 23:21:28 2008
 **      by: The Qt Meta Object Compiler version 59 (Qt 4.4.0)
 **
 ** WARNING! All changes made in this file will be lost!
