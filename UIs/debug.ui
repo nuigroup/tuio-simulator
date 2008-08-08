@@ -1,0 +1,130 @@
+<ui version="4.0" >
+ <class>debugWindow</class>
+ <widget class="QDialog" name="debugWindow" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>321</width>
+    <height>524</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Debug</string>
+  </property>
+  <property name="windowIcon" >
+   <iconset resource="../resource.qrc" >
+    <normaloff>:/newPrefix/logo.png</normaloff>:/newPrefix/logo.png</iconset>
+  </property>
+  <widget class="QGroupBox" name="groupBox" >
+   <property name="geometry" >
+    <rect>
+     <x>20</x>
+     <y>10</y>
+     <width>278</width>
+     <height>494</height>
+    </rect>
+   </property>
+   <property name="sizePolicy" >
+    <sizepolicy vsizetype="Expanding" hsizetype="Expanding" >
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize" >
+    <size>
+     <width>221</width>
+     <height>491</height>
+    </size>
+   </property>
+   <property name="title" >
+    <string>Debug Window</string>
+   </property>
+   <layout class="QGridLayout" name="gridLayout" >
+    <item row="0" column="0" >
+     <layout class="QVBoxLayout" name="verticalLayout" >
+      <item>
+       <widget class="QLabel" name="fseqLabel" >
+        <property name="text" >
+         <string>Fseq  : </string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label" >
+        <property name="text" >
+         <string>Alive Cursors</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QListWidget" name="aliveCursorList" >
+        <property name="maximumSize" >
+         <size>
+          <width>500</width>
+          <height>85</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_2" >
+        <property name="text" >
+         <string>Cursor Set</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QListWidget" name="setCursorList" >
+        <property name="maximumSize" >
+         <size>
+          <width>500</width>
+          <height>85</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_3" >
+        <property name="text" >
+         <string>Alive Object</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QListWidget" name="aliveObjectList" >
+        <property name="maximumSize" >
+         <size>
+          <width>500</width>
+          <height>85</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_4" >
+        <property name="text" >
+         <string>Object Set</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QListWidget" name="setObjectList" >
+        <property name="maximumSize" >
+         <size>
+          <width>500</width>
+          <height>85</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../resource.qrc" />
+ </resources>
+ <connections/>
+</ui>

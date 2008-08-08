@@ -1,0 +1,78 @@
+<ui version="4.0" >
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>466</width>
+    <height>475</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Readme</string>
+  </property>
+  <property name="windowIcon" >
+   <iconset resource="../resource.qrc" >
+    <normaloff>:/newPrefix/logo.png</normaloff>:/newPrefix/logo.png</iconset>
+  </property>
+  <layout class="QGridLayout" name="gridLayout" >
+   <item row="0" column="0" >
+    <widget class="QLabel" name="label" >
+     <property name="text" >
+      <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;span style=" font-size:12pt; font-weight:600;">QMTSim Help&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0" >
+    <widget class="QTextBrowser" name="textBrowser" >
+     <property name="html" >
+      <string>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;">
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt; font-weight:600;">&lt;a name="QMTSim_Help">&lt;/a>   QMTSim&lt;span style=" font-weight:400;"> is a new advanced multi touch simulatorbased on Qt 4.4. Its written in C++ so now onwards there will be no JVM:) The simulator helps you add new items ( both a tangible and a cursor) in real time , customize their property and delete them when notrequired. It also lets you define a path for the item to follow duringthe animation run.You can define the path by selecting points on thepath which are then joined using bezier curves giving a smooth path.Theitem with its properties along with its path if specified can be savedin a XML file which can be reloaded in future.All the items that areselected are saved in the same file. Thus selective bunch of items canbe saved and uploaded.The path of the item can be changed also. QMTSimalso has the support for two-finger emulation with right click. Morefeatures are discussed below in the appropriate section. Hope you enjoyusing QMTSim. For any more feature request or bug , please mail tomr.ashish.rai@gmail.com &lt;/span>&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt; font-weight:600;">&lt;a name="Details">&lt;/a>&lt;span style=" font-size:xx-large;">D&lt;/span>&lt;span style=" font-size:xx-large;">etails&lt;/span>&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt; font-weight:600;">&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;a name="Details">&lt;/a>&lt;span style=" font-weight:600;">R&lt;/span>&lt;span style=" font-weight:600;">ight and Left Mouse Clicks&lt;/span>: Using the left click you can emulate a single finger touch which youcan navigate using the mouse without lifting the mouse finger.Two-finger touch for zooming etc can be emulated using the rightclick.You control one of the cursor with the mouse movement while theother is a mirror image of the first. The cursor is destroyed as soonas you lift your finger up and cursors with new IDs are created at nextusage. &lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;a name="Details">&lt;/a>&lt;span style=" font-weight:600;">A&lt;/span>&lt;span style=" font-weight:600;">dding New Items&lt;/span> :All types of 2D geometrical figures can be created and added to thetable to represent various tangibles.These items can be stored in XMLfiles for future use. &lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;a name="Details">&lt;/a>Add Polygon : Apolygon can be added by specifying its vertices in a closed format ieyou have to repeat the first vertex as the last vertex.Fiducialattached to it and its color can be specified too. &lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;a name="Details">&lt;/a>AddEllipse : For sake of geometrical completeness, you can add an ellipseon the table by providing the rectangle containing it and specifyingwhere to place it on the scene. &lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;a name="Details">&lt;/a>AddCursor : In order to support multiple cursors, an extra class of itemscalled cursors is implemented which sends cursor data and thus emulatesmultiple cursors on the table. &lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;a name="Details">&lt;/a>&lt;span style=" font-weight:600;">D&lt;/span>&lt;span style=" font-weight:600;">elete Item&lt;/span> : All the items that are selected ( multiple items can be selected using Ctrl + left click ) can be deleted . &lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;a name="Details">&lt;/a>&lt;span style=" font-weight:600;">S&lt;/span>&lt;span style=" font-weight:600;">et Path&lt;/span>:With just one mouse at your disposal , even if you have multipleobjects you can move just one at a time and hence will not be able toproduce complex gestures. In order to overcome this, you can specifythe path to be followed by the items which are required to move byproviding points on the scene which are then joined using Bezier curveproducing a smooth path.You can even provide normalized time periodbetween which the motion should occur. Normalized time period helps youinflate or deflate the time of animation and the items co-ordinateaccordingly to run in the stipulated time period.The points can beprovided with the mouse or can be added numerically. The smoothness ofthe path formed between the points can be varied too. &lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;a name="Details">&lt;/a>&lt;span style=" font-weight:600;">S&lt;/span>&lt;span style=" font-weight:600;">tart Animation&lt;/span>All the items whose path has been set will follow their path in thestipulated normalized time for the animation time set ( which is bydefault 10000 ms ). The percentage of animation time is shown in theprogress bar. You can &lt;span style=" font-weight:600;">forward or backward  the animation time&lt;/span> using the animation timeline at the speed of your mouse.The animation can be paused and then restarted. &lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;a name="Details">&lt;/a>&lt;span style=" font-weight:600;">N&lt;/span>&lt;span style=" font-weight:600;">OTE&lt;/span>: Even while the animation is running , you are free to move objectswith the mouse and use the cursor associated with the right and leftclicks of the mouse.However it is advisable not to move items which areunder animation. &lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;a name="Details">&lt;/a>&lt;span style=" font-weight:600;">R&lt;/span>&lt;span style=" font-weight:600;">eset Animation&lt;/span>: After the animation has been done, it can be re-started right fromthe place where they are present or changed with the mouse.They can allbe set to their starting position by the Reset button. &lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;a name="Details">&lt;/a>&lt;span style=" font-weight:600;">S&lt;/span>&lt;span style=" font-weight:600;">ave and Upload&lt;/span>: Once an item is created, it can be saved along with its allproperties in an XML file and can be uploaded for future use leading toreuse of your hard work building the gesture. Items can be selectivelysaved by choosing only those items with ctrl-left click for multipleobjects.Thus several gestures can be saved individually or as a sessionand uploaded in a similar fashion. &lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;a name="Details">&lt;/a>&lt;span style=" font-weight:600;">D&lt;/span>&lt;span style=" font-weight:600;">ebug&lt;/span>: Debug window has been implemented as an external non-modal windowwhich shows on when the debug is triggered from the file menu. Thedebug window comprises of four small views which shows the IDs of thealive tangibles and cursors separately and also what values are send ina SET TUIO data. &lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;a name="Details">&lt;/a>&lt;span style=" font-weight:600;">T&lt;/span>&lt;span style=" font-weight:600;">UIO Transmission&lt;/span>: The TUIO dats is not started to transmit until this button ispressed. A default TUIO sender is connected to 127.0.0.1 at port number3333. Extra TUIO senders can be set using &lt;span style=" font-weight:600;">Configure Transmission&lt;/span> by specifying appropriate address and port number. Currently there is support only for UDP packets. &lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;a name="Details">&lt;/a>&lt;span style=" font-weight:600;">O&lt;/span>&lt;span style=" font-weight:600;">pacity Control&lt;/span>: A slider is provided to change the opacity of the QMTSim mainwindow.This will help to keep the simulator just above the application,make QMTSim transpaernt , do a bit of resizing and then both theapplication and QMTSim will work in the same frame and give animpression that the application itself is loaded in the simulator. &lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;a name="Details">&lt;/a>Please report any bug or query or feature-request to &lt;span style=" font-weight:600;">mr.ashish.rai@gmail.com&lt;/span> &lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;a name="Details">&lt;/a>&lt;span style=" font-weight:600;">H&lt;/span>&lt;span style=" font-weight:600;">OPE YOU ENJOY USING QMTSim&lt;/span> &lt;/p>&lt;/body>&lt;/html></string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../resource.qrc" />
+ </resources>
+ <connections/>
+</ui>
