@@ -1,6 +1,8 @@
 #ifndef __TOUCHLIB_TOUCHDATA__
 #define __TOUCHLIB_TOUCHDATA__
 
+
+
 class TouchData
 {
 	
@@ -18,6 +20,7 @@ public :
 		width = 0.0 ;
 		angle = 0.0 ;
 		area = 0.0 ;
+		orientation = 0;
 		packetUpdate = false ;
 		active = false ;
 	}
@@ -29,6 +32,7 @@ public :
 	float height;
 	float width;
 	float angle;
+	int orientation;
 
 	float area;
 

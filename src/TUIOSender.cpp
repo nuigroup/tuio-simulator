@@ -163,7 +163,7 @@ void TUIOSender::frame()
 				//qDebug() << newm << endl ;
 
 				p << osc::BeginMessage( "/tuio/2Dobj" ) ;
-				p << "set" << d->ID  << d->tagID << (d->X)/600 << (d->Y)/400 << n << newm << newm << n  << accel << n << osc::EndMessage;
+				p << "set" << d->ID  << d->tagID << (d->X)/600 << (d->Y)/400 << d->angle << newm << newm << n  << accel << n << osc::EndMessage;
 				mywin->myDebug->setObjectList->addItem("Object Set   "+ str_ID.setNum(d->ID) +  "    X  " + str_x.setNum(d->X) + "     Y " + str_y.setNum(d->Y));
 				mywin->myDebug->setObjectList->scrollToBottom();
 				if (Verbose) std::cout << "Animation Object Set  " << "\n" ;

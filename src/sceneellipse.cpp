@@ -29,10 +29,20 @@ SceneEllipse::SceneEllipse()
  	switch (keyevent->key())
  	{
  		case Qt::Key_R : rotate(1);
+ 					OSCdata->orientation++;
+ 					OSCdata->orientation = OSCdata->orientation  % 360 ;
+ 					if (OSCdata->orientation<0) OSCdata->orientation += 360 ;
+ 					OSCdata->angle = OSCdata->orientation * 0.01745 ; //Convert degree to radian
+ 					OSCdata->packetUpdate = true ;
  					break;
  					
  					
  		case Qt::Key_L : rotate(-1);
+ 		 			OSCdata->orientation--;
+ 					OSCdata->orientation = OSCdata->orientation  % 360 ;
+ 					if (OSCdata->orientation<0) OSCdata->orientation += 360 ;
+ 					OSCdata->angle = OSCdata->orientation * 0.01745 ; //Convert degree to radian
+ 					OSCdata->packetUpdate = true ;
  					break;
  		
  		default : break;
