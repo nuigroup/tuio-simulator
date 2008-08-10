@@ -36,6 +36,7 @@ MainWindowImpl::MainWindowImpl( QWidget * parent, Qt::WFlags f)
 	opacitySlider->setTickInterval(5);
 	opacitySlider->setTracking(false);
 	opacitySlider->setRange(20,100);
+	opacitySlider->setSliderPosition(40);
 	opacitySlider->setTickPosition(QSlider::TicksBelow);
 	scene = new QGraphicsScene;
 	scene->setBackgroundBrush(Qt::transparent);
@@ -117,18 +118,41 @@ MainWindowImpl::MainWindowImpl( QWidget * parent, Qt::WFlags f)
 	connect(actionAbout_Qt, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
 	connect(actionAbout_QMTSim, SIGNAL(triggered()),this, SLOT(showAboutQMTSim()));
 	connect(actionReadme, SIGNAL(triggered()),this, SLOT(showReadme()));
+	connect(actionView,SIGNAL(triggered()),this,SLOT(viewButtonSlot()));
+	connect(actionResize_Table,SIGNAL(triggered()),this,SLOT(showResizeDialog()));
 
 
 	
 	
 	t.start();
-
+	groupBox->hide();
+	buttonHidden = true ;
     //item->animation->setItem(item);
     //item->animation->setTimeLine(timer);
     
 
 
 	
+}
+
+void MainWindowImpl::viewButtonSlot()
+{
+	if (buttonHidden)
+	{
+		groupBox->show();
+		buttonHidden = false ;
+	}
+	else
+	{
+		groupBox->hide();
+		buttonHidden = true ;
+	}
+}
+
+void MainWindowImpl::showResizeDialog()
+{
+	resizeTableDialogImpl *local_dialog = new resizeTableDialogImpl(this);
+	local_dialog->show();
 }
 
 void MainWindowImpl::resetTx()

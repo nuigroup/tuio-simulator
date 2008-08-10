@@ -25,6 +25,7 @@ INPUT(
 ./build\tangible_type.o
 ./build\debugWindowImpl.o
 ./build\readmeDialogImpl.o
+./build\resizeTableDialogImpl.o
 ./build\moc_TUIOSender.o
 ./build\moc_aboutQMTSimImpl.o
 ./build\moc_addcusordialogimpl.o
@@ -36,5 +37,6 @@ INPUT(
 ./build\moc_setpathwinodwimpl.o
 ./build\moc_debugWindowImpl.o
 ./build\moc_readmeDialogImpl.o
+./build\moc_resizeTableDialogImpl.o
 ./build\qrc_resource.o
 );

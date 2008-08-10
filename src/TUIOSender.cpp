@@ -65,6 +65,7 @@ void TUIOSender::frameSlot()
 
 void TUIOSender::frame()
 {	
+
 	QString str_ID,str_x,str_y; // for use in debug window
 	QString aliveCursors =  "",aliveObjects = "" ;
 
@@ -108,7 +109,7 @@ void TUIOSender::frame()
 			float dx = d->X - d->LX ;
 			float dy = d->Y - d->LY ;
 			float m = sqrtf((dx*dx) + (dy*dy));
-			p << osc::BeginMessage( "/tuio/2Dcur" ) << "set" << d->ID << (d->X)/600 << (d->Y)/400 << dx/600 << dy/400 << m << osc::EndMessage;
+			p << osc::BeginMessage( "/tuio/2Dcur" ) << "set" << d->ID << (d->X)/mywin->table->w << (d->Y)/mywin->table->h << dx/mywin->table->w << dy/mywin->table->h << m << osc::EndMessage;
 			mywin->myDebug->setCursorList->addItem("Cursor Set   "+ str_ID.setNum(d->ID) +  "    X  " + str_x.setNum(d->X) + "     Y " + str_y.setNum(d->Y));
 			mywin->myDebug->setCursorList->scrollToBottom();
 			d->LX = d->X ;
@@ -128,7 +129,7 @@ void TUIOSender::frame()
 	
 	
 	
-	QList<QGraphicsItem *> list = mywin->scene->items(5,5,600,400,Qt::IntersectsItemShape);
+	QList<QGraphicsItem *> list = mywin->scene->items(5,5,mywin->table->w,mywin->table->h,Qt::IntersectsItemShape);
 	
 	while (!(list.isEmpty()))
 	{
@@ -148,7 +149,7 @@ void TUIOSender::frame()
 			if ( myTangible->tangible_type == 3 )
 			{
 				p << osc::BeginMessage( "/tuio/2Dcur" ) ;
-				p << "set" << d->ID << (d->X)/600 << (d->Y)/400 << dx << dy << m << osc::EndMessage;
+				p << "set" << d->ID << (d->X)/mywin->table->w << (d->Y)/mywin->table->h << dx << dy << m << osc::EndMessage;
 				mywin->myDebug->setCursorList->addItem("Cursor Set   "+ str_ID.setNum(d->ID) +  "    X  " + str_x.setNum(d->X) + "     Y " + str_y.setNum(d->Y));
 				mywin->myDebug->setCursorList->scrollToBottom();
 				if (Verbose) std::cout << "Animation Cursor Set  " << "\n" ;
@@ -163,7 +164,7 @@ void TUIOSender::frame()
 				//qDebug() << newm << endl ;
 
 				p << osc::BeginMessage( "/tuio/2Dobj" ) ;
-				p << "set" << d->ID  << d->tagID << (d->X)/600 << (d->Y)/400 << d->angle << newm << newm << n  << accel << n << osc::EndMessage;
+				p << "set" << d->ID  << d->tagID << (d->X)/mywin->table->w << (d->Y)/mywin->table->h << d->angle << newm << newm << n  << accel << n << osc::EndMessage;
 				mywin->myDebug->setObjectList->addItem("Object Set   "+ str_ID.setNum(d->ID) +  "    X  " + str_x.setNum(d->X) + "     Y " + str_y.setNum(d->Y));
 				mywin->myDebug->setObjectList->scrollToBottom();
 				if (Verbose) std::cout << "Animation Object Set  " << "\n" ;

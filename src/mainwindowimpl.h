@@ -28,6 +28,7 @@
 #include "aboutQMTSimImpl.h"
 #include "debugWindowImpl.h"
 #include "readmeDialogImpl.h"
+#include "resizeTableDialogImpl.h"
 #include <iostream>
 
 
@@ -51,6 +52,7 @@ public:
     QTimeLine *timer;
     QTime t;
     bool animationStarted ;
+    bool buttonHidden;
     bool txStarted ;
     int framerange;
     Table *table;
@@ -92,6 +94,9 @@ void resetTx();
 void showDebugWindow();
 void showAboutQMTSim();
 void showReadme();
+void viewButtonSlot();
+void showResizeDialog();
+
 //bool close();
 
 

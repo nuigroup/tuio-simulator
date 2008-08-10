@@ -16,6 +16,8 @@ Table::Table(MainWindowImpl *win)
 	OSCdata->packetUpdate = false ;
 	OSCdata->active = false ;
 	twoFinger = false ;
+	w = 600 ;
+	h = 400 ;
 
 }
 

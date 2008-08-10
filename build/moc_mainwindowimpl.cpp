@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'mainwindowimpl.h'
 **
-** Created: Fri Aug 8 23:59:17 2008
+** Created: Sun Aug 10 23:08:55 2008
 **      by: The Qt Meta Object Compiler version 59 (Qt 4.4.0)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_MainWindowImpl[] = {
        1,       // revision
        0,       // classname
        0,    0, // classinfo
-      21,   10, // methods
+      23,   10, // methods
        0,    0, // properties
        0,    0, // enums/sets
 
@@ -51,6 +51,8 @@ static const uint qt_meta_data_MainWindowImpl[] = {
      326,   15,   15,   15, 0x08,
      344,   15,   15,   15, 0x08,
      362,   15,   15,   15, 0x08,
+     375,   15,   15,   15, 0x08,
+     392,   15,   15,   15, 0x08,
 
        0        // eod
 };
@@ -66,7 +68,8 @@ static const char qt_meta_stringdata_MainWindowImpl[] = {
     "opacitySliderImpl(int)\0showConfigureDialog()\0"
     "startTx()\0restartPacketTimer()\0resetTx()\0"
     "showDebugWindow()\0showAboutQMTSim()\0"
-    "showReadme()\0"
+    "showReadme()\0viewButtonSlot()\0"
+    "showResizeDialog()\0"
 };
 
 const QMetaObject MainWindowImpl::staticMetaObject = {
@@ -117,8 +120,10 @@ int MainWindowImpl::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         case 18: showDebugWindow(); break;
         case 19: showAboutQMTSim(); break;
         case 20: showReadme(); break;
+        case 21: viewButtonSlot(); break;
+        case 22: showResizeDialog(); break;
         }
-        _id -= 21;
+        _id -= 23;
     }
     return _id;
 }

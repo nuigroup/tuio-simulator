@@ -3,6 +3,12 @@
     <file>logo.png</file>
   </qresource>
   <qresource prefix="newPrefix" >
+    <file>icons/view.png</file>
+  </qresource>
+  <qresource prefix="newPrefix" >
+    <file>icons/resize.png</file>
+  </qresource>
+  <qresource prefix="newPrefix" >
     <file>icons/readme.png</file>
   </qresource>
   <qresource prefix="newPrefix" >

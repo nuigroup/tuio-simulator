@@ -21,6 +21,7 @@ class Table : public QGraphicsRectItem
 			TouchData *OSCdata ;
 			SceneCursor *cursor1;
 			SceneCursor *cursor2;
+			int w,h;
 			QGraphicsEllipseItem *cursor3;
 			
 			double centrex,centrey;
