@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'debugWindowImpl.h'
 **
-** Created: Mon Aug 11 17:34:21 2008
+** Created: Mon Aug 18 19:23:50 2008
 **      by: The Qt Meta Object Compiler version 59 (Qt 4.4.0)
 **
 ** WARNING! All changes made in this file will be lost!
