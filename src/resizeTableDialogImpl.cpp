@@ -6,8 +6,8 @@ resizeTableDialogImpl::resizeTableDialogImpl(MainWindowImpl *win,QWidget * paren
 	{
 		setupUi(this);
 		mywin = win ;
-		h = 400 ;
-		w = 600 ;
+		h = mywin->table->h ;
+		w = mywin->table->w ;
 		setAttribute(Qt::WA_DeleteOnClose);
 		widthSlider->setTickInterval(180);
 		widthSlider->setTracking(false);
@@ -19,8 +19,8 @@ resizeTableDialogImpl::resizeTableDialogImpl(MainWindowImpl *win,QWidget * paren
 		heightSlider->setTickPosition(QSlider::TicksBelow);
 		connect(widthSlider,SIGNAL(sliderMoved(int )),this,SLOT(resizeWidth(int)));
 		connect(heightSlider,SIGNAL(sliderMoved(int )),this,SLOT(resizeHeight(int)));
-		heightSlider->setSliderPosition(400);
-		widthSlider->setSliderPosition(600);
+		heightSlider->setSliderPosition(mywin->table->h);
+		widthSlider->setSliderPosition(mywin->table->w);
 		
 	}
 	
