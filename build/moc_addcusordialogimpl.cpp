@@ -1,8 +1,8 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'addcusordialogimpl.h'
 **
-** Created: Mon Aug 18 19:23:26 2008
-**      by: The Qt Meta Object Compiler version 59 (Qt 4.4.0)
+** Created: Thu Jan 15 16:59:59 2009
+**      by: The Qt Meta Object Compiler version 59 (Qt 4.4.3)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -11,7 +11,7 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'addcusordialogimpl.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 59
-#error "This file was generated using the moc from 4.4.0. It"
+#error "This file was generated using the moc from 4.4.3. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -51,9 +51,9 @@ void *AddCursorDialogImpl::qt_metacast(const char *_clname)
 {
     if (!_clname) return 0;
     if (!strcmp(_clname, qt_meta_stringdata_AddCursorDialogImpl))
-	return static_cast<void*>(const_cast< AddCursorDialogImpl*>(this));
+        return static_cast<void*>(const_cast< AddCursorDialogImpl*>(this));
     if (!strcmp(_clname, "Ui4::addCursorDialog"))
-	return static_cast< Ui4::addCursorDialog*>(const_cast< AddCursorDialogImpl*>(this));
+        return static_cast< Ui4::addCursorDialog*>(const_cast< AddCursorDialogImpl*>(this));
     return QDialog::qt_metacast(_clname);
 }
 

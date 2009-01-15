@@ -1,8 +1,8 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'addellipsedialogimpl.h'
 **
-** Created: Mon Aug 18 19:23:30 2008
-**      by: The Qt Meta Object Compiler version 59 (Qt 4.4.0)
+** Created: Thu Jan 15 17:00:01 2009
+**      by: The Qt Meta Object Compiler version 59 (Qt 4.4.3)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -11,7 +11,7 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'addellipsedialogimpl.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 59
-#error "This file was generated using the moc from 4.4.0. It"
+#error "This file was generated using the moc from 4.4.3. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -53,9 +53,9 @@ void *AddEllipseDialogImpl::qt_metacast(const char *_clname)
 {
     if (!_clname) return 0;
     if (!strcmp(_clname, qt_meta_stringdata_AddEllipseDialogImpl))
-	return static_cast<void*>(const_cast< AddEllipseDialogImpl*>(this));
+        return static_cast<void*>(const_cast< AddEllipseDialogImpl*>(this));
     if (!strcmp(_clname, "Ui3::addEllipseDialog"))
-	return static_cast< Ui3::addEllipseDialog*>(const_cast< AddEllipseDialogImpl*>(this));
+        return static_cast< Ui3::addEllipseDialog*>(const_cast< AddEllipseDialogImpl*>(this));
     return QDialog::qt_metacast(_clname);
 }
 

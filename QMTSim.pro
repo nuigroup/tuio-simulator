@@ -39,14 +39,18 @@ HEADERS = ip/IpEndpointName.h \
  src/resizeTableDialog.h \
  src/resizeTableDialogImpl.h
 INCLUDEPATH += ip osc
-LIBS += -lwinmm -lws2_32
+LIBS +=
 MOC_DIR = build
 OBJECTS_DIR = build
-QT = core gui xml
+QT = core \
+ gui \
+ xml \
+ xmlpatterns \
+ network \
+ sql \
+ script
 RESOURCES += resource.qrc
 SOURCES = ip/IpEndpointName.cpp \
- ip/win32/NetworkingUtils.cpp \
- ip/win32/UdpSocket.cpp \
  osc/OscOutboundPacketStream.cpp \
  osc/OscTypes.cpp \
  src/TUIOSender.cpp \
@@ -70,6 +74,8 @@ SOURCES = ip/IpEndpointName.cpp \
  src/tangible_type.cpp \
  src/debugWindowImpl.cpp \
  src/readmeDialogImpl.cpp \
- src/resizeTableDialogImpl.cpp
+ src/resizeTableDialogImpl.cpp \
+ ip/posix/NetworkingUtils.cpp \
+ ip/posix/UdpSocket.cpp
 TEMPLATE = app
 UI_DIR = build

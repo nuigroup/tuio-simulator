@@ -15,8 +15,8 @@
 #include <QPolygon>
 #include <QPainterPath>
 #include <QAbstractSlider>
-#include <QXMLStreamWriter>
-#include <QXMLStreamReader>
+#include <QXmlStreamWriter>
+#include <QXmlStreamReader>
 #include <QTimer>
 #include <QTime>
 #include "item.h"
