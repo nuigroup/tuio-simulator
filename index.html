@@ -28,32 +28,33 @@
         </ul>
       </header>
       <section>
-        <h3>Welcome to GitHub Pages.</h3>
+        <p>The aim of this project is the development of a New TUIO Simulator for fast development and debugging of Multi-touch Applications.TUIO is a versatile protocol, designed specifically to meet the requirements of table-top tangible user interfaces.In order to develop applications one has to wait till one gets the required multi-touch screen.There is a Java based TUIO simulator but it does not help in utilizing the full capabilities of the protocol and only preliminary applications can be developed using it.</p>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<p>This project aims at a new Qt based fast and full featured simulator for Multi-Touch applications.The functionalities implemented are :</p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+<ol>
+<li><p>User will be able to add customizable polygons to the table and thus the application could be developed for all sort of items.</p></li>
+<li><p>The items will be able to rotate and translate independently and concurrently too.</p></li>
+</ol><p>3.The user will be able to set a path for the items to follow during the animation run and hence he/she will be relieved of moving the items again and again by the mouse. The points on the path is given by clicking which are interpolated using Bezier curves.</p>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<p>4.The items created can be saved individually or in groups as a session in an XML file which can be reloaded on a future run so that the same gestures could be repeated again.</p>
 
-<h3>Designer Templates</h3>
+<p>5.The simulator is now able to transmit TUIO data for multiple instances of both cursor and object - for created as well as uploaded items .</p>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<p>6.On the animation timeline , the objects can now be set to animate during a normalized time period, so that changing the timeline affects the period of animation equally to all.</p>
 
-<h3>Rather Drive Stick?</h3>
+<ol>
+<li><p>Multiple customizable TUIO sender can be set.</p></li>
+<li><p>Two-finger emulation with right click supported. This is a most wanted feature from the Apple Simulator and can be used to simulate pinching and zooming !!</p></li>
+<li><p>Opacity control helps you make the simulator transparent and keep it above the application, thus giving an impression of touching the application itself.</p></li>
+<li><p>Resize Table to fit your multi touch application.</p></li>
+</ol><p>SIMTOUCH : SimTouch is another TUIO simulator build using the Adobe Air runtime. The core benefit to using SimTouch is the transparent background allowing the application developer to have a better grasp of what he/she is 'touching' <a href="http://code.google.com/p/simtouch/">http://code.google.com/p/simtouch/</a></p>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<p><br></p>
 
-<h3>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+<hr><p>GSoC 2008 project
+<br><img src="http://db.tt/7q0G6unN" alt="GSoC 2008"><br><strong>Student:</strong> Ashish Kumar Rai
+<br><strong>Mentor:</strong> Pawel Solyga</p>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/nuigroup">nuigroup</a></p>
